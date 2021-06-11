@@ -1,15 +1,17 @@
+package za.ac.cput.entity;
+
 /*
     Rating.java
+    Entity for Rating
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
 
-package za.ac.cput.entity;
-
 public class Rating {
+
     private int movieId;
-    private float rating;
+    private double rating;
 
     private Rating(RatingBuilder RatingBuilder){
         this.movieId = RatingBuilder.movieId;
@@ -18,14 +20,14 @@ public class Rating {
 
     public static class RatingBuilder {
         private int movieId;
-        private float rating;
+        private double rating;
 
         public RatingBuilder setMovieId(int movieId) {
             this.movieId = movieId;
             return this;
         }
 
-        public RatingBuilder setRating(float rating) {
+        public RatingBuilder setRating(double rating) {
             this.rating = rating;
             return this;
         }

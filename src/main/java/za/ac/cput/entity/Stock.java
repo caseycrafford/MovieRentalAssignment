@@ -1,11 +1,12 @@
+package za.ac.cput.entity;
+
 /*
     Stock.java
+    Entity for the Stock
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
-
-package za.ac.cput.entity;
 
 public class Stock {
 
@@ -21,12 +22,14 @@ public class Stock {
         private int movieId;
         private int quantity;
 
-        public void setMovieId(int movieId) {
+        public StockBuilder setMovieId(int movieId) {
             this.movieId = movieId;
+            return this;
         }
 
-        public void setQuantity(int quantity) {
+        public StockBuilder setQuantity(int quantity) {
             this.quantity = quantity;
+            return this;
         }
 
         public Stock build(){

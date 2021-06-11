@@ -1,19 +1,20 @@
+package za.ac.cput.entity;
+
 /*
     Movie.java
+    Entity for the Movie
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
 
-package za.ac.cput.entity;
-
 public class Movie {
 
-    private int movieId,genreId,directorId;
-    private String title,releaseDate;
+    private int genreId,directorId;
+    private String title,releaseDate, movieId;
 
     private Movie(MovieBuilder MovieBuilder){
-        this.movieId = MovieBuilder.movieId;
+        this.movieId = MovieBuilder.movieIdnew;
         this.genreId = MovieBuilder.genreId;
         this.directorId = MovieBuilder.directorId;
         this.title = MovieBuilder.title;
@@ -22,10 +23,10 @@ public class Movie {
 
     public static class MovieBuilder {
         private int movieId,genreId,directorId;
-        private String title,releaseDate;
+        private String title,releaseDate,movieIdnew;
 
-        public MovieBuilder setMovieId(int movieId) {
-            this.movieId = movieId;
+        public MovieBuilder setMovieId(String movieId) {
+            this.movieIdnew = movieId;
             return this;
         }
 

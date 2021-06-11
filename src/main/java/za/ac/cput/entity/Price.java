@@ -1,11 +1,12 @@
+package za.ac.cput.entity;
+
 /*
     Price.java
+    Entity for the Price
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
-
-package za.ac.cput.entity;
 
 public class Price {
     private int amount;
@@ -17,13 +18,18 @@ public class Price {
     public static class PriceBuilder{
         private int amount;
 
-        public void setAmount(int amount) {
+        public PriceBuilder setAmount(int amount) {
             this.amount = amount;
+            return this;
         }
 
         public Price build(){
             return new Price(this);
         }
+    }
+
+    public int getAmount() {
+        return amount;
     }
 
     @Override
