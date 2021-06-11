@@ -1,11 +1,11 @@
+package za.ac.cput.entity;
+
 /*
-    Movie.java
+    Rating.java
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
-
-package za.ac.cput.entity;
 
 public class Movie {
 
