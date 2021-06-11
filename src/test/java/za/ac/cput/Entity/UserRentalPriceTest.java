@@ -5,9 +5,11 @@ package za.ac.cput.Entity;
  * Student number: 216063124
  */
 
+import za.ac.cput.entity.UserRentalPrice;
+import za.ac.cput.factory.UserRentalPriceFactory;
 import org.junit.jupiter.api.*;
 
-public class UserRentalPrice {
+public class UserRentalPriceTest {
 
     @Test
     void test ()
