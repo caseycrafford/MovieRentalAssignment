@@ -4,6 +4,12 @@ import za.ac.cput.entity.userRole;
 
 import java.util.UUID;
 
+/**
+ * Author: Muhammad Yaasin Cole
+ * Student Number: 218340869
+ *
+ */
+
 public class UserRoleFactory {
 
     public static userRole build(int userId , int roleId)
