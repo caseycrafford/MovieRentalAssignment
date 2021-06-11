@@ -1,12 +1,10 @@
-package za.ac.cput.Entity;
+package za.ac.cput.entity;
 
 /* Studio.java
         Entity for studio
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */
-
-import java.util.SimpleTimeZone;
 
 public class Studio {
 
