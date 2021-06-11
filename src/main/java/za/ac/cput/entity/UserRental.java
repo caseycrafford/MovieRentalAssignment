@@ -1,5 +1,10 @@
 package za.ac.cput.entity;
 
+/*
+ * Author: Grant Constant
+ * Student number: 216063124
+ */
+
 public class UserRental {
     private int rentalId, userId, movieId, rentalDate, returnDate;
     private String rentedBy;
