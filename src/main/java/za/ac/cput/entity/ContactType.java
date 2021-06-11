@@ -7,50 +7,48 @@ package za.ac.cput.entity;
 */
 
 public class ContactType {
-private String name,description;
-private int contactTypeId;
+    private String name, description;
+    private int contactTypeId;
 
-private ContactType(contactTypeBuilder contactTypeBuilder)
-{
-this.contactTypeId = contactTypeBuilder.contactTypeId;
-this.description = contactTypeBuilder.description;
-this.name = contactTypeBuilder.name;
+    private ContactType(contactTypeBuilder contactTypeBuilder) {
+        this.contactTypeId = contactTypeBuilder.contactTypeId;
+        this.description = contactTypeBuilder.description;
+        this.name = contactTypeBuilder.name;
 
-}
+    }
 
- public static class contactTypeBuilder {
-  private String name,description;
-  private int contactTypeId;
+    public static class contactTypeBuilder {
+        private String name, description;
+        private int contactTypeId;
 
-  public contactTypeBuilder setName(String name) {
-   this.name = name;
-   return this;
-  }
+        public contactTypeBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
 
-  public contactTypeBuilder setDescription(String description) {
-   this.description = description;
-   return this;
-  }
+        public contactTypeBuilder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
 
-  public contactTypeBuilder setContactTypeId(int contactTypeId) {
-   this.contactTypeId = contactTypeId;
-   return this;
-  }
+        public contactTypeBuilder setContactTypeId(int contactTypeId) {
+            this.contactTypeId = contactTypeId;
+            return this;
+        }
 
-public ContactType build()
-{
+        public ContactType build() {
 
- return new ContactType(this);
-}
+            return new ContactType(this);
+        }
 
- }
+    }
 
- @Override
- public String toString() {
-  return "ContactType{" +
-          "name='" + name + '\'' +
-          ", description='" + description + '\'' +
-          ", contactTypeId=" + contactTypeId +
-          '}';
- }
+    @Override
+    public String toString() {
+        return "ContactType{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", contactTypeId=" + contactTypeId +
+                '}';
+    }
 }

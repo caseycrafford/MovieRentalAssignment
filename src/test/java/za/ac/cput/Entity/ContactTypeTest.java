@@ -18,41 +18,39 @@ Test for the ContactType
 
 class ContactTypeTest {
     @Test
-    void test()
-    {
-        ContactType uc = ContactTypeFactory.build("","",84385385);
+    void test() {
+        ContactType uc = ContactTypeFactory.build("", "");
         System.out.println(uc);
 
 
     }
+
     @Test
     void test2Equal() {
-        ContactType uc = ContactTypeFactory.build("b","c",84385385);
-        ContactType uc2 = ContactTypeFactory.build("a","e",84385385);
+        ContactType uc = ContactTypeFactory.build("b", "c");
+        ContactType uc2 = ContactTypeFactory.build("a", "e");
         assertNotEquals(uc, uc2);
     }
+
     @Test
-    void test3Identity()
-    {
-        ContactType uc = ContactTypeFactory.build("b","c",84385385);
-        assertSame(uc,uc);
+    void test3Identity() {
+        ContactType uc = ContactTypeFactory.build("b", "c");
+        assertSame(uc, uc);
     }
+
     @Timeout(value = 1, unit = MILLISECONDS)
-    void test4TimeOut()
-    {
-        for (int i =0;i<100;i++)
-        {
-            ContactType uc = ContactTypeFactory.build("b","c",84385385);
+    void test4TimeOut() {
+        for (int i = 0; i < 100; i++) {
+            ContactType uc = ContactTypeFactory.build("b", "c");
             System.out.println(uc);
         }
     }
 
     @Disabled
-    void test5Disable()
-    {
-        int v =2;
-        int i=1;
-        assertSame(i,v);
+    void test5Disable() {
+        int v = 2;
+        int i = 1;
+        assertSame(i, v);
     }
 
 

@@ -1,5 +1,8 @@
 package za.ac.cput.factory;
+
 import za.ac.cput.entity.ContactType;
+
+import java.util.UUID;
 
 /* ContactTypeFactory.java
  entity for the ContactTypeFactory
@@ -8,12 +11,11 @@ import za.ac.cput.entity.ContactType;
 */
 public class ContactTypeFactory {
 
-    public static ContactType build(String name , String description , int contactTypeId)
-    {
+    public static ContactType build(String name, String description) {
         if (name.isEmpty())
             return null;
 
-        //int userId= Integer.parseInt(UUID.randomUUID().toString());
+        int contactTypeId = UUID.randomUUID().hashCode();
 
 
         return new ContactType.contactTypeBuilder()
