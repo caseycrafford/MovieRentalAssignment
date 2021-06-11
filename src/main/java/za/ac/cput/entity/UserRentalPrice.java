@@ -17,16 +17,19 @@ public class UserRentalPrice {
     public static class UserRentalPriceBuilder{
         private int rentalId, duration, amount;
 
-        public void setRentalId(int rentalId) {
+        public UserRentalPriceBuilder setRentalId(int rentalId) {
             this.rentalId = rentalId;
+            return this;
         }
 
-        public void setDuration(int duration) {
+        public UserRentalPriceBuilder setDuration(int duration) {
             this.duration = duration;
+            return this;
         }
 
-        public void setAmount(int amount) {
+        public UserRentalPriceBuilder setAmount(int amount) {
             this.amount = amount;
+            return this;
         }
 
         public UserRentalPrice build(){return new UserRentalPrice(this);}
