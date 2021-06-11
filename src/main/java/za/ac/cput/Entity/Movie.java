@@ -5,12 +5,12 @@ public class Movie {
     private int movieId,genreId,directorId;
     private String title,releaseDate;
 
-    private Movie(MovieBuilder movieBuilder){
-        this.movieId = movieBuilder.movieId;
-        this.genreId = movieBuilder.genreId;
-        this.directorId = movieBuilder.directorId;
-        this.title = movieBuilder.title;
-        this.releaseDate = movieBuilder.releaseDate;
+    private Movie(MovieBuilder MovieBuilder){
+        this.movieId = MovieBuilder.movieId;
+        this.genreId = MovieBuilder.genreId;
+        this.directorId = MovieBuilder.directorId;
+        this.title = MovieBuilder.title;
+        this.releaseDate = MovieBuilder.releaseDate;
     }
 
     public static class MovieBuilder {
