@@ -2,6 +2,8 @@ package za.ac.cput.factory;
 
 import za.ac.cput.entity.UserContact;
 
+import java.util.UUID;
+
 /* UserContactFactory.java
  entity for the UserContactFactory
  Author: Malcolm Camelo (217137334)
@@ -10,19 +12,20 @@ import za.ac.cput.entity.UserContact;
 
 public class UserContactFactory {
 
-   public static UserContact build(int userId ,int contactTypeId ,String contact)
-   {
-      if (contact.isEmpty())
-         return null;
-
-       //int userId= Integer.parseInt(UUID.randomUUID().toString());
+    public static UserContact build(String contact) {
+        if (contact.isEmpty())
+            return null;
 
 
-      return new UserContact.userContactBuilder()
-        .setUserId(userId)
-        .setContactTypeId(contactTypeId)
-        .setContact(contact)
-        .build();
-   }
+        int userId = UUID.randomUUID().hashCode();
+        int contactTypeId = UUID.randomUUID().hashCode();
+
+
+        return new UserContact.userContactBuilder()
+                .setUserId(userId)
+                .setContactTypeId(contactTypeId)
+                .setContact(contact)
+                .build();
+    }
 
 }
