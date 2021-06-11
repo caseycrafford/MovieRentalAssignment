@@ -1,7 +1,7 @@
 package za.ac.cput.factory;
 
 /* MovieGenre.java
-        Entity for MovieGenre
+        Factory class for MovieGenre entity
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */

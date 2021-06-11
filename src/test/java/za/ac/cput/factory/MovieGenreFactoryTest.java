@@ -9,11 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 /* MovieGenre.java
-        Entity for MovieGenre
+
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */
-
 
 class MovieGenreFactoryTest {
         MovieGenre m;

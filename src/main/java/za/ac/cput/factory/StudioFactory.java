@@ -3,7 +3,7 @@ package za.ac.cput.factory;
 import za.ac.cput.entity.Studio;
 
 /* MovieGenre.java
-        Entity for MovieGenre
+        Factory class for StudioFactory entity
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */
