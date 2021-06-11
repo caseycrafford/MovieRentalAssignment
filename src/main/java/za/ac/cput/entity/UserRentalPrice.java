@@ -8,13 +8,13 @@ package za.ac.cput.entity;
 public class UserRentalPrice {
     private int rentalId, duration, amount;
 
-    private UserRentalPrice(UserRentalPriceBuilder userRentalPriceBuilder){
+    public UserRentalPrice(UserRentalPriceBuilder userRentalPriceBuilder){
         this.rentalId = userRentalPriceBuilder.rentalId;
         this.duration = userRentalPriceBuilder.duration;
         this.amount = userRentalPriceBuilder.amount;
     }
 
-    private static class UserRentalPriceBuilder{
+    public static class UserRentalPriceBuilder{
         private int rentalId, duration, amount;
 
         public void setRentalId(int rentalId) {

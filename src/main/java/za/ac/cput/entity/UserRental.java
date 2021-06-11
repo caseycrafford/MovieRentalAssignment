@@ -9,7 +9,7 @@ public class UserRental {
     private int rentalId, userId, movieId, rentalDate, returnDate;
     private String rentedBy;
 
-    private UserRental(UserRentalBuilder userRentalBuilder){
+    public UserRental(UserRentalBuilder userRentalBuilder){
         this.rentalId = userRentalBuilder.rentalId;
         this.userId = userRentalBuilder.userId;
         this.movieId = userRentalBuilder.movieId;
@@ -18,7 +18,7 @@ public class UserRental {
 
     }
 
-    private static class UserRentalBuilder{
+    public static class UserRentalBuilder{
         private int rentalId, userId, movieId, rentalDate, returnDate;
         private String rentedBy;
 
