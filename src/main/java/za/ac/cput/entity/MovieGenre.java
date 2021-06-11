@@ -1,7 +1,7 @@
 package za.ac.cput.entity;
 
-/* Studio.java
-        Entity for studio
+/* MovieGenre.java
+        Entity for MovieGenre
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */
@@ -10,13 +10,11 @@ public class MovieGenre {
 
     private int genreId, movieId;
 
-
     private MovieGenre(Builder builder) {
         this.genreId = builder.genreId;
         this.movieId = builder.movieId;
 
     }
-
 
     public static class Builder{
 
