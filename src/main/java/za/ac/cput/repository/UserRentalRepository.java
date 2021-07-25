@@ -9,7 +9,7 @@ import za.ac.cput.entity.UserRental;
 
 import java.util.*;
 
-public class UserRentalRepository {
+public class UserRentalRepository implements IUserRentalRepository{
     private static UserRentalRepository repository = null;
     private Set<UserRental> userRentalDB = null;
 
@@ -35,9 +35,9 @@ public class UserRentalRepository {
     }
 
     @Override
-    public UserRental read(String userRentalId){
+    public UserRental read(Integer userRentalId){
         for (UserRental r : userRentalDB)
-            if (r.getId().equals(userRentalId)) {
+            if (r.getUserId().equals(userRentalId)) {
                 return r;
             }
         return null;
@@ -45,7 +45,7 @@ public class UserRentalRepository {
 
     @Override
     public UserRental update(UserRental userRental) {
-        UserRental oldUserRental = read(userRental.getId);
+        UserRental oldUserRental = read(userRental.getUserId());
         if (oldUserRental != null) {
             userRentalDB.remove(oldUserRental);
             userRentalDB.add(userRental);
@@ -55,7 +55,7 @@ public class UserRentalRepository {
     }
 
     @Override
-    public boolean delete(String userRentalId) {
+    public boolean delete(Integer userRentalId) {
         UserRental userRentalToDelete = read(userRentalId);
         if (userRentalToDelete == null)
             return false;
@@ -63,4 +63,8 @@ public class UserRentalRepository {
         return true;
     }
 
+    @Override
+    public Set<UserRental> getAll() {
+        return userRentalDB;
+    }
 }

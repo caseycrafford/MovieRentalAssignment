@@ -19,6 +19,10 @@ public class UserRental {
 
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
     public static class UserRentalBuilder{
         private String rentalId;
         private int userId;
