@@ -6,8 +6,8 @@ package za.ac.cput.entity;
  */
 
 public class UserRental {
-    private int rentalId, userId, movieId, rentalDate, returnDate;
-    private String rentedBy;
+    private int userId, movieId;
+    private String rentedBy, rentalDate, returnDate, rentalId;
 
     public UserRental(UserRentalBuilder userRentalBuilder){
         this.rentalId = userRentalBuilder.rentalId;
@@ -20,10 +20,14 @@ public class UserRental {
     }
 
     public static class UserRentalBuilder{
-        private int rentalId, userId, movieId, rentalDate, returnDate;
+        private String rentalId;
+        private int userId;
+        private int movieId;
+        private String rentalDate;
+        private String returnDate;
         private String rentedBy;
 
-        public UserRentalBuilder setRentalId(int rentalId) {
+        public UserRentalBuilder setRentalId(String rentalId) {
             this.rentalId = rentalId;
             return this;
         }
@@ -38,12 +42,12 @@ public class UserRental {
             return this;
         }
 
-        public UserRentalBuilder setRentalDate(int rentalDate) {
+        public UserRentalBuilder setRentalDate(String rentalDate) {
             this.rentalDate = rentalDate;
             return this;
         }
 
-        public UserRentalBuilder setReturnDate(int returnDate) {
+        public UserRentalBuilder setReturnDate(String returnDate) {
             this.returnDate = returnDate;
             return this;
         }

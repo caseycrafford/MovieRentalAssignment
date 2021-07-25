@@ -10,13 +10,13 @@ import java.util.UUID;
 
 public class UserRentalFactory {
 
-    public static UserRental build(int rentalId, int userId, int movieId, int rentalDate, int returnDate, String rentedBy){
+    public static UserRental build(int userId, int movieId, String rentalDate, String returnDate, String rentedBy){
 
-        if (rentalId<0 || userId<0 || movieId<0 || rentalDate<0 || returnDate<0 || rentedBy.isEmpty()){
+        if (userId<0 || movieId<0 || rentalDate.isEmpty() || returnDate.isEmpty() || rentedBy.isEmpty()){
             return null;
         }
 
-        int id= Integer.parseInt(UUID.randomUUID().toString());
+        String id= UUID.randomUUID().toString();
 
         return new UserRental.UserRentalBuilder()
                 .setRentalId(id).setUserId(userId).setMovieId(movieId).setRentalDate(rentalDate).setReturnDate(returnDate).setRentedBy(rentedBy).build();

@@ -14,7 +14,8 @@ public class UserRentalTest {
     @Test
     void test ()
     {
-        UserRental o = UserRentalFactory.build(32, 23, 203, 24042021, 65, "Lance");
+        UserRental o = UserRentalFactory.build(23, 203, "10 January 2018", "12 January 2018", "Lance");
+        System.out.println(o);
         assertNotNull(o);
     }
 
