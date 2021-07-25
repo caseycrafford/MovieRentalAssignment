@@ -1,9 +1,8 @@
-package za.ac.cput.Entity;
+package za.ac.cput.entity;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import za.ac.cput.entity.ContactType;
 import za.ac.cput.factory.ContactTypeFactory;
 
 
