@@ -6,7 +6,9 @@ package za.ac.cput.entity;
  */
 
 public class UserRentalPrice {
-    private int rentalId, duration, amount;
+    private int duration;
+    private String rentalId;
+    private double amount;
 
     public UserRentalPrice(UserRentalPriceBuilder userRentalPriceBuilder){
         this.rentalId = userRentalPriceBuilder.rentalId;
@@ -15,9 +17,11 @@ public class UserRentalPrice {
     }
 
     public static class UserRentalPriceBuilder{
-        private int rentalId, duration, amount;
+        private int  duration;
+        private double amount;
+        private String rentalId;
 
-        public UserRentalPriceBuilder setRentalId(int rentalId) {
+        public UserRentalPriceBuilder setRentalId(String rentalId) {
             this.rentalId = rentalId;
             return this;
         }
@@ -27,7 +31,7 @@ public class UserRentalPrice {
             return this;
         }
 
-        public UserRentalPriceBuilder setAmount(int amount) {
+        public UserRentalPriceBuilder setAmount(double amount) {
             this.amount = amount;
             return this;
         }
