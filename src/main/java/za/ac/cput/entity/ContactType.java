@@ -41,6 +41,7 @@ public class ContactType {
             return new ContactType(this);
         }
 
+
     }
 
     @Override
