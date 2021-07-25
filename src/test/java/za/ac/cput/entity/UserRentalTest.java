@@ -1,11 +1,10 @@
-package za.ac.cput.Entity;
+package za.ac.cput.entity;
 
 /*
  * Author: Grant Constant
  * Student number: 216063124
  */
 
-import za.ac.cput.entity.UserRental;
 import za.ac.cput.factory.UserRentalFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
