@@ -39,7 +39,17 @@ public class UserContact {
 
             return new UserContact(this);
         }
+        public userContactBuilder copy(UserContact userContact)
+        {
+            this.userId =userContact.userId;
+            this.Contact = userContact.Contact;
+            this.contactTypeId = userContact.contactTypeId;
 
+
+            return this;
+
+
+        }
     }
 
 
