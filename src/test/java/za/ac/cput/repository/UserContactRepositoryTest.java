@@ -9,48 +9,51 @@ package za.ac.cput.repository;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.entity.ContactType;
-import za.ac.cput.factory.ContactTypeFactory;
+
+
+import za.ac.cput.entity.UserContact;
+import za.ac.cput.factory.UserContactFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
-public class ContactTypeRepositoryTest {
-private static ContactTypeRepository repository = ContactTypeRepository.getRepository();
-private static ContactType contactType = ContactTypeFactory.build("House", "Home number");
+public class UserContactRepositoryTest {
+    private static UserContactRepository repository = UserContactRepository.getRepository();
+    private static UserContact userContact = UserContactFactory.build("535435@gmail.com");
 
 
-
-    @Test
-    void e_getAll() {
-        System.out.println("Number of contacts type: "+repository.getAll());
-    }
 
     @Test
     void a_create() {
-        ContactType created = repository.create(contactType);
-        assertEquals(created.toString(), contactType.toString());
+        UserContact created = repository.create(userContact);
+        assertEquals(created.toString(), userContact.toString());
         System.out.println("create:" +created);
     }
-
     @Test
     void b_read() {
-        ContactType read = repository.read(contactType.toString());
+        UserContact read = repository.read(userContact.toString());
         assertNotNull(read);
         System.out.println("read: "+read);
 
     }
 
+
     @Test
     void c_update() {
-        ContactType contactUpdate = new ContactType.contactTypeBuilder().copy(contactType).setName("House number").build();
+        UserContact contactUpdate = new UserContact.userContactBuilder().copy(userContact).setContact("1111234@gmail.com").build();
         //assertNotNull(repository.update(contactUpdate));
         System.out.println("update: "+contactUpdate);
     }
 
     @Test
     void d_delete() {
-        boolean success =repository.delete(contactType.toString());
+        boolean success =repository.delete(userContact.toString());
         assertTrue(success);
         System.out.println("deleted: "+success);
+    }
+
+
+    @Test
+    void e_getAll() {
+        System.out.println("Number of User contacts : "+repository.getAll());
     }
 }
