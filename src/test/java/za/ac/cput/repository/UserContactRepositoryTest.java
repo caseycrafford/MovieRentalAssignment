@@ -40,7 +40,7 @@ public class UserContactRepositoryTest {
     @Test
     void c_update() {
         UserContact contactUpdate = new UserContact.userContactBuilder().copy(userContact).setContact("1111234@gmail.com").build();
-        //assertNotNull(repository.update(contactUpdate));
+        assertNotNull(repository.update(contactUpdate));
         System.out.println("update: "+contactUpdate);
     }
 
