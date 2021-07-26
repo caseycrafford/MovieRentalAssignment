@@ -10,7 +10,7 @@ import za.ac.cput.entity.Studio;
 
 public class StudioFactory {
 
-    public static Studio createStudio(Integer studioId, String studioName){
+    public static Studio build(String studioId, String studioName){
 
         Studio studio = new Studio.Builder()
                 .setStudioId(studioId)
