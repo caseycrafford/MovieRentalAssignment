@@ -43,7 +43,7 @@ private static ContactType contactType = ContactTypeFactory.build("House", "Home
     @Test
     void c_update() {
         ContactType contactUpdate = new ContactType.contactTypeBuilder().copy(contactType).setName("House number").build();
-        //assertNotNull(repository.update(contactUpdate));
+        assertNotNull(repository.update(contactUpdate));
         System.out.println("update: "+contactUpdate);
     }
 
