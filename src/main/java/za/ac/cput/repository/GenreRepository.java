@@ -43,11 +43,6 @@ public class GenreRepository implements IGenreRepository {
             }
         }
         return genre;
-        //for(Genre g : genreDB)
-        //    if(g.toString().equals(genreId)){ // getClass should be getId or something (tostring should be getId)
-        //        return g;
-        //    }
-        //return null;
 
     }
 
