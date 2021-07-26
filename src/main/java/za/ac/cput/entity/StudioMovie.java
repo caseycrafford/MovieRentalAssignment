@@ -9,9 +9,18 @@ package za.ac.cput.entity;
 
 public class StudioMovie {
 
-    private int studioId, movieId;
+    private String studioId, movieId;
+
+    public String getStudioId() {
+        return studioId;
+    }
+
+    public String getMovieId() {
+        return movieId;
+    }
 
     private StudioMovie(studioBuilder studioBuilder){
+
         this.studioId = studioBuilder.studioId;
         this.movieId = studioBuilder.movieId;
     }
@@ -19,17 +28,31 @@ public class StudioMovie {
     //inner class, build main class
     public static class studioBuilder{
 
-        private int studioId, movieId;
+        private String studioId, movieId;
 
-        public studioBuilder setStudioId(int studioId) {
+        public studioBuilder setStudioId(String studioId) {
             this.studioId = studioId;
             return this;
         }
 
-        public studioBuilder setMovieId(int movieId) {
+        public studioBuilder setMovieId(String movieId) {
             this.movieId = movieId;
             return this;
         }
+        public String getStudioId() {
+            return studioId;
+        }
+
+        public String getMovieId() {
+            return movieId;
+        }
+
+        public studioBuilder copy(StudioMovie studioMovie){
+            this.studioId = studioMovie.studioId;
+            this.movieId = studioMovie.movieId;
+            return this;
+        }
+
         public StudioMovie build(){
             return new StudioMovie(this);
         }
