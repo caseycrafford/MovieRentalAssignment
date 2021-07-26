@@ -6,6 +6,12 @@ import za.ac.cput.factory.MovieGenreFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/* Studio.java
+        studio repo
+        Author: Marchello Carolus 218234457
+        Date: 26 July 2021
+        */
+
 class MovieGenreRepositoryTest {
 
     private static MovieGenreRepository repo = MovieGenreRepository.getRepository();

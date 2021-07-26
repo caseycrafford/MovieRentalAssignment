@@ -5,6 +5,12 @@ import za.ac.cput.entity.MovieGenre;
 import java.util.HashSet;
 import java.util.Set;
 
+/* Studio.java
+        studio repo
+        Author: Marchello Carolus 218234457
+        Date: 26 July 2021
+        */
+
 public class MovieGenreRepository implements IMovieGenreRepository{
 
     private static MovieGenreRepository repo = null;
