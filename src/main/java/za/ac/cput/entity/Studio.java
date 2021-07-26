@@ -8,22 +8,28 @@ package za.ac.cput.entity;
 
 public class Studio {
 
-    private int studioId;
-    private String studioName;
+    private String studioId, studioName;
 
-
-    private Studio(Studio.Builder builder) {
+    private Studio(Builder builder) {
         this.studioId = builder.studioId;
         this.studioName = builder.studioName;
 
     }
 
+    public String getStudioId() {
+        return studioId;
+    }
+
+    public String getStudioName() {
+        return studioName;
+    }
+
     public static class Builder{
 
-        private int studioId;
+        private String studioId;
         private String studioName;
 
-        public Studio.Builder setStudioId(int studioId) {
+        public Studio.Builder setStudioId(String studioId) {
             this.studioId = studioId;
 
             return this;
@@ -39,7 +45,7 @@ public class Studio {
             return new Studio(this);
         }
 
-        private Studio.Builder copy(Studio studio){
+        public Studio.Builder copy(Studio studio){
 
             this.studioId = studio.studioId;
             this.studioName = studio.studioName;

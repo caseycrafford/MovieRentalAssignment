@@ -9,7 +9,7 @@ import za.ac.cput.entity.MovieGenre;
 
 public class MovieGenreFactory {
 
-    public static MovieGenre createMovieGenre(Integer genreId, Integer movieId){
+    public static MovieGenre build(String genreId, String movieId){
 
         MovieGenre movieGenre = new MovieGenre.Builder()
                 .setGenreId(genreId)
