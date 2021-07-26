@@ -19,12 +19,13 @@ public class UserRental {
 
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
     public static class UserRentalBuilder{
         private String rentalId;
+
+        public String getRentalId() {
+            return rentalId;
+        }
+
         private int userId;
         private int movieId;
         private String rentalDate;
@@ -61,7 +62,19 @@ public class UserRental {
             return this;
         }
 
+        public UserRentalBuilder copy (UserRental userRental) {
+            this.movieId = userRental.movieId;
+            this.rentalDate = userRental.rentalDate;
+            this.rentalId = userRental.rentalId;
+            this.rentedBy = userRental.rentedBy;
+            this.returnDate = userRental.returnDate;
+            this.userId = userRental.userId;
+
+            return this;
+        }
+
         public UserRental build(){return new UserRental(this);}
+
     }
 
     @Override
