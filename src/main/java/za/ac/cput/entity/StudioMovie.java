@@ -12,6 +12,7 @@ public class StudioMovie {
     private String studioId, movieId;
 
     private StudioMovie(studioBuilder studioBuilder){
+
         this.studioId = studioBuilder.studioId;
         this.movieId = studioBuilder.movieId;
     }
@@ -30,6 +31,20 @@ public class StudioMovie {
             this.movieId = movieId;
             return this;
         }
+        public String getStudioId() {
+            return studioId;
+        }
+
+        public String getMovieId() {
+            return movieId;
+        }
+
+        public studioBuilder copy(StudioMovie studioMovie){
+            this.studioId = studioMovie.studioId;
+            this.movieId = studioMovie.movieId;
+            return this;
+        }
+
         public StudioMovie build(){
             return new StudioMovie(this);
         }
