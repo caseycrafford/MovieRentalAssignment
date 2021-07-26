@@ -11,14 +11,14 @@ import java.util.UUID;
 
 public class RoleFactory {
 
-    public static Role build(int roleId , String name , String description)
+    public static Role build(String roleId , String name , String description)
     {
-        if (name.isEmpty()||description.isEmpty()|| roleId < 0 )
+        if (name.isEmpty()||description.isEmpty()|| roleId.isEmpty())
         {
             return null;
         }
 
-        int roleID = Integer.parseInt(UUID.randomUUID().toString());
+        String roleID = UUID.randomUUID().toString();
 
         return new Role.roleBuilder()
                 .setDescription(description).setRoleId(roleID).setName(name).build();

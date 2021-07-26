@@ -6,11 +6,12 @@ package za.ac.cput.entity;
  */
 public class Address {
 
-    private String street , city , country,province;
+    private String street , city , country,province, userId;
     private int postalCode;
 
     public Address(addressBuilder addressBuilder)
     {
+        this.userId = addressBuilder.userId;
         this.street = addressBuilder.street;
         this.city = addressBuilder.city;
         this.country = addressBuilder.country;
@@ -19,13 +20,42 @@ public class Address {
 
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public int getPostalCode() {
+        return postalCode;
+    }
+
     public static class addressBuilder
     {
-        private String street , city , country,province;
+        private String street , city , country,province,userId;
         private int postalCode;
 
         public addressBuilder setStreet(String street) {
             this.street = street;
+            return this;
+        }
+
+        public addressBuilder setuserId(String userId) {
+            this.userId = userId;
             return this;
         }
 
@@ -52,6 +82,20 @@ public class Address {
         public Address build()
         {
             return new Address(this);
+
+        }
+
+        public addressBuilder copy(Address address)
+        {
+            this.userId = address.userId;
+            this.street = address.street;
+            this.city = address.city;
+            this.country = address.country;
+            this.province = address.province;
+            this.postalCode = address.postalCode;
+
+            return this;
+
 
         }
     }

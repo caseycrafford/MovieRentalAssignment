@@ -7,7 +7,8 @@ package za.ac.cput.entity;
  */
 public class userRole {
 
-    private int userId, roleId;
+    private int roleId;
+    private String userId;
 
     public userRole(userRoleBuilder userRoleBuilder) {
 
@@ -17,11 +18,20 @@ public class userRole {
 
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public int getRoleId() {
+        return roleId;
+    }
+
     public static class userRoleBuilder
     {
-        private int userId, roleId;
+        private int roleId;
+        private String userId;
 
-        public userRoleBuilder setUserId(int userId) {
+        public userRoleBuilder setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -30,10 +40,23 @@ public class userRole {
             this.roleId = roleId;
             return this;
         }
+
         public userRole build()
         {
             return new userRole(this);
         }
+
+
+        public userRoleBuilder copy(userRole userrole)
+        {
+            this.roleId = userrole.roleId;
+            this.userId = userrole.userId;
+
+            return this;
+
+
+        }
+
     }
 
     @Override

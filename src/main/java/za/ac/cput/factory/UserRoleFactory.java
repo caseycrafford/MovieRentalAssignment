@@ -12,15 +12,15 @@ import java.util.UUID;
 
 public class UserRoleFactory {
 
-    public static userRole build(int userId , int roleId)
+    public static userRole build(String userId , int roleId)
     {
-        if( roleId <= 0 || userId<=0)
+        if( roleId <= 0 )
         {
             return null;
         }
 
         int roleID = Integer.parseInt(UUID.randomUUID().toString());
-        int userID = Integer.parseInt(UUID.randomUUID().toString());
+        String userID = UUID.randomUUID().toString();
 
         return new userRole.userRoleBuilder()
                 .setRoleId(roleID).setUserId(userID).build();
