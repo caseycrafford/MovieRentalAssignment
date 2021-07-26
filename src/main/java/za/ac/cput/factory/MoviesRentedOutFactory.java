@@ -11,7 +11,7 @@ public class MoviesRentedOutFactory {
         if (movieID<0 || quantity<0)
             return null;
 
-        int ID= Integer.parseInt(UUID.randomUUID().toString());
+        String ID= UUID.randomUUID().toString();
 
         return new MovieRentedOut.MovieRentedOutBuilder().
                 setMovieID(ID).setQuantity(quantity).build();
