@@ -11,6 +11,14 @@ public class StudioMovie {
 
     private String studioId, movieId;
 
+    public String getStudioId() {
+        return studioId;
+    }
+
+    public String getMovieId() {
+        return movieId;
+    }
+
     private StudioMovie(studioBuilder studioBuilder){
 
         this.studioId = studioBuilder.studioId;

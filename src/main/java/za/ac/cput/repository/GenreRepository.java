@@ -35,23 +35,31 @@ public class GenreRepository implements IGenreRepository {
 
     @Override
     public Genre read(String genreId) { // add String genreName
-        for(Genre g : genreDB)
-            if(g.toString().equals(genreId)){ // getClass should be getId or something (tostring should be getId)
-                return g;
+        Genre genre = null;
+        for( Genre g: genreDB){
+            if(g.getGenreId().equalsIgnoreCase(genreId)){
+                genre = g;
+                break;
             }
-        return null;
+        }
+        return genre;
+        //for(Genre g : genreDB)
+        //    if(g.toString().equals(genreId)){ // getClass should be getId or something (tostring should be getId)
+        //        return g;
+        //    }
+        //return null;
 
     }
 
     @Override
     public Genre update(Genre genre) {
-        Genre oldGenre = read(genre.toString());  //getId (tostring should be getId or genreId)
+        Genre oldGenre = read((genre.getGenreId()));  //read(genre.toString());  //getId (tostring should be getId or genreId)
         if(oldGenre != null){
             genreDB.remove(oldGenre);
             genreDB.add(genre);
             return genre;
         }
-        return null;
+        return genre;
     }
 
     @Override

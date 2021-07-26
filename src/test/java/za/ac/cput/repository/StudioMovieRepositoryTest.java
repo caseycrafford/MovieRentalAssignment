@@ -18,30 +18,27 @@ public  class StudioMovieRepositoryTest {
     @Test
     void a_create() {
         StudioMovie created = repository.create(studioMovie);
-        assertEquals(created.toString(), studioMovie);
-        System.out.println("Create: " + created);
-
+        assertEquals(studioMovie.getStudioId(), created.getStudioId());
+        System.out.println("Created: " + created);
     }
 
     @Test
     void b_read() {
-        StudioMovie read = repository.read("30");
-        assertNotNull(read);
+        StudioMovie read = repository.read(studioMovie.getStudioId());
         System.out.println("Read: " + read);
     }
 
     @Test
     void c_update() {
-        StudioMovie updated = new StudioMovie.studioBuilder().copy(studioMovie).setMovieId("45678").build(); //setStudioMovie should be copy
-        assertNotNull(repository.update(updated));
+        StudioMovie updated = new StudioMovie.studioBuilder().copy(studioMovie).setStudioId("2333").build();
         System.out.println("Updated: " + updated);
     }
 
     @Test
     void d_delete() {
-        boolean success = repository.delete("30");
-        assertTrue(success);
-        System.out.println("Delete " + success);
+        repository.delete(studioMovie.getStudioId());
+        System.out.println("Deleted: " + studioMovie.getStudioId() + "");
+
     }
 
     @Test
