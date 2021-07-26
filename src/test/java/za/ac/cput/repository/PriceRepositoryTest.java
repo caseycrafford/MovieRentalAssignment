@@ -4,33 +4,34 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.Movie;
+import za.ac.cput.entity.Price;
 import za.ac.cput.factory.MovieFactory;
+import za.ac.cput.factory.PriceFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 @TestMethodOrder(MethodOrderer.MethodName.class)
-class MovieRepositoryTest {
-    private static MovieRepository repository=MovieRepository.getRepository();
-    private static Movie movie= MovieFactory.build("Title","26/07/2021","76","567");
+class PriceRepositoryTest {
+    private static PriceRepository repository=PriceRepository.getRepository();
+    private static Price price = PriceFactory.build(50.00f,"23tsfwg32");
 
     @Test
     void a_create(){
-        Movie created=repository.create(movie);
-        System.out.println(movie);
+        Price created=repository.create(price);
+        System.out.println(price);
         assertNotNull(created);
     }
 
     @Test
     void b_read(){
-        Movie read=repository.read(movie.getMovieId());
+        Price read=repository.read(price.getMovieId());
 
         System.out.println("Read: "+read);
     }
 
     @Test
     void c_update(){
-        Movie updated=new Movie.MovieBuilder().copy(movie).setTitle("New Title").build();
+        Price updated=new Price.PriceBuilder().copy(price).setAmount(55.00f).build();
         System.out.println(updated);
         assertNotNull(repository.update(updated));
     }
@@ -43,7 +44,7 @@ class MovieRepositoryTest {
 
     @Test
     void e_delete(){
-        boolean success=repository.delete(movie.getMovieId());
+        boolean success=repository.delete(price.getMovieId());
         assertTrue(success);
         System.out.println("Delete status: "+success);
     }

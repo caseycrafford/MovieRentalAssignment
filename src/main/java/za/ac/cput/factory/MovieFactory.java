@@ -14,9 +14,9 @@ import java.util.UUID;
 
 public class MovieFactory {
 
-    public static Movie build(String title, String releaseDate, int genreId, int directorId){
+    public static Movie build(String title, String releaseDate, String genreId, String directorId){
 
-        if (title.isEmpty() || releaseDate.isEmpty() || genreId<0 || directorId<0)
+        if (title.isEmpty() || releaseDate.isEmpty() || genreId.isEmpty() || directorId.isEmpty())
             return null;
 
         String id= UUID.randomUUID().toString();

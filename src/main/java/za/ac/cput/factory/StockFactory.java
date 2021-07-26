@@ -12,9 +12,9 @@ import za.ac.cput.entity.Stock;
 
 public class StockFactory {
 
-    public static Stock build(int movieId, int quantity){
+    public static Stock build(String movieId, int quantity){
 
-        if (movieId==0)
+        if (movieId.isEmpty())
             return null;
 
         return new Stock.StockBuilder().setMovieId(movieId)
