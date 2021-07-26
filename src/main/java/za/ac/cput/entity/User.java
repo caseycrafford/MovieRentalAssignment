@@ -6,8 +6,8 @@ package za.ac.cput.entity;
  */
 public class User {
 
-    private int userId ,addressId , idNumber;
-    private String firstName,lastName;
+    private int addressId , idNumber;
+    private String firstName,lastName, userId ;
 
     private User(userBuilder userBuilder)
     {
@@ -19,12 +19,44 @@ public class User {
 
 
     }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public int getAddressId() {
+        return addressId;
+    }
+
+    public int getIdNumber() {
+        return idNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", addressId=" + addressId +
+                ", idNumber=" + idNumber +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
     public static class userBuilder
     {
-        private int userId ,addressId , idNumber;
-        private String firstName,lastName;
+        private int addressId , idNumber;
+        private String firstName,lastName,userId ;
 
-        public userBuilder setUserId(int userId) {
+        public userBuilder setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -49,6 +81,19 @@ public class User {
             return this;
         }
 
+        public userBuilder copy(User user)
+        {
+            this.userId = user.userId;
+            this.addressId = user.addressId;
+            this.idNumber = user.idNumber;
+            this.firstName = user.firstName;
+            this.lastName = user.lastName;
+
+            return this;
+
+
+        }
+
         public User build()
         {
             return new User(this);
@@ -56,14 +101,5 @@ public class User {
     }
 
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", addressId=" + addressId +
-                ", idNumber=" + idNumber +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
+
 }

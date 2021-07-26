@@ -41,6 +41,17 @@ public class ContactType {
             return new ContactType(this);
         }
 
+        public contactTypeBuilder copy(ContactType contactType)
+        {
+            this.contactTypeId = contactType.contactTypeId;
+            this.name = contactType.name;
+            this.description = contactType.description;
+
+
+            return this;
+
+
+        }
     }
 
     @Override
