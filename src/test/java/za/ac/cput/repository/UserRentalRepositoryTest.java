@@ -7,6 +7,10 @@ import za.ac.cput.entity.UserRental;
 import static org.junit.jupiter.api.Assertions.*;
 import za.ac.cput.factory.UserRentalFactory;
 
+/*
+ * Author: Grant Constant
+ * Student number: 216063124
+ */
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 public class UserRentalRepositoryTest {

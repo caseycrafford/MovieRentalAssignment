@@ -36,6 +36,14 @@ public class UserRentalPrice {
             return this;
         }
 
+        public UserRentalPriceBuilder copy (UserRentalPrice userRentalPrice) {
+            this.rentalId = userRentalPrice.rentalId;
+            this.amount = userRentalPrice.amount;
+            this.duration = userRentalPrice.duration;
+
+            return this;
+        }
+
         public UserRentalPrice build(){return new UserRentalPrice(this);}
     }
 

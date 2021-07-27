@@ -1,0 +1,69 @@
+package za.ac.cput.repository;
+
+/*
+ * Author: Grant Constant
+ * Student number: 216063124
+ */
+
+import za.ac.cput.entity.UserRentalPrice;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class UserRentalPriceRepository implements IUserRentalPriceRepository {
+    private static UserRentalPriceRepository repository = null;
+    private Set<UserRentalPrice> userRentalPriceDB = null;
+
+    private UserRentalPriceRepository() { userRentalPriceDB = new HashSet<>(); }
+
+    public static UserRentalPriceRepository getRepository(){
+        if (repository == null){
+            repository = new UserRentalPriceRepository();
+        }
+
+        return repository;
+
+    }
+
+    @Override
+    public UserRentalPrice create(UserRentalPrice userRentalPrice) {
+        boolean success = userRentalPriceDB.add(userRentalPrice);
+        if (!success)
+            return null;
+        return userRentalPrice;
+    }
+
+    @Override
+    public UserRentalPrice read(String rentalId) {
+        for (UserRentalPrice r : userRentalPriceDB)
+            if (r.toString().equals(rentalId)) {
+                return r;
+            }
+        return null;
+    }
+
+    @Override
+    public UserRentalPrice update(UserRentalPrice userRentalPrice) {
+        UserRentalPrice oldUserRentalPrice = read(userRentalPrice.toString());
+        if (oldUserRentalPrice != null) {
+            userRentalPriceDB.remove(oldUserRentalPrice);
+            userRentalPriceDB.add(userRentalPrice);
+            return userRentalPrice;
+        }
+        return null;
+    }
+
+    @Override
+    public boolean delete(String userRentalPriceId) {
+        UserRentalPrice userRentalPriceToDelete = read(userRentalPriceId);
+        if (userRentalPriceToDelete == null)
+            return false;
+        userRentalPriceDB.remove(userRentalPriceToDelete);
+        return true;
+    }
+
+    @Override
+    public Set<UserRentalPrice> getAll() {
+        return userRentalPriceDB;
+    }
+}
