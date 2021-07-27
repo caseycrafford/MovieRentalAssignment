@@ -7,7 +7,7 @@ package za.ac.cput.entity;
  */
 
 public class NumberOfMoviesRented {
-    private int userID;
+    private String userID;
     private int rentalID;
     private int movieID;
     private int numMovies;
@@ -17,12 +17,34 @@ public class NumberOfMoviesRented {
         this.rentalID = NumberOfMoviesRentedBuilder.rentalID;
         this.movieID = NumberOfMoviesRentedBuilder.movieID;
         this.numMovies = NumberOfMoviesRentedBuilder.numMovies;
+
+
     }
 
-    public static class NumberOfMoviesRentedBuilder {
-        private int userID, rentalID, movieID, numMovies;
+    public String getUserID() {
+        return userID;
+    }
 
-        public NumberOfMoviesRented.NumberOfMoviesRentedBuilder setUserID(int userID) {
+    public int getRentalID() {
+        return rentalID;
+    }
+
+    public int getMovieID() {
+        return movieID;
+    }
+
+    public int getNumMovies() {
+        return numMovies;
+    }
+
+
+
+    public static class NumberOfMoviesRentedBuilder {
+        private int rentalID, movieID, numMovies;
+        private String userID;
+
+
+        public NumberOfMoviesRented.NumberOfMoviesRentedBuilder setUserID(String userID) {
             this.userID = userID;
             return this;
         }
@@ -44,6 +66,16 @@ public class NumberOfMoviesRented {
 
         public NumberOfMoviesRented build() {
             return new NumberOfMoviesRented(this);
+        }
+
+        public NumberOfMoviesRentedBuilder copy(NumberOfMoviesRented NumberOfMoviesRented)
+        {
+            this.userID = NumberOfMoviesRented.userID;
+            this.rentalID = NumberOfMoviesRented.rentalID;
+            this.movieID = NumberOfMoviesRented.movieID;
+            this.numMovies = NumberOfMoviesRented.numMovies;
+
+            return this;
         }
 
         @Override

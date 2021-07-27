@@ -10,7 +10,7 @@ package za.ac.cput.entity;
 
 public class Stock {
 
-    private int movieId;
+    private String movieId;
     private int quantity;
 
     private Stock(StockBuilder StockBuilder) {
@@ -18,17 +18,31 @@ public class Stock {
         this.quantity=StockBuilder.quantity;
     }
 
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
     public static class StockBuilder {
-        private int movieId;
+        private String movieId;
         private int quantity;
 
-        public StockBuilder setMovieId(int movieId) {
+        public StockBuilder setMovieId(String movieId) {
             this.movieId = movieId;
             return this;
         }
 
         public StockBuilder setQuantity(int quantity) {
             this.quantity = quantity;
+            return this;
+        }
+
+        public Stock.StockBuilder copy(Stock stock){
+            this.movieId=stock.movieId;
+            this.quantity=stock.quantity;
             return this;
         }
 

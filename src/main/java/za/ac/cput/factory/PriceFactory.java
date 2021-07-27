@@ -12,11 +12,11 @@ import za.ac.cput.entity.Price;
 
 public class PriceFactory {
 
-    public static Price build(int price){
+    public static Price build(float price,String movieId){
 
         if (price==0)
             return null;
 
-        return new Price.PriceBuilder().setAmount(price).build();
+        return new Price.PriceBuilder().setAmount(price).setMovieId(movieId).build();
     }
 }

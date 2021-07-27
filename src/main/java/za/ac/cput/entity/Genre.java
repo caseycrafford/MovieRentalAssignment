@@ -17,6 +17,18 @@ public class Genre {
         this.description = genreBuilder.description;
     }
 
+    public String getGenreId() {
+        return genreId;
+    }
+
+    public String getGenreName() {
+        return genreName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     public static class genreBuilder{
 
         private String genreId, genreName, description;
@@ -33,6 +45,13 @@ public class Genre {
 
         public genreBuilder setDescription(String description) {
             this.description = description;
+            return this;
+        }
+
+        public genreBuilder copy(Genre genre){
+            this.genreId = genre.genreId;
+            this.genreName = genre.genreName;
+            this.description = genre.description;
             return this;
         }
 

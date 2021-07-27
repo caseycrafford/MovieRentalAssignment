@@ -11,9 +11,9 @@ package za.ac.cput.factory;
 import za.ac.cput.entity.Rating;
 
 public class RatingFactory {
-    public static Rating build(int movieId, double rating){
+    public static Rating build(String movieId, double rating){
 
-        if (movieId==0 )
+        if (movieId.isEmpty() )
             return null;
 
         return new Rating.RatingBuilder().

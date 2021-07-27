@@ -8,24 +8,35 @@ package za.ac.cput.entity;
 
 public class MovieGenre {
 
-    private int genreId, movieId;
+    private String genreId, movieId;
 
+    public MovieGenre() {
+
+    }
     private MovieGenre(Builder builder) {
         this.genreId = builder.genreId;
         this.movieId = builder.movieId;
 
     }
 
+    public String getGenreId() {
+        return genreId;
+    }
+
+    public String getMovieId() {
+        return movieId;
+    }
+
     public static class Builder{
 
-        private int genreId, movieId;
+        private String genreId, movieId;
 
-        public Builder setGenreId(int genreId) {
+        public Builder setGenreId(String genreId) {
             this.genreId = genreId;
 
             return this;
         }
-        public Builder setMovieId(int movieId) {
+        public Builder setMovieId(String movieId) {
             this.movieId = movieId;
 
             return this;
@@ -36,15 +47,12 @@ public class MovieGenre {
             return new MovieGenre(this);
         }
 
-        private Builder copy(MovieGenre movies){
+        public Builder copy(MovieGenre movies){
 
             this.genreId = movies.genreId;
             this.movieId = movies.movieId;
-
             return this;
-
         }
-
 
     }
     @Override

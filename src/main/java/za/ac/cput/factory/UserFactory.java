@@ -11,17 +11,17 @@ import java.util.UUID;
 
 public class UserFactory {
 
-    private int userId ,addressId , idNumber;
-    private String firstName,lastName;
+    private int  addressId , idNumber;
+    private String firstName,lastName, userId;
 
-    public static User build(String firstName , String lastName, int userId , int addressId , int idNumber)
+    public static User build(String firstName , String lastName, String userId , int addressId , int idNumber)
     {
-        if (firstName.isEmpty()||lastName.isEmpty()|| userId <= 0 || addressId <= 0 || idNumber <=0  )
+        if (firstName.isEmpty()||lastName.isEmpty()|| userId.isEmpty() || addressId <= 0 || idNumber <=0  )
         {
             return null;
         }
 
-        int userID = Integer.parseInt(UUID.randomUUID().toString());
+        String userID = UUID.randomUUID().toString();
         int idNUmber = Integer.parseInt(UUID.randomUUID().toString());
 
 

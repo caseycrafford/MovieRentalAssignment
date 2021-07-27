@@ -10,7 +10,7 @@ package za.ac.cput.entity;
 
 public class Rating {
 
-    private int movieId;
+    private String movieId;
     private double rating;
 
     private Rating(RatingBuilder RatingBuilder){
@@ -18,11 +18,19 @@ public class Rating {
         this.rating = RatingBuilder.rating;
     }
 
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
     public static class RatingBuilder {
-        private int movieId;
+        private String movieId;
         private double rating;
 
-        public RatingBuilder setMovieId(int movieId) {
+        public RatingBuilder setMovieId(String movieId) {
             this.movieId = movieId;
             return this;
         }
@@ -32,9 +40,17 @@ public class Rating {
             return this;
         }
 
+        public Rating.RatingBuilder copy(Rating rating){
+            this.movieId=rating.movieId;
+            this.rating=rating.rating;
+            return this;
+        }
+
         public Rating build(){
             return new Rating(this);
         }
+
+
     }
 
     @Override

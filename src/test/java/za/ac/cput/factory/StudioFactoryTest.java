@@ -23,7 +23,7 @@ class StudioFactoryTest {
 
     @BeforeEach
     void setUp() {
-        s =  new StudioFactory().createStudio(3214,"Sony");
+        s =  new StudioFactory().build("3214","Sony");
         s1 = s;
 
     }

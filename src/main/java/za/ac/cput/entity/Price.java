@@ -9,26 +9,42 @@ package za.ac.cput.entity;
 */
 
 public class Price {
-    private int amount;
+    private float amount;
+    private String movieId;
 
     private Price(PriceBuilder PriceBuilder){
         this.amount=PriceBuilder.amount;
+        this.movieId=PriceBuilder.movieId;
     }
 
     public static class PriceBuilder{
-        private int amount;
+        private float amount;
+        private String movieId;
 
-        public PriceBuilder setAmount(int amount) {
+        public PriceBuilder setAmount(float amount) {
             this.amount = amount;
             return this;
         }
 
+        public PriceBuilder setMovieId(String movieId) {
+            this.movieId = movieId;
+            return this;
+        }
+        public PriceBuilder copy(Price price){
+            this.movieId=price.movieId;
+            this.amount=price.amount;
+            return this;
+        }
         public Price build(){
             return new Price(this);
         }
     }
 
-    public int getAmount() {
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public float getAmount() {
         return amount;
     }
 

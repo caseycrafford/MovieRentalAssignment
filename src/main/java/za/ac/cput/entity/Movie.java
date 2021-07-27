@@ -10,32 +10,50 @@ package za.ac.cput.entity;
 
 public class Movie {
 
-    private int genreId,directorId;
-    private String title,releaseDate, movieId;
+    private String title,releaseDate, movieId,genreId,directorId;
 
     private Movie(MovieBuilder MovieBuilder){
-        this.movieId = MovieBuilder.movieIdnew;
+        this.movieId = MovieBuilder.movieId;
         this.genreId = MovieBuilder.genreId;
         this.directorId = MovieBuilder.directorId;
         this.title = MovieBuilder.title;
         this.releaseDate = MovieBuilder.releaseDate;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public String getGenreId() {
+        return genreId;
+    }
+
+    public String getDirectorId() {
+        return directorId;
+    }
+
     public static class MovieBuilder {
-        private int movieId,genreId,directorId;
-        private String title,releaseDate,movieIdnew;
+        private String title,releaseDate,movieId,genreId,directorId;
 
         public MovieBuilder setMovieId(String movieId) {
-            this.movieIdnew = movieId;
+            this.movieId = movieId;
             return this;
         }
 
-        public MovieBuilder setGenreId(int genreId) {
+        public MovieBuilder setGenreId(String genreId) {
             this.genreId = genreId;
             return this;
         }
 
-        public MovieBuilder setDirectorId(int directorId) {
+        public MovieBuilder setDirectorId(String directorId) {
             this.directorId = directorId;
             return this;
         }
@@ -47,6 +65,15 @@ public class Movie {
 
         public MovieBuilder setReleaseDate(String releaseDate) {
             this.releaseDate = releaseDate;
+            return this;
+        }
+
+        public MovieBuilder copy(Movie movie){
+            this.movieId=movie.movieId;
+            this.directorId=movie.directorId;
+            this.genreId=movie.genreId;
+            this.releaseDate=movie.releaseDate;
+            this.title=movie.title;
             return this;
         }
 

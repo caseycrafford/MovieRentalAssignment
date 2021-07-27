@@ -22,9 +22,9 @@ class MovieTest {
 
     @BeforeEach
     void setUp(){
-        movie1 = MovieFactory.build("Lord of the Rings","12 January 2018",324312,12413);
-        movie2 = MovieFactory.build("Harry Potter","18 July 2018",42352235,36534);
-        movie3 = MovieFactory.build("Mission Possible","28 February 2018",63256,87533);
+        movie1 = MovieFactory.build("Lord of the Rings","12 January 2018","","");
+        movie2 = MovieFactory.build("Harry Potter","18 July 2018","","");
+        movie3 = MovieFactory.build("Mission Possible","28 February 2018","","");
         movie4 = movie1;
     }
 
