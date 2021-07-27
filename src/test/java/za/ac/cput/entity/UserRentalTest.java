@@ -11,35 +11,39 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class UserRentalTest {
 
-    @Test
-    void test ()
+    UserRental userRental_1, userRental_2, userRental_3;
+
+    @BeforeEach
+    void setUp()
     {
-        UserRental o = UserRentalFactory.build(32, 23, 203, 24042021, 65, "Lance");
-        assertNotNull(o);
+        userRental_1 = UserRentalFactory.build(15,154,"11 January 2018", "15 January 2018", "Malcolm");
+        userRental_2 = UserRentalFactory.build(23,191,"4 March 2018","8 March 2018","Lance");
+        userRental_3 = userRental_1;
     }
 
     @Test
     void testEqualty()
     {
-
+        assertEquals(userRental_1, userRental_3);
     }
 
     @Test
     void testIdentity()
     {
-
+        assertSame(userRental_1, userRental_3);
     }
 
     @Disabled
+    @Test
     void disabledTest()
     {
-
+        assertSame(userRental_3,userRental_2);
     }
 
     @Timeout(10)
     @Test
     void timeoutTest()
     {
-
+        assertNotNull(userRental_1);
     }
 }

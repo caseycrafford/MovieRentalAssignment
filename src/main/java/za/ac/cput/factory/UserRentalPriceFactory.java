@@ -10,14 +10,14 @@ import java.util.UUID;
 
 public class UserRentalPriceFactory {
 
-    public static UserRentalPrice build(int rentalId, int duration, int amount){
-        if (rentalId<0 || duration<0 || amount<0){
+    public static UserRentalPrice build(int duration, double amount){
+        if (duration<0 || amount<0){
             return null;
         }
 
-        int id= Integer.parseInt(UUID.randomUUID().toString());
+        String id= UUID.randomUUID().toString();
 
         return new UserRentalPrice.UserRentalPriceBuilder()
-                .setRentalId(rentalId).setDuration(duration).setAmount(amount).build();
+                .setRentalId(id).setDuration(duration).setAmount(amount).build();
     }
 }
