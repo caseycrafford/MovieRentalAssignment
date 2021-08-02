@@ -6,8 +6,8 @@ package za.ac.cput.entity;
  */
 
 public class UserRental {
-    private int rentalId, userId, movieId, rentalDate, returnDate;
-    private String rentedBy;
+    private int userId, movieId;
+    private String rentedBy, rentalDate, returnDate, rentalId;
 
     public UserRental(UserRentalBuilder userRentalBuilder){
         this.rentalId = userRentalBuilder.rentalId;
@@ -20,10 +20,19 @@ public class UserRental {
     }
 
     public static class UserRentalBuilder{
-        private int rentalId, userId, movieId, rentalDate, returnDate;
+        private String rentalId;
+
+        public String getRentalId() {
+            return rentalId;
+        }
+
+        private int userId;
+        private int movieId;
+        private String rentalDate;
+        private String returnDate;
         private String rentedBy;
 
-        public UserRentalBuilder setRentalId(int rentalId) {
+        public UserRentalBuilder setRentalId(String rentalId) {
             this.rentalId = rentalId;
             return this;
         }
@@ -38,12 +47,12 @@ public class UserRental {
             return this;
         }
 
-        public UserRentalBuilder setRentalDate(int rentalDate) {
+        public UserRentalBuilder setRentalDate(String rentalDate) {
             this.rentalDate = rentalDate;
             return this;
         }
 
-        public UserRentalBuilder setReturnDate(int returnDate) {
+        public UserRentalBuilder setReturnDate(String returnDate) {
             this.returnDate = returnDate;
             return this;
         }
@@ -53,7 +62,19 @@ public class UserRental {
             return this;
         }
 
+        public UserRentalBuilder copy (UserRental userRental) {
+            this.movieId = userRental.movieId;
+            this.rentalDate = userRental.rentalDate;
+            this.rentalId = userRental.rentalId;
+            this.rentedBy = userRental.rentedBy;
+            this.returnDate = userRental.returnDate;
+            this.userId = userRental.userId;
+
+            return this;
+        }
+
         public UserRental build(){return new UserRental(this);}
+
     }
 
     @Override

@@ -8,7 +8,7 @@ package za.ac.cput.entity;
  */
 
 public class MovieRentedOut {
-    private int movieID;
+    private String movieID;
     private int quantity;
 
     private MovieRentedOut(MovieRentedOutBuilder MovieRentedOutBuilder) {
@@ -16,10 +16,19 @@ public class MovieRentedOut {
         this.quantity = MovieRentedOutBuilder.quantity;
     }
 
-    public static class MovieRentedOutBuilder {
-        private int movieID, quantity;
+    public String getMovieID() {
+        return movieID;
+    }
 
-        public MovieRentedOut.MovieRentedOutBuilder setMovieID(int movieID) {
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public static class MovieRentedOutBuilder {
+        private int quantity;
+        private String movieID;
+
+        public MovieRentedOut.MovieRentedOutBuilder setMovieID(String movieID) {
             this.movieID = movieID;
             return this;
         }
@@ -32,7 +41,13 @@ public class MovieRentedOut {
         public MovieRentedOut build() {
             return new MovieRentedOut(this);
         }
+        public MovieRentedOutBuilder copy(MovieRentedOut MovieRentedOut)
+        {
+            this.movieID = MovieRentedOut.movieID;
+            this.quantity = MovieRentedOut.quantity;
 
+            return this;
+        }
 
         @Override
         public String toString() {
