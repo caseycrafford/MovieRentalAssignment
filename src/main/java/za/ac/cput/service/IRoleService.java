@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.service;
 
 /**
  * Author: Muhammad Yaasin Cole
@@ -9,7 +9,7 @@ import za.ac.cput.entity.Role;
 
 import java.util.Set;
 
-public interface IRoleRepository extends IRepository<Role, String>{
+public interface IRoleService extends IService<Role,String>{
 
     public Set<Role> getAll();
 }
