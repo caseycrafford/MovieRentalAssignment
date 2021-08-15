@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.service;
 
 /**
  * Author: Muhammad Yaasin Cole
@@ -9,9 +9,7 @@ import za.ac.cput.entity.User;
 
 import java.util.Set;
 
-public interface IUserRepository extends IRepository<User, String>
-{
+public interface IUserService extends IService<User, String>{
 
     public Set<User> getAll();
-
 }
