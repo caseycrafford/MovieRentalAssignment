@@ -61,6 +61,6 @@ public class ContactTypeService implements IContactTypeService {
 
     @Override
     public Set<ContactType> getAll() {
-        return null;
+        return this.repo.getAll();
     }
 }

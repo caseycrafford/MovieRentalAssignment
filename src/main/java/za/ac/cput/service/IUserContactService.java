@@ -1,9 +1,10 @@
 package za.ac.cput.service;
-/* ContactType.java
- Entity for the ContactType
+/* UserContact.java
+
  Author: Malcolm Camelo (217137334)
  Date: 22 August 2021
 */
+
 import za.ac.cput.entity.UserContact;
 
 import java.util.Set;
