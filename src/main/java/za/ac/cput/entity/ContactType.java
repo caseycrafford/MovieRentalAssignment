@@ -10,6 +10,10 @@ public class ContactType {
     private String name, description;
     private int contactTypeId;
 
+    public int getContactTypeId() {
+        return contactTypeId;
+    }
+
     private ContactType(contactTypeBuilder contactTypeBuilder) {
         this.contactTypeId = contactTypeBuilder.contactTypeId;
         this.description = contactTypeBuilder.description;
