@@ -9,6 +9,10 @@ public class UserContact {
     private int userId, contactTypeId;
     private String Contact;
 
+    public String getContact() {
+        return Contact;
+    }
+
     private UserContact(userContactBuilder userContactBuilder) {
         this.contactTypeId = userContactBuilder.contactTypeId;
         this.userId = userContactBuilder.userId;
