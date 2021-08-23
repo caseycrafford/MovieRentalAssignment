@@ -23,7 +23,6 @@ class PriceServiceTest {
     @Test
     void b_read(){
         Price read=service.read(price.getMovieId());
-
         System.out.println("Read: "+read);
     }
 
