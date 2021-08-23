@@ -7,12 +7,24 @@ package za.ac.cput.service;
 
 import za.ac.cput.entity.UserRental;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class UserRentalService implements IUserRentalService {
 
     public static UserRentalService service = null;
     private Set<UserRental> userRentalDB = null;
+
+    private UserRentalService() {
+        userRentalDB = new HashSet<UserRental>();
+    }
+
+    static UserRentalService getService(){
+        if (service == null) {
+            service = new UserRentalService();
+        }
+        return service;
+    }
 
     @Override
     public UserRental create(UserRental userRental) {
