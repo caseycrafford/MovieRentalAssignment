@@ -1,8 +1,12 @@
 package za.ac.cput.service;
-
+/*
+ * Author: Emilio Castano
+ * Student number: 219035709
+ */
 
 import za.ac.cput.entity.StudioMovie;
 import za.ac.cput.repository.StudioMovieRepository;
+
 
 import java.util.Set;
 
