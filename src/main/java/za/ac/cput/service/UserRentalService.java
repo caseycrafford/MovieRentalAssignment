@@ -6,17 +6,16 @@ package za.ac.cput.service;
  */
 
 import za.ac.cput.entity.UserRental;
-
-import java.util.HashSet;
+import za.ac.cput.repository.UserRentalRepository;
 import java.util.Set;
 
 public class UserRentalService implements IUserRentalService {
 
     public static UserRentalService service = null;
-    private Set<UserRental> userRentalDB = null;
+    private UserRentalRepository userRentalDB = null;
 
     private UserRentalService() {
-        userRentalDB = new HashSet<UserRental>();
+        this.userRentalDB = UserRentalRepository.getRepository();
     }
 
     static UserRentalService getService(){
@@ -28,43 +27,26 @@ public class UserRentalService implements IUserRentalService {
 
     @Override
     public UserRental create(UserRental userRental) {
-        boolean success = userRentalDB.add(userRental);
-        if (!success)
-            return null;
-        return userRental;
+        return this.userRentalDB.create(userRental);
     }
 
     @Override
     public UserRental read(String rentalId) {
-        for (UserRental r : userRentalDB)
-            if (r.toString().equals(rentalId)){
-                return r;
-            }
-        return null;
+        return this.userRentalDB.read(rentalId);
     }
 
     @Override
     public UserRental update(UserRental userRental) {
-        UserRental oldUserRental = read(userRental.toString());
-        if (oldUserRental != null) {
-            userRentalDB.remove(oldUserRental);
-            userRentalDB.add(userRental);
-            return userRental;
-        }
-        return null;
+        return this.userRentalDB.update(userRental);
     }
 
     @Override
     public boolean delete(String userRentalId) {
-        UserRental userRentalToDelete = read(userRentalId);
-        if (userRentalToDelete == null)
-            return false;
-        userRentalDB.remove(userRentalToDelete);
-        return true;
+        return this.userRentalDB.delete(userRentalId);
     }
 
     @Override
     public Set<UserRental> getAll() {
-        return userRentalDB;
+       return this.userRentalDB.getAll();
     }
 }
