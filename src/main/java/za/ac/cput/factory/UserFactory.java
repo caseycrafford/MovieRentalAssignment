@@ -22,11 +22,14 @@ public class UserFactory {
         }
 
         String userID = UUID.randomUUID().toString();
-        int idNUmber = Integer.parseInt(UUID.randomUUID().toString());
+        int idNUmber = UUID.randomUUID().hashCode();
 
 
         return new User.userBuilder()
-                .setFirstName(firstName).setLastName(lastName).setUserId(userID)
-                .setAddressId(addressId).setIdNumber(idNUmber).build();
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserId(userID)
+                .setAddressId(addressId)
+                .setIdNumber(idNUmber).build();
     }
 }

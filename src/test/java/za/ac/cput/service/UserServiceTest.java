@@ -16,7 +16,6 @@ class UserServiceTest {
     private static User user = UserFactory.build("boy" , "Cole", "7856", 756, 101);
 
     @Test
-    @Order(1)
     void Create()
     {
         User built =service.create(user);
@@ -26,28 +25,21 @@ class UserServiceTest {
 
     }
     @Test
-    @Order(2)
     void Read()
     {
         User read = service.read(user.getUserId());
 
-        assertNotNull(read);
-        System.out.println("Read : " + read);
-
+        System.out.println("Read: " + read);
     }
     @Test
-    @Order(3)
     void Update()
     {
         User updated = new User.userBuilder().copy(user).setFirstName("John").setLastName("Snow").setUserId("100").setAddressId(756).setIdNumber(94).build();
-
-        assertNotNull(service.update(updated));
-        System.out.println("updated : "+ updated);
+        System.out.println("Updated: " + updated);
 
 
     }
     @Test
-    @Order(4)
     void Delete()
     {
         boolean success =service.delete(user.getUserId());

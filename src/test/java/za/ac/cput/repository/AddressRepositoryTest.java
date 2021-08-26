@@ -32,7 +32,6 @@ public class AddressRepositoryTest {
     {
         Address read = repository.read(address.getUserId());
 
-        assertNotNull(read);
         System.out.println("Read : " + read);
 
     }
@@ -44,7 +43,6 @@ public class AddressRepositoryTest {
                 .setPostalCode(1111).setProvince("Random").setuserId("8000")
                 .setStreet("denmarkstreet").build();
 
-        assertNotNull(repository.update(updated));
         System.out.println("updated : "+ updated);
 
 
