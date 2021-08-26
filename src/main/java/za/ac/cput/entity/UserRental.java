@@ -9,6 +9,30 @@ public class UserRental {
     private int userId, movieId;
     private String rentedBy, rentalDate, returnDate, rentalId;
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public String getRentedBy() {
+        return rentedBy;
+    }
+
+    public String getRentalDate() {
+        return rentalDate;
+    }
+
+    public String getReturnDate() {
+        return returnDate;
+    }
+
+    public String getRentalId() {
+        return rentalId;
+    }
+
     public UserRental(UserRentalBuilder userRentalBuilder){
         this.rentalId = userRentalBuilder.rentalId;
         this.userId = userRentalBuilder.userId;
