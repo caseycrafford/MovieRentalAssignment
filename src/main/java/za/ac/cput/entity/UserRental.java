@@ -9,6 +9,15 @@ public class UserRental {
     private int userId, movieId;
     private String rentedBy, rentalDate, returnDate, rentalId;
 
+    public UserRental(UserRentalBuilder userRentalBuilder){
+        this.rentalId = userRentalBuilder.rentalId;
+        this.userId = userRentalBuilder.userId;
+        this.movieId = userRentalBuilder.movieId;
+        this.rentalDate = userRentalBuilder.rentalDate;
+        this.returnDate = userRentalBuilder.returnDate;
+        this.rentedBy = userRentalBuilder.rentedBy;
+
+    }
     public int getUserId() {
         return userId;
     }
@@ -33,23 +42,8 @@ public class UserRental {
         return rentalId;
     }
 
-    public UserRental(UserRentalBuilder userRentalBuilder){
-        this.rentalId = userRentalBuilder.rentalId;
-        this.userId = userRentalBuilder.userId;
-        this.movieId = userRentalBuilder.movieId;
-        this.rentalDate = userRentalBuilder.rentalDate;
-        this.returnDate = userRentalBuilder.returnDate;
-        this.rentedBy = userRentalBuilder.rentedBy;
-
-    }
-
     public static class UserRentalBuilder{
         private String rentalId;
-
-        public String getRentalId() {
-            return rentalId;
-        }
-
         private int userId;
         private int movieId;
         private String rentalDate;

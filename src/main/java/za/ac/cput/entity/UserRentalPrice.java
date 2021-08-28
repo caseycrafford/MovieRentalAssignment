@@ -16,6 +16,18 @@ public class UserRentalPrice {
         this.amount = userRentalPriceBuilder.amount;
     }
 
+    public int getDuration() {
+        return duration;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getRentalId() {
+        return rentalId;
+    }
+
     public static class UserRentalPriceBuilder{
         private int  duration;
         private double amount;
