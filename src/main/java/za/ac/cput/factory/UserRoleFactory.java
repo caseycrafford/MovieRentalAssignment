@@ -19,7 +19,7 @@ public class UserRoleFactory {
             return null;
         }
 
-        int roleID = Integer.parseInt(UUID.randomUUID().toString());
+        int roleID = UUID.randomUUID().hashCode();
         String userID = UUID.randomUUID().toString();
 
         return new userRole.userRoleBuilder()
