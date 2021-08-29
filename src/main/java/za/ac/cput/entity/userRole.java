@@ -10,6 +10,8 @@ public class userRole {
     private int roleId;
     private String userId;
 
+    private userRole()
+    {}
     public userRole(userRoleBuilder userRoleBuilder) {
 
         this.roleId = userRoleBuilder.roleId;

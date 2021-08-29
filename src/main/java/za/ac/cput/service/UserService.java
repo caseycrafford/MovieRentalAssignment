@@ -6,11 +6,13 @@ package za.ac.cput.service;
  *
  */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.User;
 import za.ac.cput.repository.UserRepository;
 
 import java.util.Set;
 
+@Service
 public class UserService implements IUserService {
 
     private static UserService service = null;
