@@ -41,5 +41,4 @@ public class StudioMovieController {
         return studioMovieServices.getAll();
     }
 
-
 }
