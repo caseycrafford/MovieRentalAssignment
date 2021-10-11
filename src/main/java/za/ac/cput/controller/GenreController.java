@@ -20,10 +20,10 @@ public class GenreController {
     @Autowired
     private GenreService genreService;
 
-    //@RequestMapping(value = "/create", method = RequestMethod.POST)//only need one to declaire post method
-    @PostMapping("/create")
+    @RequestMapping(value = "/create", method = RequestMethod.POST)//only need one to declaire post method
+    //@PostMapping("/create")
     public Genre create(@RequestBody Genre genre){
-        Genre newGenre = GenreFactory.createGenre(genre.getDescription()); //checkout
+        Genre newGenre = GenreFactory.build("47977","Horror", "These horrors will give you sleepless nights and and scream like never before"); //checkout
         return genreService.create(newGenre);
     }
 
