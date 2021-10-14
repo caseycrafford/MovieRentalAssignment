@@ -7,6 +7,6 @@ public class HomeController {
 
     @RequestMapping({"/","/home"})
     public String home(){
-        return "hello World";
+        return "Movie Rental Application";
     }
 }

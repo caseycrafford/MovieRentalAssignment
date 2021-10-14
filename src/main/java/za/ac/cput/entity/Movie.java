@@ -12,6 +12,9 @@ public class Movie {
 
     private String title,releaseDate, movieId,genreId,directorId;
 
+    private Movie(){
+    }
+
     private Movie(MovieBuilder MovieBuilder){
         this.movieId = MovieBuilder.movieId;
         this.genreId = MovieBuilder.genreId;

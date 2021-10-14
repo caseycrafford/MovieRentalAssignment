@@ -1,9 +1,11 @@
 package za.ac.cput.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Price;
 import za.ac.cput.repository.PriceRepository;
 import java.util.Set;
 
+@Service
 public class PriceService implements IPriceService{
 
     private static PriceService service = null;

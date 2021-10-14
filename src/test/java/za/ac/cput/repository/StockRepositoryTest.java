@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class StockRepositoryTest {
     private static StockRepository repository=StockRepository.getRepository();
-    private static Stock stock = StockFactory.build("235235wfswef34",3);
+    private static Stock stock = StockFactory.build(3);
 
     @Test
     void a_create(){
