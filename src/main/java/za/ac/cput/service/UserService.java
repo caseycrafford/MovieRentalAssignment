@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.User;
 import za.ac.cput.repository.UserRepository;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -46,13 +47,13 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public boolean delete(String idNumber) {
-        return this.repo.delete(idNumber);
+    public boolean delete(String userId) {
+        return this.repo.delete(userId);
     }
 
     public Set<User> getSingleUser()
     {
-        Set<User> singleUserRole =null;
+        Set<User> singleUserRole = new HashSet<User>();
         Set<User> users = getAll();
 
         for (User uSer: users)
