@@ -1,7 +1,6 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.entity.User;
-
 import java.util.UUID;
 /**
  * Author: Muhammad Yaasin Cole
@@ -11,25 +10,18 @@ import java.util.UUID;
 
 public class UserFactory {
 
-    private int  addressId , idNumber;
-    private String firstName,lastName, userId;
-
-    public static User build(String firstName , String lastName, String userId , int addressId , int idNumber)
+    public static User build(String userId , int addressId , int idNumber,String firstName , String lastName)
     {
-        if (firstName.isEmpty()||lastName.isEmpty()|| userId.isEmpty() || addressId <= 0 || idNumber <=0  )
-        {
+        if (firstName.isEmpty() || lastName.isEmpty() || userId.isEmpty() || addressId <= 0 || idNumber <=0  )
             return null;
-        }
 
         String userID = UUID.randomUUID().toString();
-        int idNUmber = UUID.randomUUID().hashCode();
-
 
         return new User.userBuilder()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserId(userID)
                 .setAddressId(addressId)
-                .setIdNumber(idNUmber).build();
+                .setIdNumber(idNumber).build();
     }
 }

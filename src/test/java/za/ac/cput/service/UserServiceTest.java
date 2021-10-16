@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class UserServiceTest {
     private static UserService service = UserService.getService();
-    private static User user = UserFactory.build("boy" , "Cole", "7856", 756, 101);
+    private static User user = UserFactory.build("boy" , 11, 7856, "Yaasin", "Cole");
 
     @Test
     void Create()
