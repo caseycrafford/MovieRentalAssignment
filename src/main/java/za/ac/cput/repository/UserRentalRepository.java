@@ -36,10 +36,11 @@ public class UserRentalRepository implements IUserRentalRepository{
 
     @Override
     public UserRental read(String rentalId){
-        for (UserRental r : userRentalDB)
+        for (UserRental r : userRentalDB) {
             if (r.toString().equals(rentalId)) {
                 return r;
             }
+        }
         return null;
     }
 

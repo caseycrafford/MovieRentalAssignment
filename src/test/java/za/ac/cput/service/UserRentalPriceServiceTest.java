@@ -1,5 +1,10 @@
 package za.ac.cput.service;
 
+/*
+ * Author: Grant Constant
+ * Student number: 216063124
+ */
+
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.UserRentalPrice;
 import za.ac.cput.factory.UserRentalPriceFactory;

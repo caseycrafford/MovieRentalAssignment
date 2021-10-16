@@ -9,6 +9,9 @@ public class UserRental {
     private int userId, movieId;
     private String rentedBy, rentalDate, returnDate, rentalId;
 
+    private UserRental(){
+    }
+
     public UserRental(UserRentalBuilder userRentalBuilder){
         this.rentalId = userRentalBuilder.rentalId;
         this.userId = userRentalBuilder.userId;
@@ -18,6 +21,7 @@ public class UserRental {
         this.rentedBy = userRentalBuilder.rentedBy;
 
     }
+
     public int getUserId() {
         return userId;
     }
@@ -91,8 +95,9 @@ public class UserRental {
             return this;
         }
 
-        public UserRental build(){return new UserRental(this);}
-
+        public UserRental build(){
+            return new UserRental(this);
+        }
     }
 
     @Override

@@ -29,7 +29,7 @@ class UserRentalServiceTest {
     void b_read() {
         UserRental read = service.read(userRental.toString());
         assertEquals(read.toString(), userRental.toString());
-        System.out.println("Create: " + read);
+        System.out.println("Read: " + read);
     }
 
     @Test
