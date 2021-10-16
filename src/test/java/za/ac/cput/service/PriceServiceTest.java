@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class PriceServiceTest {
     private static IPriceService service = PriceService.getService();
-    private static Price price = PriceFactory.build(50.00f,"23tsfwg32");
+    private static Price price = PriceFactory.build(50.00f);
 
     @Test
     void a_create(){

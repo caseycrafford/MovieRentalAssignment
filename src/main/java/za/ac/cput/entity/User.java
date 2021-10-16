@@ -9,6 +9,8 @@ public class User {
     private int addressId , idNumber;
     private String firstName,lastName, userId ;
 
+    private User() {}
+
     private User(userBuilder userBuilder)
     {
         this.userId = userBuilder.userId;
