@@ -37,7 +37,7 @@ class UserRentalControllerTest {
 
     @Test
     void b_read() {
-        String url= BASE_URL +"/read/"+ userRental.getRentalId();
+        String url= BASE_URL +"/read"+ userRental.getRentalId();
         System.out.println("URL: "+url);
         ResponseEntity<UserRental> response=restTemplate.getForEntity(url, UserRental.class);
         assertEquals(userRental.getRentalId(),response.getBody().getRentalId());

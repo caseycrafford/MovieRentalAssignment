@@ -55,8 +55,8 @@ public class UserRentalPriceRepository implements IUserRentalPriceRepository {
     }
 
     @Override
-    public boolean delete(String userRentalPriceId) {
-        UserRentalPrice userRentalPriceToDelete = read(userRentalPriceId);
+    public boolean delete(String id) {
+        UserRentalPrice userRentalPriceToDelete = read(id);
         if (userRentalPriceToDelete == null)
             return false;
         userRentalPriceDB.remove(userRentalPriceToDelete);

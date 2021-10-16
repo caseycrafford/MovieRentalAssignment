@@ -36,6 +36,11 @@ public class UserRentalPriceController {
         return uRPService.read(id);
     }
 
+    @DeleteMapping("/delete{id}")
+        public boolean delete(@PathVariable String id){
+           return uRPService.delete(id);
+        }
+
     @GetMapping("/getall")
     public Set<UserRentalPrice> getAll() {
         return uRPService.getAll();
