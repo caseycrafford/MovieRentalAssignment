@@ -21,7 +21,7 @@ public class UserRentalPriceController {
     private UserRentalPriceService uRPService;
     
     @PostMapping("/create")
-    public UserRentalPrice create(@RequestBody UserRentalPrice.UserRentalPriceBuilder userRentalPrice){
+    public UserRentalPrice create(@RequestBody UserRentalPrice userRentalPrice){
         UserRentalPrice newURP = UserRentalPriceFactory.build(userRentalPrice.getDuration(), userRentalPrice.getAmount());
         return uRPService.create(newURP);
     }
@@ -31,7 +31,7 @@ public class UserRentalPriceController {
         return uRPService.update(userRentalPrice);
     }
 
-    @GetMapping("/read/{id}")
+    @GetMapping("/read{id}")
     public UserRentalPrice read(@PathVariable String id){
         return uRPService.read(id);
     }

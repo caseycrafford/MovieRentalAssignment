@@ -31,14 +31,14 @@ public class UserRentalController {
         return userRentalService.update(userRental);
     }
 
-    @GetMapping("/read/{id}")
+    @GetMapping("/read{id}")
     public UserRental read(@PathVariable String id){
         return userRentalService.read(id);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String rentalId){
-        return userRentalService.delete(rentalId);
+    @DeleteMapping("/delete{id}")
+    public boolean delete(@PathVariable String id){
+        return userRentalService.delete(id);
     }
 
     @GetMapping("/getall")

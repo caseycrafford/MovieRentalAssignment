@@ -29,15 +29,15 @@ public class UserRentalRepository implements IUserRentalRepository{
     @Override
     public UserRental create(UserRental userRental) {
         boolean success = userRentalDB.add(userRental);
-        if (!success)
-            return null;
+        if (!success){
+            return null;}
         return userRental;
     }
 
     @Override
-    public UserRental read(String rentalId){
+    public UserRental read(String id){
         for (UserRental r : userRentalDB) {
-            if (r.toString().equals(rentalId)) {
+            if (r.getRentalId().equals(id)) {
                 return r;
             }
         }
@@ -46,7 +46,7 @@ public class UserRentalRepository implements IUserRentalRepository{
 
     @Override
     public UserRental update(UserRental userRental) {
-        UserRental oldUserRental = read(userRental.toString());
+        UserRental oldUserRental = read(userRental.getRentalId());
         if (oldUserRental != null) {
             userRentalDB.remove(oldUserRental);
             userRentalDB.add(userRental);
@@ -56,8 +56,8 @@ public class UserRentalRepository implements IUserRentalRepository{
     }
 
     @Override
-    public boolean delete(String userRentalId) {
-        UserRental userRentalToDelete = read(userRentalId);
+    public boolean delete(String rentalId) {
+        UserRental userRentalToDelete = read(rentalId);
         if (userRentalToDelete == null)
             return false;
         userRentalDB.remove(userRentalToDelete);
