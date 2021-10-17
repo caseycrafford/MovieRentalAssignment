@@ -12,7 +12,11 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import za.ac.cput.entity.Rating;
 import za.ac.cput.factory.RatingFactory;
-
+/*
+    RatingControllerTest.java
+    @author:219169640 - Casey Michael Keven Crafford
+    Assignment 3 – Domain Driven Design: Entity and Factory
+*/
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)

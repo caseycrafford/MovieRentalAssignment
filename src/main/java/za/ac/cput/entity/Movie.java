@@ -7,13 +7,16 @@ package za.ac.cput.entity;
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-public class Movie {
+@Entity
+public class Movie implements Serializable {
+    @Id private String movieId;
+    private String title,releaseDate,genreId,directorId;
 
-    private String title,releaseDate, movieId,genreId,directorId;
-
-    private Movie(){
-    }
+    private Movie(){}
 
     private Movie(MovieBuilder MovieBuilder){
         this.movieId = MovieBuilder.movieId;
