@@ -1,9 +1,5 @@
 package za.ac.cput.repository;
-/**
- * Author: Emilio Castano
- * Student Number: 219035709
- *
- */
+
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -15,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GenreRepositoryTest {
     private static GenreRepository repository = GenreRepository.getRepository();
-    private static Genre genre = GenreFactory.build("HOR", "Horror", "These horrors will give you sleepless nights and and scream like never before");
+    private static Genre genre = GenreFactory.build("23", "Horror", "These horrors will give you sleepless nights and and scream like never before");
 
 
     @Test
@@ -41,7 +37,7 @@ public class GenreRepositoryTest {
 
     @Test
     void c_update() {
-        Genre updated = new Genre.genreBuilder().copy(genre).setGenreId("Hor").build();
+        Genre updated = new Genre.genreBuilder().copy(genre).setGenreId("23").build();
         System.out.println("Updated: " + updated);
 
     }

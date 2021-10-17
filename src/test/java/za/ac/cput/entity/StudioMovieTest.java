@@ -1,9 +1,5 @@
 package za.ac.cput.entity;
-/**
- * Author: Emilio Castano
- * Student Number: 219035709
- *
- */
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;

@@ -10,8 +10,6 @@ public class Genre {
 
     private String genreId, genreName, description;
 
-    private Genre(){}
-
     private Genre(genreBuilder genreBuilder){
 
         this.genreId = genreBuilder.genreId;
@@ -65,7 +63,7 @@ public class Genre {
     @Override
     public String toString() {
         return "Genre{" +
-                "genreId='" + genreId +
+                "genreId='" + genreId + '\'' +
                 ", genreName='" + genreName + '\'' +
                 ", description='" + description + '\'' +
                 '}';

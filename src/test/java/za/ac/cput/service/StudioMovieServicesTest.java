@@ -1,9 +1,4 @@
 package za.ac.cput.service;
-/**
- * Author: Emilio Castano
- * Student Number: 219035709
- *
- */
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.StudioMovie;
