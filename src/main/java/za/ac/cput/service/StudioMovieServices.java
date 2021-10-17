@@ -3,6 +3,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.StudioMovie;
 import za.ac.cput.repository.StudioMovieRepository;
 
+import java.util.HashSet;
 import java.util.Set;
 /**
  * Author: Emilio Castano
@@ -46,12 +47,12 @@ public class StudioMovieServices implements IStudioMovieService{
     }
 
     public Set<StudioMovie> getSingleStudioMovie() {
-        Set<StudioMovie> singleStudioMovie =null;
+        Set<StudioMovie> singleStudioMovie =new HashSet<StudioMovie>();
         Set<StudioMovie> StudioMovieSet = getAll();
 
         for (StudioMovie studioMovie : StudioMovieSet)
         {
-            if(studioMovie.getStudioId().trim().toUpperCase().contains("3")){
+            if(studioMovie.getStudioId().trim().toUpperCase().contains("a")){
                 singleStudioMovie.add(studioMovie);
             }
         }

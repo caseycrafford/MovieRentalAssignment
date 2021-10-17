@@ -3,6 +3,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Genre;
 import za.ac.cput.repository.GenreRepository;
 
+import java.util.HashSet;
 import java.util.Set;
 /**
  * Author: Emilio Castano
@@ -45,12 +46,12 @@ public class GenreService implements IGenreService{
     }
 
     public Set<Genre> getSingleGenre() {
-        Set<Genre> singleGenre =null;
+        Set<Genre> singleGenre =new HashSet<Genre>();
         Set<Genre> GenreSet = getAll();
 
         for (Genre genre : GenreSet)
         {
-            if(genre.getGenreId().trim().toUpperCase().contains("1")){
+            if(genre.getGenreId().trim().toUpperCase().contains("HOR")){
                 singleGenre.add(genre);
             }
         }

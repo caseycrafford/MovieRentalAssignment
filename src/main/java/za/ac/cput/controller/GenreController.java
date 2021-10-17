@@ -23,7 +23,7 @@ public class GenreController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)//only need one to declaire post method
     //@PostMapping("/create")
     public Genre create(@RequestBody Genre genre){
-        Genre newGenre = GenreFactory.build(genre.getGenreId(), genre.getGenreName(), genre.getDescription()); //checkout
+        Genre newGenre = GenreFactory.build(genre.getGenreId(),genre.getGenreName(), genre.getDescription());//("HOR","Horror", "These horrors will give you sleepless nights and and scream like never before"); //checkout
         return genreService.create(newGenre);
     }
 

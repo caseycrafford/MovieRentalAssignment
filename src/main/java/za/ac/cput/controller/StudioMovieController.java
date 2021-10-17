@@ -17,7 +17,7 @@ public class StudioMovieController {
 
     @PostMapping("/create")
     public StudioMovie create(@RequestBody StudioMovie studioMovie){
-        StudioMovie newStudioMovie = StudioMovieFactory.build("12344", "4321"); //checkout possibly add "Builder"
+        StudioMovie newStudioMovie = StudioMovieFactory.build(studioMovie.getStudioId(), studioMovie.getMovieId()); //checkout possibly add "Builder"
         return studioMovieServices.create(newStudioMovie);
     }
 
