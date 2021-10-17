@@ -1,9 +1,5 @@
 package za.ac.cput.controller;
-/*
-    MovieControllerTest.java
-    @author:219169640 - Casey Michael Keven Crafford
-    Assignment 3 – Domain Driven Design: Entity and Factory
-*/
+
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -14,58 +10,58 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import za.ac.cput.entity.Movie;
-import za.ac.cput.factory.MovieFactory;
+import za.ac.cput.entity.UserRental;
+import za.ac.cput.factory.UserRentalFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class MovieControllerTest {
-    private static Movie movie = MovieFactory.build("ADP","asf","weges","afasd");
+class UserRentalControllerTest {
+    public static UserRental userRental = UserRentalFactory.build(8,91,"5 January 2018","1 February 2018", "Casey");
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private final String BASE_URL = "http://localhost:8080/movie";
+    private final String BASE_URL = "http://localhost:8080/UserRental";
 
     @Test
     void a_create() {
         String url = BASE_URL +"/create";
-        ResponseEntity<Movie> postResponse=restTemplate.postForEntity(url, movie,Movie.class);
+        ResponseEntity<UserRental> postResponse=restTemplate.postForEntity(url, userRental, UserRental.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
-        movie =postResponse.getBody();
-        System.out.println("Saved data: "+ movie);
-        assertEquals(movie.getMovieId(),postResponse.getBody().getMovieId());
+        userRental =postResponse.getBody();
+        System.out.println("Saved data: "+ userRental);
+        assertEquals(userRental.getRentalId(),postResponse.getBody().getRentalId());
     }
 
     @Test
     void b_read() {
-        String url= BASE_URL +"/read"+ movie.getMovieId();
+        String url= BASE_URL +"/read"+ userRental.getRentalId();
         System.out.println("URL: "+url);
-        ResponseEntity<Movie> response=restTemplate.getForEntity(url,Movie.class);
-        assertEquals(movie.getMovieId(),response.getBody().getMovieId());
+        ResponseEntity<UserRental> response=restTemplate.getForEntity(url, UserRental.class);
+        assertEquals(userRental.getRentalId(),response.getBody().getRentalId());
     }
 
     @Test
-    void c_update(){
-        Movie updated=new Movie.MovieBuilder().copy(movie).setTitle("PRT").build();
+    void c_update() {
+        UserRental updated=new UserRental.UserRentalBuilder().copy(userRental).setReturnDate("20 January 2018").build();
         String url= BASE_URL +"/update";
         System.out.println("URL: "+url);
         System.out.println("Post data: "+updated);
-        ResponseEntity<Movie> response=restTemplate.postForEntity(url,updated,Movie.class);
+        ResponseEntity<UserRental> response=restTemplate.postForEntity(url,updated,UserRental.class);
         assertNotNull(response.getBody());
     }
 
     @Test
-    void d_delete() {
-        String url= BASE_URL +"/delete/"+ movie.getMovieId();
+    void e_delete(){
+        String url= BASE_URL +"/delete/"+ userRental.getRentalId();
         System.out.println("URL: "+url);
         restTemplate.delete(url);
     }
 
     @Test
-    void e_getAll() {
+    void getAll() {
         String url= BASE_URL +"/getall";
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null,headers);

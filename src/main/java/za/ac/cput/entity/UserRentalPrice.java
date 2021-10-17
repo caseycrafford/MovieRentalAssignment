@@ -10,10 +10,26 @@ public class UserRentalPrice {
     private String rentalId;
     private double amount;
 
+    public UserRentalPrice(){
+
+    }
+
     public UserRentalPrice(UserRentalPriceBuilder userRentalPriceBuilder){
         this.rentalId = userRentalPriceBuilder.rentalId;
         this.duration = userRentalPriceBuilder.duration;
         this.amount = userRentalPriceBuilder.amount;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getRentalId() {
+        return rentalId;
     }
 
     public static class UserRentalPriceBuilder{

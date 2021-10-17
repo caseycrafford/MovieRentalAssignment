@@ -1,5 +1,9 @@
 package za.ac.cput.controller;
-
+/*
+    PriceControllerTest.java
+    @author:219169640 - Casey Michael Keven Crafford
+    Assignment 3 – Domain Driven Design: Entity and Factory
+*/
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;

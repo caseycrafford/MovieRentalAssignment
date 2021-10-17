@@ -8,12 +8,13 @@ package za.ac.cput.entity;
     11 June 2021
 */
 
-public class Movie {
+import java.io.Serializable;
 
-    private String title,releaseDate, movieId,genreId,directorId;
+public class Movie implements Serializable {
+    private String movieId;
+    private String title,releaseDate,genreId,directorId;
 
-    private Movie(){
-    }
+    private Movie(){}
 
     private Movie(MovieBuilder MovieBuilder){
         this.movieId = MovieBuilder.movieId;

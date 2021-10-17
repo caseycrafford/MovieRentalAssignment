@@ -1,5 +1,9 @@
 package za.ac.cput.repository;
-
+/**
+ * Author: Emilio Castano
+ * Student Number: 219035709
+ *
+ */
 import za.ac.cput.entity.Genre;
 
 import java.util.HashSet;
@@ -33,19 +37,26 @@ public class GenreRepository implements IGenreRepository {
         return genre;
     }
 
-    @Override
-    public Genre read(String genreId) { // add String genreName
-        Genre genre = null;
-        for( Genre g: genreDB){
-            if(g.getGenreId().equalsIgnoreCase(genreId)){
-                genre = g;
-                break;
-            }
+//    @Override
+//    public Genre read(String genreId) { // add String genreName
+//        Genre genre = null;
+//        for( Genre g: genreDB){
+//            if(g.getGenreId().equalsIgnoreCase(genreId)){
+//                genre = g;
+//                break;
+//            }
+//        }
+//        return genre;
+//    }
+@Override
+public Genre read(String genreId) {
+    for (Genre genre : genreDB){
+        if(genre.getGenreId().equals(genreId)){
+            return genre;
         }
-        return genre;
-
     }
-
+    return null;
+}
     @Override
     public Genre update(Genre genre) {
         Genre oldGenre = read((genre.getGenreId()));  //read(genre.toString());  //getId (tostring should be getId or genreId)

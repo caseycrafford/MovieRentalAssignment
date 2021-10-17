@@ -14,28 +14,37 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping( value = "/create", method = RequestMethod.POST)
-    public User create ( @RequestBody User user) {
-
-        User newUser = UserFactory.build("Yaasin","Cole","123",456,485);
-
+    @PostMapping("/create")
+    public User create (@RequestBody User user) {
+        User newUser = UserFactory.build(user.getUserId(),user.getAddressId(),user.getIdNumber(),user.getFirstName(),user.getLastName());
         return userService.create(newUser);
 
     }
 
-    @GetMapping("/read")
-    public User read(@RequestBody User user) {
+    @GetMapping("/read{userId}")
+    public User read(@PathVariable User user) {
 
         return userService.read(user.getUserId());
     }
 
-   /* @PostMapping("/update")
-    public User update(){
+    @PostMapping("/update")
+    public User update(@RequestBody User user){
+        return userService.update(user);
 
-    }*/
+    }
     @GetMapping("/getall")
     public Set<User> getAll() {
 
         return userService.getAll();
+    }
+
+    @PostMapping("/delete{userId}")
+    public boolean delete (@PathVariable String userId) {
+       return userService.delete(userId);
+    }
+
+    @GetMapping("/getSingleUser")
+    public Set<User> getSingleUser(){
+        return userService.getSingleUser();
     }
 }

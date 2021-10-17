@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 public class AddressRepositoryTest {
+
     private static AddressRepository repository = AddressRepository.getRepository();
     private static Address address = AddressFactory.build("roseMary", "Cape Town", "South Africa"
                                                             ,"Western Cape",7801 , "68597");
