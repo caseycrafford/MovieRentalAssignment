@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class GenreService implements IGenreService{
     private static GenreService service = null;
-    private GenreRepository repository;
+    private GenreRepository repository = null;
 
     private GenreService(){
         this.repository = GenreRepository.getRepository();
