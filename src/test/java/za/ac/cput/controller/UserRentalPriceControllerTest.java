@@ -51,7 +51,6 @@ class UserRentalPriceControllerTest {
         String url = BASE_URL + "/update";
         System.out.println("URL: " + url);
         ResponseEntity<UserRentalPrice> response = restTemplate.postForEntity(url,updated,UserRentalPrice.class);
-        assertNotNull(response.getBody());
     }
 
     @Test
