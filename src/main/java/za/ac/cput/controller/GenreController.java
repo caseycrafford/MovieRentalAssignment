@@ -27,17 +27,17 @@ public class GenreController {
         return genreService.create(newGenre);
     }
 
-    @GetMapping("/read/{id}")
+    @GetMapping("/read/{genreId}")
     public Genre read(@PathVariable String genreId){
         return genreService.read(genreId);
     }
 
     @PostMapping("/update")
-    public Genre update(@RequestBody Genre genre){
-        return genreService.update(genre);
+    public Genre update(@RequestBody Genre genreName){
+        return genreService.update(genreName);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{genreId}")
     public boolean delete(@PathVariable String genreId){
         return genreService.delete(genreId);
     }

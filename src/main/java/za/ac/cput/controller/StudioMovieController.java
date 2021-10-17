@@ -7,7 +7,11 @@ import za.ac.cput.factory.StudioMovieFactory;
 import za.ac.cput.service.StudioMovieServices;
 
 import java.util.Set;
-
+/**
+ * Author: Emilio Castano
+ * Student Number: 219035709
+ *
+ */
 @RestController
 @RequestMapping("/studioMovie")
 
@@ -21,19 +25,19 @@ public class StudioMovieController {
         return studioMovieServices.create(newStudioMovie);
     }
 
-    @GetMapping("/read/{id}")
-    public StudioMovie read(@PathVariable String id){
-        return studioMovieServices.read(id);
+    @GetMapping("/read/{studioId}")
+    public StudioMovie read(@PathVariable String studioId){
+        return studioMovieServices.read(studioId);
     }
 
     @PostMapping("/update")
-    public StudioMovie update(@RequestBody StudioMovie studioMovie){
-        return studioMovieServices.update(studioMovie);
+    public StudioMovie update(@RequestBody StudioMovie studioId){
+        return studioMovieServices.update(studioId);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String id){
-        return studioMovieServices.delete(id);
+    @DeleteMapping("/delete/{studioId}")
+    public boolean delete(@PathVariable String studioId){
+        return studioMovieServices.delete(studioId);
     }
 
     @GetMapping("/getall")
