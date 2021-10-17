@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * Author: Lance Kruger
  * Student Number: 218159501
- *
+ *lk
  */
 
 public class NumberOfMoviesRentedService implements INumberOfMoviesRentedService {

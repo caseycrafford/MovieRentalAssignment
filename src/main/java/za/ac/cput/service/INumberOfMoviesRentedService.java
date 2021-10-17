@@ -5,7 +5,7 @@ import za.ac.cput.entity.NumberOfMoviesRented;
 /**
  * Author: Lance Kruger
  * Student Number: 218159501
- *
+ *lk
  */
 
 import java.util.Set;
