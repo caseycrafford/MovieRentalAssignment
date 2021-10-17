@@ -5,6 +5,7 @@ import za.ac.cput.entity.Movie;
 import za.ac.cput.repository.MovieRepository;
 import java.util.Set;
 
+@Service
 public class MovieService implements IMovieService{
 
     private static MovieService service = null;
