@@ -9,6 +9,8 @@ public class User {
     private int addressId , idNumber;
     private String firstName,lastName, userId ;
 
+    private User() {}
+
     private User(userBuilder userBuilder)
     {
         this.userId = userBuilder.userId;
@@ -19,6 +21,15 @@ public class User {
 
 
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
 
     public String getUserId() {
         return userId;
@@ -32,29 +43,23 @@ public class User {
         return idNumber;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", addressId=" + addressId +
-                ", idNumber=" + idNumber +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
 
     public static class userBuilder
     {
         private int addressId , idNumber;
-        private String firstName,lastName,userId ;
+        private String firstName,lastName,userId;
+
+
+        public userBuilder setFirstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public userBuilder setLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
 
         public userBuilder setUserId(String userId) {
             this.userId = userId;
@@ -71,15 +76,6 @@ public class User {
             return this;
         }
 
-        public userBuilder setFirstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
-
-        public userBuilder setLastName(String lastName) {
-            this.lastName = lastName;
-            return this;
-        }
 
         public userBuilder copy(User user)
         {
@@ -98,6 +94,17 @@ public class User {
         {
             return new User(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", addressId=" + addressId +
+                ", idNumber=" + idNumber +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 
 

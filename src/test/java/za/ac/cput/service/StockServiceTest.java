@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class StockServiceTest {
     private static IStockService service = StockService.getService();
-    private static Stock stock = StockFactory.build("235235wfswef34",3);
+    private static Stock stock = StockFactory.build(3);
 
     @Test
     void a_create(){

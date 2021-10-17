@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class PriceRepositoryTest {
     private static PriceRepository repository=PriceRepository.getRepository();
-    private static Price price = PriceFactory.build(50.00f,"23tsfwg32");
+    private static Price price = PriceFactory.build(50.00f);
 
     @Test
     void a_create(){
@@ -32,7 +32,6 @@ class PriceRepositoryTest {
     @Test
     void b_read(){
         Price read=repository.read(price.getMovieId());
-
         System.out.println("Read: "+read);
     }
 

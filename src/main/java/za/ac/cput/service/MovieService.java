@@ -1,9 +1,9 @@
 package za.ac.cput.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Movie;
 import za.ac.cput.repository.MovieRepository;
 import java.util.Set;
-
 
 public class MovieService implements IMovieService{
 

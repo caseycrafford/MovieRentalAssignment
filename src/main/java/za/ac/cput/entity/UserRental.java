@@ -9,6 +9,9 @@ public class UserRental {
     private int userId, movieId;
     private String rentedBy, rentalDate, returnDate, rentalId;
 
+    private UserRental(){
+    }
+
     public UserRental(UserRentalBuilder userRentalBuilder){
         this.rentalId = userRentalBuilder.rentalId;
         this.userId = userRentalBuilder.userId;
@@ -19,13 +22,32 @@ public class UserRental {
 
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public String getRentedBy() {
+        return rentedBy;
+    }
+
+    public String getRentalDate() {
+        return rentalDate;
+    }
+
+    public String getReturnDate() {
+        return returnDate;
+    }
+
+    public String getRentalId() {
+        return rentalId;
+    }
+
     public static class UserRentalBuilder{
         private String rentalId;
-
-        public String getRentalId() {
-            return rentalId;
-        }
-
         private int userId;
         private int movieId;
         private String rentalDate;
@@ -73,8 +95,9 @@ public class UserRental {
             return this;
         }
 
-        public UserRental build(){return new UserRental(this);}
-
+        public UserRental build(){
+            return new UserRental(this);
+        }
     }
 
     @Override

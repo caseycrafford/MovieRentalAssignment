@@ -27,14 +27,14 @@ class UserRentalServiceTest {
 
     @Test
     void b_read() {
-        UserRental read = service.read(userRental.toString());
-        assertEquals(read.toString(), userRental.toString());
-        System.out.println("Create: " + read);
+        UserRental read = service.read(userRental.getRentalId());
+
+        System.out.println("Read: " + read);
     }
 
     @Test
     void c_update() {
-        UserRental updated = new UserRental.UserRentalBuilder().copy(userRental).setUserId(19).build();
+        UserRental updated = new UserRental.UserRentalBuilder().copy(userRental).setUserId(11).build();
         assertNotNull(service.update(updated));
         System.out.println("Update: " + updated);
     }

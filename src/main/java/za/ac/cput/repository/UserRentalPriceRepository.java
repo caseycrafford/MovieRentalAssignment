@@ -14,7 +14,7 @@ public class UserRentalPriceRepository implements IUserRentalPriceRepository {
     private static UserRentalPriceRepository repository = null;
     private Set<UserRentalPrice> userRentalPriceDB = null;
 
-    private UserRentalPriceRepository() { userRentalPriceDB = new HashSet<>(); }
+    private UserRentalPriceRepository() { userRentalPriceDB = new HashSet<UserRentalPrice>(); }
 
     public static UserRentalPriceRepository getRepository(){
         if (repository == null){
@@ -34,17 +34,18 @@ public class UserRentalPriceRepository implements IUserRentalPriceRepository {
     }
 
     @Override
-    public UserRentalPrice read(String rentalId) {
-        for (UserRentalPrice r : userRentalPriceDB)
-            if (r.toString().equals(rentalId)) {
+    public UserRentalPrice read(String id) {
+        for (UserRentalPrice r : userRentalPriceDB) {
+            if (r.getRentalId().equals(id)) {
                 return r;
             }
+        }
         return null;
     }
 
     @Override
     public UserRentalPrice update(UserRentalPrice userRentalPrice) {
-        UserRentalPrice oldUserRentalPrice = read(userRentalPrice.toString());
+        UserRentalPrice oldUserRentalPrice = read(userRentalPrice.getRentalId());
         if (oldUserRentalPrice != null) {
             userRentalPriceDB.remove(oldUserRentalPrice);
             userRentalPriceDB.add(userRentalPrice);
@@ -54,8 +55,8 @@ public class UserRentalPriceRepository implements IUserRentalPriceRepository {
     }
 
     @Override
-    public boolean delete(String userRentalPriceId) {
-        UserRentalPrice userRentalPriceToDelete = read(userRentalPriceId);
+    public boolean delete(String id) {
+        UserRentalPrice userRentalPriceToDelete = read(id);
         if (userRentalPriceToDelete == null)
             return false;
         userRentalPriceDB.remove(userRentalPriceToDelete);

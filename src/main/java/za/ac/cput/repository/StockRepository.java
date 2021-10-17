@@ -7,11 +7,13 @@ package za.ac.cput.repository;
     26 July 2021
 */
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.Stock;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Repository
 public class StockRepository implements IStockRepository{
     private static StockRepository repository = null;
     private Set<Stock> stockDB = null;

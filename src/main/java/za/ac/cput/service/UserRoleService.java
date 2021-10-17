@@ -7,12 +7,14 @@ package za.ac.cput.service;
  *
  */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.userRole;
 
 import za.ac.cput.repository.UserRoleRepository;
 
 import java.util.Set;
 
+@Service
 public class UserRoleService implements IUserRoleService {
 
     private static UserRoleService service = null;

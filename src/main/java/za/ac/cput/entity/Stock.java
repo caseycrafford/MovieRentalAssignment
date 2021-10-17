@@ -13,6 +13,10 @@ public class Stock {
     private String movieId;
     private int quantity;
 
+    private Stock(){
+
+    }
+
     private Stock(StockBuilder StockBuilder) {
         this.movieId=StockBuilder.movieId;
         this.quantity=StockBuilder.quantity;

@@ -10,6 +10,10 @@ package za.ac.cput.entity;
 
 public class Rating {
 
+    private Rating(){
+
+    }
+
     private String movieId;
     private double rating;
 
