@@ -22,27 +22,27 @@ class UserRentalPriceRepositoryTest {
 
     @Test
     void b_read() {
-        UserRentalPrice read = repository.read(userRentalPrice.toString());
+        UserRentalPrice read = repository.read(userRentalPrice.getRentalId());
         assertEquals(read.toString(), userRentalPrice.toString());
-        System.out.println("Create: " + read);
+        System.out.println("Read: " + read);
     }
 
     @Test
     void c_update() {
-        UserRentalPrice updated = new UserRentalPrice.UserRentalPriceBuilder().copy(userRentalPrice).setDuration(5).build();
+        UserRentalPrice updated = new UserRentalPrice.UserRentalPriceBuilder().copy(userRentalPrice).setDuration(10).build();
         assertNotNull(repository.update(updated));
         System.out.println("Update: " + updated);
     }
 
     @Test
-    void delete() {
-        boolean success = repository.delete(userRentalPrice.toString());
+    void e_delete() {
+        boolean success = repository.delete(userRentalPrice.getRentalId());
         assertTrue(success);
         System.out.println("Delete: " + success);
     }
 
     @Test
-    void getAll() {
+    void d_getAll() {
         System.out.println("Show All:");
         System.out.println(repository.getAll());
     }
