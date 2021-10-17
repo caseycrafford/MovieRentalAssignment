@@ -33,29 +33,19 @@ public class UserRepository implements IUserRepository{
     public User create(User user)
     {
         boolean success = userDB.add(user);
-
         if(!success)
-        {
             return null;
-
-        }
         return user;
 
     }
     @Override
     public User read(String userId)
     {
-
-        for(User u : userDB) {
-            if (u.getUserId().equals(userId)) {
-                return u;
-
-            }
-
-        }
-            return null;
-
-
+        User user = userDB.stream()
+                .filter(e -> e.getUserId().equals(userId))
+                .findAny()
+                .orElse(null);
+        return user;
     }
 
     @Override
@@ -77,21 +67,12 @@ public class UserRepository implements IUserRepository{
     public boolean delete(String userId)
     {
         User userDelete = read(userId);
-
         if(userDelete == null )
-        {
-
             return false;
-
-        }
-
         userDB.remove(userDelete);
         return true;
 
     }
 
-    public Set<User> getAll()
-    {
-        return userDB;
-    }
+    public Set<User> getAll() { return userDB; }
 }

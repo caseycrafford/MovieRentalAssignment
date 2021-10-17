@@ -14,15 +14,12 @@ public class UserRoleFactory {
 
     public static userRole build(String userId , int roleId)
     {
-        if( roleId <= 0 )
-        {
+        if( roleId <= 0 || userId.isEmpty())
             return null;
-        }
 
-        int roleID = UUID.randomUUID().hashCode();
         String userID = UUID.randomUUID().toString();
 
         return new userRole.userRoleBuilder()
-                .setRoleId(roleID).setUserId(userID).build();
+                .setRoleId(roleId).setUserId(userID).build();
     }
 }

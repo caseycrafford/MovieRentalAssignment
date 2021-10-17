@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserRepositoryTest {
 
     private static UserRepository repository = UserRepository.getRepository();
-    private static User user = UserFactory.build("boy" , "Cole", "7856", 756, 101);
+    private static User user = UserFactory.build("7856", 756, 101,"boy" , "Cole");
 
     @Test
     @Order(1)
