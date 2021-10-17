@@ -11,6 +11,8 @@ public class StudioMovie {
 
     private String studioId, movieId;
 
+    private StudioMovie(){}
+
     public String getStudioId() {
         return studioId;
     }
