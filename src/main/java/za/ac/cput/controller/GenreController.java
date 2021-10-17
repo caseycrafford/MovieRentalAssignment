@@ -23,13 +23,13 @@ public class GenreController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)//only need one to declaire post method
     //@PostMapping("/create")
     public Genre create(@RequestBody Genre genre){
-        Genre newGenre = GenreFactory.build("47977","Horror", "These horrors will give you sleepless nights and and scream like never before"); //checkout
+        Genre newGenre = GenreFactory.build(genre.getGenreId(), genre.getGenreName(), genre.getDescription()); //checkout
         return genreService.create(newGenre);
     }
 
     @GetMapping("/read/{id}")
-    public Genre read(@PathVariable String id){
-        return genreService.read(id);
+    public Genre read(@PathVariable String genreId){
+        return genreService.read(genreId);
     }
 
     @PostMapping("/update")
@@ -38,13 +38,18 @@ public class GenreController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String id){
-        return genreService.delete(id);
+    public boolean delete(@PathVariable String genreId){
+        return genreService.delete(genreId);
     }
 
     @GetMapping("/getall")
     public Set<Genre> getAll(){
         return genreService.getAll();
+    }
+
+    @GetMapping("/getSingleGenre")
+    public Set<Genre> getSingleGenre(){
+        return genreService.getSingleGenre();
     }
 
 

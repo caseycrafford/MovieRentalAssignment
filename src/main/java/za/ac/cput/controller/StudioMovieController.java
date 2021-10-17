@@ -17,7 +17,7 @@ public class StudioMovieController {
 
     @PostMapping("/create")
     public StudioMovie create(@RequestBody StudioMovie studioMovie){
-        StudioMovie newStudioMovie = StudioMovieFactory.createstudiomovie(studioMovie.getStudioId()); //checkout possibly add "Builder"
+        StudioMovie newStudioMovie = StudioMovieFactory.build("12344", "4321"); //checkout possibly add "Builder"
         return studioMovieServices.create(newStudioMovie);
     }
 
@@ -39,6 +39,11 @@ public class StudioMovieController {
     @GetMapping("/getall")
     public Set<StudioMovie> getAll(){
         return studioMovieServices.getAll();
+    }
+
+    @GetMapping("/getSingleStudioMovie")
+    public Set<StudioMovie> getSingleStudioMovie(){
+        return studioMovieServices.getSingleStudioMovie();
     }
 
 }

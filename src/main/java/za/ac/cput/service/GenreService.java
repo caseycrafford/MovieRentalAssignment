@@ -1,14 +1,15 @@
 package za.ac.cput.service;
+import org.springframework.stereotype.Service;
+import za.ac.cput.entity.Genre;
+import za.ac.cput.repository.GenreRepository;
+
+import java.util.Set;
 /**
  * Author: Emilio Castano
  * Student Number: 219035709
  *
  */
-import za.ac.cput.entity.Genre;
-import za.ac.cput.repository.GenreRepository;
-
-import java.util.Set;
-
+@Service
 public class GenreService implements IGenreService{
     private static GenreService service = null;
     private GenreRepository repository = null;
@@ -41,6 +42,19 @@ public class GenreService implements IGenreService{
     @Override
     public boolean delete(String genreId){
         return this.repository.delete(genreId);
+    }
+
+    public Set<Genre> getSingleGenre() {
+        Set<Genre> singleGenre =null;
+        Set<Genre> GenreSet = getAll();
+
+        for (Genre genre : GenreSet)
+        {
+            if(genre.getGenreId().trim().toUpperCase().contains("1")){
+                singleGenre.add(genre);
+            }
+        }
+        return singleGenre;
     }
 
     @Override

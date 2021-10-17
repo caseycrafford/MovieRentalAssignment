@@ -1,15 +1,15 @@
 package za.ac.cput.service;
-/*
- * Author: Emilio Castano
- * Student number: 219035709
- */
-
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.StudioMovie;
 import za.ac.cput.repository.StudioMovieRepository;
 
-
 import java.util.Set;
-
+/**
+ * Author: Emilio Castano
+ * Student Number: 219035709
+ *
+ */
+@Service
 public class StudioMovieServices implements IStudioMovieService{
 
     private static StudioMovieServices service = null;
@@ -43,6 +43,19 @@ public class StudioMovieServices implements IStudioMovieService{
     @Override
     public boolean delete(String studioMovieId){
         return this.repository.delete(studioMovieId);
+    }
+
+    public Set<StudioMovie> getSingleStudioMovie() {
+        Set<StudioMovie> singleStudioMovie =null;
+        Set<StudioMovie> StudioMovieSet = getAll();
+
+        for (StudioMovie studioMovie : StudioMovieSet)
+        {
+            if(studioMovie.getStudioId().trim().toUpperCase().contains("3")){
+                singleStudioMovie.add(studioMovie);
+            }
+        }
+        return singleStudioMovie;
     }
 
     @Override
