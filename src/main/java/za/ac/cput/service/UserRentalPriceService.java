@@ -5,10 +5,12 @@ package za.ac.cput.service;
  * Student number: 216063124
  */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.UserRentalPrice;
 import za.ac.cput.repository.UserRentalPriceRepository;
 import java.util.Set;
 
+@Service
 public class UserRentalPriceService implements IUserRentalPriceService {
     private static za.ac.cput.service.UserRentalPriceService service = null;
     private UserRentalPriceRepository userRentalPriceDB = null;

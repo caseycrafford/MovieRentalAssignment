@@ -26,9 +26,9 @@ public class UserRentalRepositoryTest {
 
     @Test
     void b_read() {
-        UserRental read = repository.read(userRental.toString());
-        assertEquals(read.toString(), userRental.toString());
-        System.out.println("Create: " + read);
+        UserRental read = repository.read(userRental.getRentalId());
+
+        System.out.println("Read: " + read);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class UserRentalRepositoryTest {
 
     @Test
     void e_delete() {
-        boolean success = repository.delete(userRental.toString());
+        boolean success = repository.delete(userRental.getRentalId());
         assertTrue(success);
         System.out.println("Delete: " + success);
     }
