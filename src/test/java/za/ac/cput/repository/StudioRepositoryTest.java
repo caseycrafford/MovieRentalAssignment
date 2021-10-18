@@ -1,6 +1,8 @@
 package za.ac.cput.repository;
 
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.MovieGenre;
 import za.ac.cput.entity.Studio;
 import za.ac.cput.factory.MovieGenreFactory;
@@ -14,39 +16,41 @@ import static org.junit.jupiter.api.Assertions.*;
         Date: 26 July 2021
         */
 
+@TestMethodOrder(MethodOrderer.MethodName.class)
 class StudioRepositoryTest {
 
     private static StudioRepository repository = StudioRepository.getRepository();
     private static Studio studio = StudioFactory.build("1234", "Sony");
 
     @Test
-    void create() {
+    void a_create() {
         Studio create = repository.create(studio);
-        assertEquals(create.getStudioId(), create.getStudioName());
-        System.out.println(create);
+        assertEquals(create.toString(), studio.toString());
+        System.out.println("Create: " + create);
     }
 
     @Test
-    void read() {
+    void b_read() {
         Studio read = repository.read(studio.getStudioId());
-        assertNotNull(read);
-        System.out.println(read);
+        //assertEquals(1234, read.getStudioId());
+        System.out.println("Read: " + read);
     }
 
     @Test
-    void update() {
+    void c_update() {
         Studio update = new Studio.Builder().copy(studio).setStudioId("2342").build();
+        System.out.println("Update: " + update);
     }
 
     @Test
-    void delete() {
-        boolean success = repository.delete(studio.getStudioId());
-        assertTrue(success);
-        System.out.println(success);
+    void d_delete() {
+        repository.delete(studio.getStudioId());
+
+        System.out.println(studio.getStudioId() + " was deleted.");
     }
 
     @Test
-    void getAll() {
-        System.out.println(repository.getAll());
+    void e_getAll() {
+        System.out.println("Get All: " + repository.getAll());
     }
 }
