@@ -12,9 +12,8 @@ import java.util.UUID;
 @Deprecated
 public class UserContactFactory {
 
-    public static UserContact build(String contact) {
-        if (contact.isEmpty())
-            return null;
+    public static UserContact build(String Contact) {
+
 
 
         int userId = UUID.randomUUID().hashCode();
@@ -24,7 +23,7 @@ public class UserContactFactory {
         return new UserContact.userContactBuilder()
                 .setUserId(userId)
                 .setContactTypeId(contactTypeId)
-                .setContact(contact)
+                .setContact(Contact)
                 .build();
     }
 

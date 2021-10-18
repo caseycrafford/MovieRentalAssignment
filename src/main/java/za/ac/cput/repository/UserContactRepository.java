@@ -38,9 +38,9 @@ public class UserContactRepository implements IUserContact {
     }
 
     @Override
-    public UserContact read(String s ) {
+    public UserContact read(String userId ) {
         for (UserContact u: userContactDB)
-            if(u.toString().equals(s)){
+            if(u.getUserId() == Integer.parseInt(userId)){
         return u;
             }
         return null;
@@ -48,7 +48,7 @@ public class UserContactRepository implements IUserContact {
 
     @Override
     public UserContact update(UserContact userContact) {
-        UserContact contact = read(userContact.toString());
+        UserContact contact = read(String.valueOf(userContact.getUserId()));
         if (contact != null)
         {
             userContactDB.remove(contact);
@@ -59,8 +59,8 @@ public class UserContactRepository implements IUserContact {
     }
 
     @Override
-    public boolean delete(String s) {
-        UserContact contactDelete = read(s);
+    public boolean delete(String userId) {
+        UserContact contactDelete = read(userId);
         if(contactDelete ==null)
             return false;
         userContactDB.remove(contactDelete);
@@ -70,6 +70,6 @@ public class UserContactRepository implements IUserContact {
 
     @Override
     public Set<UserContact> getAll() {
-        return null;
+        return userContactDB;
     }
 }

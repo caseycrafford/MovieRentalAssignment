@@ -32,7 +32,7 @@ class UserContactServiceTest {
 
     @Test
     void b_read() {
-        UserContact read=service.read(userContact.toString());
+        UserContact read=service.read(String.valueOf(userContact.getUserId()));
 
         System.out.println("Read: "+read);
     }
@@ -46,7 +46,7 @@ class UserContactServiceTest {
 
     @Test
     void d_delete() {
-        boolean success=service.delete(userContact.toString());
+        boolean success=service.delete(String.valueOf(userContact.getUserId()));
         assertTrue(success);
         System.out.println("Delete status: "+success);
     }
