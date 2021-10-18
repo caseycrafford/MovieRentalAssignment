@@ -1,29 +1,24 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /* UserContact.java
  Entity for the UserContact
  Author: Malcolm Camelo (217137334)
  Date: 10 June 2021
 */
-@Deprecated
+@Entity
 public class UserContact {
 
-    private UserContact(){}
-
-    private int userId, contactTypeId;
+    public UserContact(){}
+    @Id
+    private String userId;
+    private String contactTypeId;
     private String Contact;
 
-    public String getContact() {
-        return Contact;
-    }
 
-    public int getUserId() {
-        return userId;
-    }
 
-    public int getContactId() {
-        return contactTypeId;
-    }
     private UserContact(userContactBuilder userContactBuilder) {
         this.contactTypeId = userContactBuilder.contactTypeId;
         this.userId = userContactBuilder.userId;
@@ -31,16 +26,25 @@ public class UserContact {
 
     }
 
+    public String getContactId() {
+        return contactTypeId;
+    }
+    public String getContact() {
+        return Contact;
+    }
+    public String getUserId() { return userId; }
+
     public static class userContactBuilder {
-        private int userId, contactTypeId;
+        private String userId;
+        private String contactTypeId;
         private String Contact;
 
-        public userContactBuilder setUserId(int userId) {
+        public userContactBuilder setUserId(String userId) {
             this.userId = userId;
             return this;
         }
 
-        public userContactBuilder setContactTypeId(int contactTypeId) {
+        public userContactBuilder setContactTypeId(String contactTypeId) {
             this.contactTypeId = contactTypeId;
             return this;
         }

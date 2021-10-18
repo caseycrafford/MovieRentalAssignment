@@ -5,66 +5,66 @@ package za.ac.cput.service;
  Date: 22 August 2021
 */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.entity.ContactType;
+
+
 import za.ac.cput.entity.UserContact;
 import za.ac.cput.repository.UserContactRepository;
 
+import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+
 @Service
-@Deprecated
 public class UserContactService implements IUserContactService{
-    private static UserContactService service = null;
-    private UserContactRepository repo = null;
 
-    private UserContactService(){
-        this.repo = UserContactRepository.getRepository();
-    }
 
-    public static UserContactService getService(){
-        if(service == null){
-            service =new UserContactService();
-        }
-        return service;
-    }
+    private static UserContactService service =null;
 
+    @Autowired
+    private UserContactRepository repo;
 
     @Override
-    public UserContact create(UserContact userContact) {
-        return this.repo.create(userContact);
-    }
+    public UserContact create(UserContact userContact){return this.repo.save(userContact);}
 
     @Override
-    public UserContact read(String userId) {
-        return this.repo.read(userId);
+    public UserContact read(String userId){return this.repo.findById(userId).orElse(null);}
+
+    @Override
+    public UserContact update(UserContact userContact){
+        if(this.repo.existsById(userContact.getContactId()))
+            return this.repo.save(userContact);
+        return null;
     }
 
     @Override
-    public UserContact update(UserContact userContact) {
-        return this.repo.update(userContact);
-    }
-
-    @Override
-    public boolean delete(String userId) {
-        return this.repo.delete(userId);
+    public boolean delete(String userId){
+        this.repo.deleteById(userId);
+        if(this.repo.existsById(userId))
+            return false;
+        else
+            return true;
     }
 
     @Override
     public Set<UserContact> getAll() {
-        return this.repo.getAll();
+        return this.repo.findAll().stream().collect(Collectors.toSet());
     }
 
-    public Set<UserContact> getSingleUserContact() {
-        Set<UserContact> SingleUserContact =null;
-        Set<UserContact> UserContactSet = getAll();
+    public Set<UserContact> getAllAddressStartWithA(){
+        Set<UserContact> AddressWithA = new HashSet<>();
+        Set<UserContact> userContacts = getAll();
 
-        for (UserContact userContact : UserContactSet)
-        {
-            if(userContact.toString().trim().toUpperCase().contains("A")){
-                SingleUserContact.add(userContact);
+        for (UserContact userContact : userContacts){
+            if (userContact.toString().trim().toLowerCase().startsWith("a")){
+                AddressWithA.add(userContact);
             }
         }
-        return SingleUserContact;
+        return AddressWithA;
     }
+
+
+
 
 }
