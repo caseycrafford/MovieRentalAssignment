@@ -1,9 +1,11 @@
 package za.ac.cput.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Rating;
 import za.ac.cput.repository.RatingRepository;
 import java.util.Set;
 
+@Service
 public class RatingService implements IRatingService{
 
     private static RatingService service = null;

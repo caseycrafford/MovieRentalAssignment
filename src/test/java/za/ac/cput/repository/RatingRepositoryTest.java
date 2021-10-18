@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class RatingRepositoryTest {
     private static RatingRepository repository=RatingRepository.getRepository();
-    private static Rating rating = RatingFactory.build("235235wfswef34",9);
+    private static Rating rating = RatingFactory.build(9);
 
     @Test
     void a_create(){

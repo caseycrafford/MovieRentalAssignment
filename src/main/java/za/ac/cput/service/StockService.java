@@ -1,9 +1,11 @@
 package za.ac.cput.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Stock;
 import za.ac.cput.repository.StockRepository;
 import java.util.Set;
 
+@Service
 public class StockService implements IStockService{
 
     private static StockService service = null;

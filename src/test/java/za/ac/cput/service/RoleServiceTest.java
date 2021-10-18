@@ -31,8 +31,6 @@ class RoleServiceTest {
     void Read()
     {
         Role read = service.read(role.getRoleId());
-
-        assertNotNull(read);
         System.out.println("Read : " + read);
 
     }
@@ -42,7 +40,6 @@ class RoleServiceTest {
     {
         Role updated = new Role.roleBuilder().copy(role).setRoleId("4523").setName("John").setDescription("User").build();
 
-        assertNotNull(service.update(updated));
         System.out.println("updated : "+ updated);
 
 

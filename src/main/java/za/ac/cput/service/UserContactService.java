@@ -5,12 +5,13 @@ package za.ac.cput.service;
  Date: 22 August 2021
 */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.ContactType;
 import za.ac.cput.entity.UserContact;
 import za.ac.cput.repository.UserContactRepository;
 
 import java.util.Set;
-
+@Service
 public class UserContactService implements IUserContactService{
     private static UserContactService service = null;
     private UserContactRepository repo = null;
@@ -33,8 +34,8 @@ public class UserContactService implements IUserContactService{
     }
 
     @Override
-    public UserContact read(String s) {
-        return this.repo.read(s);
+    public UserContact read(String userId) {
+        return this.repo.read(userId);
     }
 
     @Override
@@ -43,8 +44,8 @@ public class UserContactService implements IUserContactService{
     }
 
     @Override
-    public boolean delete(String s) {
-        return this.repo.delete(s);
+    public boolean delete(String userId) {
+        return this.repo.delete(userId);
     }
 
     @Override

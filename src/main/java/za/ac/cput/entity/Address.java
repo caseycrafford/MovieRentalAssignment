@@ -9,6 +9,8 @@ public class Address {
     private String street , city , country,province, userId;
     private int postalCode;
 
+    private Address()
+    {}
     public Address(addressBuilder addressBuilder)
     {
         this.userId = addressBuilder.userId;

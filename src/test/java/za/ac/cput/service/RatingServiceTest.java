@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class RatingServiceTest {
     private static IRatingService service = RatingService.getService();
-    private static Rating rating = RatingFactory.build("235235wfswef34",9);
+    private static Rating rating = RatingFactory.build(9);
 
     @Test
     void a_create(){

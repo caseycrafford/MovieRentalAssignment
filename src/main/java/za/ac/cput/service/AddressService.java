@@ -5,11 +5,13 @@ package za.ac.cput.service;
  * Student Number: 218340869
  *
  */
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Address;
 import za.ac.cput.repository.AddressRepository;
 
 import java.util.Set;
 
+@Service
 public class AddressService implements IAddressService{
 
     private static AddressService service = null;

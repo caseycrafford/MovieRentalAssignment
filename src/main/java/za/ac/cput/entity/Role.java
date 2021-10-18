@@ -8,6 +8,8 @@ package za.ac.cput.entity;
 public class Role {
     private String name,description,roleId;
 
+    private Role(){}
+
     public Role(roleBuilder roleBuilder) {
 
         this.roleId = roleBuilder.roleId;

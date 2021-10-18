@@ -12,6 +12,9 @@ public class Price {
     private float amount;
     private String movieId;
 
+    private Price(){
+    }
+
     private Price(PriceBuilder PriceBuilder){
         this.amount=PriceBuilder.amount;
         this.movieId=PriceBuilder.movieId;
