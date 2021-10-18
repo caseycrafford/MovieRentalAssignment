@@ -1,3 +1,4 @@
+/*
 package za.ac.cput.repository;
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -63,4 +64,4 @@ class UserRepositoryTest {
 
     }
 
-}
+}*/

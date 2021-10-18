@@ -11,7 +11,7 @@ package za.ac.cput.factory;
 import za.ac.cput.entity.Movie;
 import java.util.UUID;
 
-
+@Deprecated
 public class MovieFactory {
 
     public static Movie build(String title, String releaseDate, String genreId, String directorId){

@@ -11,7 +11,7 @@ import za.ac.cput.entity.Movie;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class MovieRepository implements IMovieRepository{
     private static MovieRepository repository = null;
     private Set <Movie> movieDB = null;

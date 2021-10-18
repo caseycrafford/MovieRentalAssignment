@@ -1,9 +1,14 @@
 package za.ac.cput.factory;
-
+/**
+ * Author: Emilio Castano
+ * Student Number: 219035709
+ *
+ */
 import za.ac.cput.entity.Genre;
 
 import java.util.UUID;
 
+@Deprecated
 public class GenreFactory {
 
     public static Genre build(String genreId, String genreName, String description){

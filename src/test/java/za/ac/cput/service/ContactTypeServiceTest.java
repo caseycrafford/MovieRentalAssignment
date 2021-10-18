@@ -31,7 +31,7 @@ class ContactTypeServiceTest {
 
     @Test
     void b_read() {
-        ContactType read=service.read(contactType.toString());
+        ContactType read=service.read(String.valueOf(contactType.getContactTypeId()));
 
         System.out.println("Read: "+read);
     }
@@ -45,7 +45,7 @@ class ContactTypeServiceTest {
 
     @Test
     void d_delete() {
-        boolean success=service.delete(contactType.toString());
+        boolean success=service.delete(String.valueOf(contactType.getContactTypeId()));
         assertTrue(success);
         System.out.println("Delete status: "+success);
     }

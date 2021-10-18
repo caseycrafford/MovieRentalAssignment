@@ -7,6 +7,7 @@ package za.ac.cput.factory;
         */
 import za.ac.cput.entity.MovieGenre;
 
+@Deprecated
 public class MovieGenreFactory {
 
     public static MovieGenre build(String genreId, String movieId){

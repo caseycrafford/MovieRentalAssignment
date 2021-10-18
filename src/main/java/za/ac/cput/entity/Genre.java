@@ -6,9 +6,12 @@ package za.ac.cput.entity;
  * Program: Genre Structure of builder pattern
  *
  */
+@Deprecated
 public class Genre {
 
     private String genreId, genreName, description;
+
+    private Genre(){}
 
     private Genre(genreBuilder genreBuilder){
 
@@ -63,7 +66,7 @@ public class Genre {
     @Override
     public String toString() {
         return "Genre{" +
-                "genreId='" + genreId + '\'' +
+                "genreId='" + genreId +
                 ", genreName='" + genreName + '\'' +
                 ", description='" + description + '\'' +
                 '}';

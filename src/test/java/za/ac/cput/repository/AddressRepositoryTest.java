@@ -1,3 +1,4 @@
+/*
 package za.ac.cput.repository;
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -66,4 +67,4 @@ public class AddressRepositoryTest {
         System.out.println(repository.getAll());
 
     }
-}
+}*/

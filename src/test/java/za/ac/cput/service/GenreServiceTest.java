@@ -1,4 +1,11 @@
+/*
 package za.ac.cput.service;
+*/
+/**
+ * Author: Emilio Castano
+ * Student Number: 219035709
+ *
+ *//*
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Genre;
@@ -8,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GenreServiceTest {
     private static GenreService service = GenreService.getService();
-    private static Genre genre = GenreFactory.build("29", "Horror", "These horrors will give you sleepless nights and and scream like never before");
+    private static Genre genre = GenreFactory.build("HOR", "Horror", "These horrors will give you sleepless nights and and scream like never before");
 
 
     @Test
@@ -26,7 +33,7 @@ class GenreServiceTest {
 
     @Test
     void c_update() {
-        Genre updated = new Genre.genreBuilder().copy(genre).setGenreId("27").build();
+        Genre updated = new Genre.genreBuilder().copy(genre).setGenreId("HOR").build();
         System.out.println("Updated: " + updated);
     }
 
@@ -41,4 +48,4 @@ class GenreServiceTest {
         System.out.println("Show All:");
         System.out.println(service.getAll());
     }
-}
+}*/

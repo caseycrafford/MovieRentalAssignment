@@ -9,7 +9,7 @@ import za.ac.cput.entity.UserRentalPrice;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class UserRentalPriceRepository implements IUserRentalPriceRepository {
     private static UserRentalPriceRepository repository = null;
     private Set<UserRentalPrice> userRentalPriceDB = null;

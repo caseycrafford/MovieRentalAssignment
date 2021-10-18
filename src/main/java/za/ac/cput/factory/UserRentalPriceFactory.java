@@ -7,7 +7,7 @@ package za.ac.cput.factory;
 
 import za.ac.cput.entity.UserRentalPrice;
 import java.util.UUID;
-
+@Deprecated
 public class UserRentalPriceFactory {
 
     public static UserRentalPrice build(int duration, double amount){

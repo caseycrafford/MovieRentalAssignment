@@ -12,7 +12,7 @@ import java.util.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 public class MovieRentedOutRepositoryTest {
     private static MovieRentedOutRepository repository = MovieRentedOutRepository.getRepository();
-    private static MovieRentedOut movieRentedOut = MoviesRentedOutFactory.build(32,1);
+    private static MovieRentedOut movieRentedOut = MoviesRentedOutFactory.build("Ajk52l",1);
 
     @Test
     void a_create(){

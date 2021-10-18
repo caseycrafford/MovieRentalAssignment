@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Rating;
 import za.ac.cput.repository.RatingRepository;
 import java.util.Set;
-
+@Deprecated
 @Service
 public class RatingService implements IRatingService{
 

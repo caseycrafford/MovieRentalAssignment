@@ -6,10 +6,11 @@ package za.ac.cput.service;
  Date: 22 August 2021
 */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.ContactType;
 import za.ac.cput.repository.ContactTypeRepository;
 import java.util.Set;
-
+@Service
 public class ContactTypeService implements IContactTypeService {
 
     private static ContactTypeService service = null;
@@ -32,8 +33,8 @@ public class ContactTypeService implements IContactTypeService {
     }
 
     @Override
-    public ContactType read(String s) {
-        return this.repo.read(s);
+    public ContactType read(String contactTypeId) {
+        return this.repo.read(contactTypeId);
     }
 
     @Override
@@ -42,8 +43,8 @@ public class ContactTypeService implements IContactTypeService {
     }
 
     @Override
-    public boolean delete(String s) {
-        return this.repo.delete(s);
+    public boolean delete(String contactTypeId) {
+        return this.repo.delete(contactTypeId);
     }
 
     public Set<ContactType> getSingleContactType() {

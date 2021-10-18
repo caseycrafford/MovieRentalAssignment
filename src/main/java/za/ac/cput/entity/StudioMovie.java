@@ -7,9 +7,12 @@ package za.ac.cput.entity;
  *
  */
 
+@Deprecated
 public class StudioMovie {
 
     private String studioId, movieId;
+
+    private StudioMovie(){}
 
     public String getStudioId() {
         return studioId;

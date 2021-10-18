@@ -4,8 +4,9 @@ package za.ac.cput.service;
 import za.ac.cput.entity.StudioMovie;
 import za.ac.cput.repository.StudioMovieRepository;
 
+import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class StudioMovieServices implements IStudioMovieService{
 
     private static StudioMovieServices service = null;
@@ -39,6 +40,19 @@ public class StudioMovieServices implements IStudioMovieService{
     @Override
     public boolean delete(String studioMovieId){
         return this.repository.delete(studioMovieId);
+    }
+
+    public Set<StudioMovie> getSingleStudioMovie() {
+        Set<StudioMovie> singleStudioMovie =new HashSet<StudioMovie>();
+        Set<StudioMovie> StudioMovieSet = getAll();
+
+        for (StudioMovie studioMovie : StudioMovieSet)
+        {
+            if(studioMovie.getStudioId().trim().toUpperCase().contains("a")){
+                singleStudioMovie.add(studioMovie);
+            }
+        }
+        return singleStudioMovie;
     }
 
     @Override

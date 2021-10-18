@@ -11,7 +11,7 @@ import za.ac.cput.entity.Rating;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class RatingRepository implements IRatingRepository{
     private static RatingRepository repository = null;
     private Set<Rating> ratingDB = null;

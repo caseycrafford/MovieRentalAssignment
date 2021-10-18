@@ -9,6 +9,7 @@ import java.util.UUID;
  Author: Malcolm Camelo (217137334)
  Date: 10 June 2021
 */
+@Deprecated
 public class ContactTypeFactory {
 
     public static ContactType build(String name, String description) {
@@ -23,6 +24,7 @@ public class ContactTypeFactory {
                 .setDescription(description)
                 .setContactTypeId(contactTypeId).build();
     }
+
 
 
 }
