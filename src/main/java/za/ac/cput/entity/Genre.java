@@ -1,15 +1,19 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Author: Emilio Castano
  * Student Number: 219035709
  * Program: Genre Structure of builder pattern
  *
  */
-@Deprecated
+@Entity
 public class Genre {
-
-    private String genreId, genreName, description;
+    @Id
+    private String genreId;
+    private String genreName, description;
 
     private Genre(){}
 

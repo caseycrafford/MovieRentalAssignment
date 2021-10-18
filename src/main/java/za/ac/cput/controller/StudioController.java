@@ -15,7 +15,7 @@ import java.util.List;
         Author: Marchello Carolus 218234457
 
         */
-
+@Deprecated
 @RestController
 @RequestMapping("/studio")
 public class StudioController {

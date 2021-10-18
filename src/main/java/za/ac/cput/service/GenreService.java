@@ -1,43 +1,51 @@
-/*
+
 package za.ac.cput.service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Genre;
 import za.ac.cput.repository.GenreRepository;
 
+import java.util.HashSet;
 import java.util.Set;
-@Deprecated
+import java.util.stream.Collectors;
+
+@Service
 public class GenreService implements IGenreService{
-    private static GenreService service = null;
-    private GenreRepository repository = null;
 
-    private GenreService(){
-        this.repository = GenreRepository.getRepository();
-    }
 
-    public static GenreService getService(){
-        if(service == null){
-            service = new GenreService();
-        }
-        return service;
-    }
+    @Autowired
+    private GenreRepository repository;
+
     @Override
     public Genre create(Genre genre){
-        return this.repository.create(genre);
+        return this.repository.save(genre);
     }
 
     @Override
     public Genre read(String genreId){
-        return this.repository.read(genreId);
+        return this.repository.findById(genreId).orElse(null);
     }
 
     @Override
     public Genre update(Genre genre){
-        return this.repository.update(genre);
+        if(this.repository.existsById(genre.getGenreId()))
+            return this.repository.save(genre);
+        return null;
     }
 
     @Override
     public boolean delete(String genreId){
-        return this.repository.delete(genreId);
+        this.repository.deleteById(genreId);
+        if(this.repository.existsById(genreId))
+            return false;
+        else
+            return true;
+    }
+
+    @Override
+    //converting List to set
+    public Set<Genre> getAll() {
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
     public Set<Genre> getSingleGenre() {
@@ -46,17 +54,11 @@ public class GenreService implements IGenreService{
 
         for (Genre genre : GenreSet)
         {
-            if(genre.getGenreId().trim().toUpperCase().contains("HOR")){
+            if(genre.getGenreId().trim().toUpperCase().contains("A")){
                 singleGenre.add(genre);
             }
         }
         return singleGenre;
     }
-
-    @Override
-    public Set<Genre> getAll(){
-        return this.repository.getAll();
-    }
-
 }
-*/
+

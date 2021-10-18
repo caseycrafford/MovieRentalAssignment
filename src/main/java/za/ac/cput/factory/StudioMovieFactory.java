@@ -8,7 +8,6 @@ import za.ac.cput.entity.StudioMovie;
 
 import java.util.UUID;
 
-@Deprecated
 public class StudioMovieFactory {
 
     public static StudioMovie build(String studioId, String movieId){
