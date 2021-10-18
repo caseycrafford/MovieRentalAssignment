@@ -10,7 +10,7 @@ import za.ac.cput.entity.ContactType;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class ContactTypeRepository implements IContactType {
 
 
@@ -31,7 +31,7 @@ public class ContactTypeRepository implements IContactType {
 
     @Override
     public Set<ContactType> getAll() {
-        return null;
+        return contactTypeDB;
     }
 
     @Override
@@ -43,9 +43,9 @@ public class ContactTypeRepository implements IContactType {
     }
 
     @Override
-    public ContactType read(String s) {
+    public ContactType read(String contactTypeId) {
         for (ContactType c : contactTypeDB)
-            if (c.toString().equals(s)) {
+            if (c.getContactTypeId() == Integer.parseInt(contactTypeId)) {
                 return c;
             }
         return null;
@@ -53,7 +53,7 @@ public class ContactTypeRepository implements IContactType {
 
     @Override
     public ContactType update(ContactType contactType) {
-        ContactType contact = read(contactType.toString());
+        ContactType contact = read(String.valueOf(contactType.getContactTypeId()));
         if (contact != null) {
             contactTypeDB.remove(contact);
             contactTypeDB.add(contactType);
@@ -63,8 +63,8 @@ public class ContactTypeRepository implements IContactType {
     }
 
     @Override
-    public boolean delete(String s) {
-        ContactType contactDelete = read(s);
+    public boolean delete(String contactTypeId) {
+        ContactType contactDelete = read(contactTypeId);
         if (contactDelete == null)
             return false;
         contactTypeDB.remove(contactDelete);

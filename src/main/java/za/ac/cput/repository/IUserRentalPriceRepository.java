@@ -7,7 +7,7 @@ package za.ac.cput.repository;
 
 import za.ac.cput.entity.UserRentalPrice;
 import java.util.Set;
-
+@Deprecated
 public interface IUserRentalPriceRepository extends IRepository<UserRentalPrice, String> {
     public Set<UserRentalPrice> getAll();
 }

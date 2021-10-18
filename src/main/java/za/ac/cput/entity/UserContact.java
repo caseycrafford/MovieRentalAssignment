@@ -5,7 +5,11 @@ package za.ac.cput.entity;
  Author: Malcolm Camelo (217137334)
  Date: 10 June 2021
 */
+@Deprecated
 public class UserContact {
+
+    private UserContact(){}
+
     private int userId, contactTypeId;
     private String Contact;
 
@@ -13,6 +17,13 @@ public class UserContact {
         return Contact;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public int getContactId() {
+        return contactTypeId;
+    }
     private UserContact(userContactBuilder userContactBuilder) {
         this.contactTypeId = userContactBuilder.contactTypeId;
         this.userId = userContactBuilder.userId;
@@ -34,8 +45,8 @@ public class UserContact {
             return this;
         }
 
-        public userContactBuilder setContact(String contact) {
-            Contact = contact;
+        public userContactBuilder setContact(String Contact) {
+          this.Contact = Contact;
             return this;
         }
 

@@ -7,6 +7,7 @@ package za.ac.cput.entity;
  *
  */
 
+@Deprecated
 public class StudioMovie {
 
     private String studioId, movieId;

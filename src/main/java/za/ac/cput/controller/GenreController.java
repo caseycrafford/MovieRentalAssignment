@@ -1,3 +1,4 @@
+/*
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +9,13 @@ import za.ac.cput.service.GenreService;
 
 import java.util.Set;
 
+*/
 /**
  * Author: Emilio Castano
  * Student Number: 219035709
  *
- */
+ *//*
+
 @RestController
 @RequestMapping("/genre")
 
@@ -54,3 +57,4 @@ public class GenreController {
 
 
 }
+*/

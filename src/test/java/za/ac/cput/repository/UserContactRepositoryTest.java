@@ -30,7 +30,7 @@ public class UserContactRepositoryTest {
     }
     @Test
     void b_read() {
-        UserContact read = repository.read(userContact.toString());
+        UserContact read = repository.read(String.valueOf(userContact.getUserId()));
         assertNotNull(read);
         System.out.println("read: "+read);
 
@@ -46,7 +46,7 @@ public class UserContactRepositoryTest {
 
     @Test
     void d_delete() {
-        boolean success =repository.delete(userContact.toString());
+        boolean success =repository.delete(String.valueOf(userContact.getUserId()));
         assertTrue(success);
         System.out.println("deleted: "+success);
     }

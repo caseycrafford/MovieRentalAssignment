@@ -8,7 +8,7 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.Genre;
 
 import java.util.Set;
-
+@Deprecated
 public interface IGenreRepository extends IRepository<Genre, String>{
 
     public Set<Genre> getAll();

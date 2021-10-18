@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Price;
 import za.ac.cput.repository.PriceRepository;
 import java.util.Set;
-
+@Deprecated
 @Service
 public class PriceService implements IPriceService{
 

@@ -34,7 +34,7 @@ private static ContactType contactType = ContactTypeFactory.build("House", "Home
 
     @Test
     void b_read() {
-        ContactType read = repository.read(contactType.toString());
+        ContactType read = repository.read(String.valueOf(contactType.getContactTypeId()));
         assertNotNull(read);
         System.out.println("read: "+read);
 
@@ -49,7 +49,7 @@ private static ContactType contactType = ContactTypeFactory.build("House", "Home
 
     @Test
     void d_delete() {
-        boolean success =repository.delete(contactType.toString());
+        boolean success =repository.delete(String.valueOf(contactType.getContactTypeId()));
         assertTrue(success);
         System.out.println("deleted: "+success);
     }

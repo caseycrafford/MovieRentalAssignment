@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Movie;
 import za.ac.cput.repository.MovieRepository;
 import java.util.Set;
-
-@Service
+@Deprecated
 public class MovieService implements IMovieService{
 
     private static MovieService service = null;

@@ -3,7 +3,7 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.NumberOfMoviesRented;
 
 import java.util.*;
-
+@Deprecated
 public class NumberOfMoviesRentedRepository implements INumberOfMoviesRented {
         private static NumberOfMoviesRentedRepository repository = null;
         public Set<NumberOfMoviesRented> numberOfMoviesRentedDB = null;

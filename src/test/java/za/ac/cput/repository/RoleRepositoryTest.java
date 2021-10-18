@@ -1,3 +1,4 @@
+/*
 package za.ac.cput.repository;
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -64,4 +65,4 @@ class RoleRepositoryTest {
         System.out.println(repository.getAll());
 
     }
-}
+}*/

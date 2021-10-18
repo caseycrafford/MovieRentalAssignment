@@ -3,7 +3,9 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.MovieGenre;
 import za.ac.cput.entity.Studio;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /* Studio.java
@@ -11,14 +13,14 @@ import java.util.Set;
         Author: Marchello Carolus 218234457
         Date: 26 July 2021
         */
-
+@Deprecated
 public class StudioRepository implements IStudioRepository{
 
     private static StudioRepository repository = null;
-    private Set<Studio> studioDB = null;
+    private List<Studio> studioDB = null;
 
     private StudioRepository() {
-        studioDB = new HashSet<Studio>();
+        studioDB = new ArrayList<>();
 
     }
 
@@ -39,11 +41,12 @@ public class StudioRepository implements IStudioRepository{
     }
 
     @Override
-    public Studio read(String studiod) {
-        for (Studio s : studioDB)
-            if (s.getStudioId().equals(studiod)) {
+    public Studio read(String studio) {
+        for (Studio s : studioDB){
+            if (s.getStudioId().equals(studio)) {
                 return s;
             }
+        }
         return null;
 
 
@@ -71,7 +74,7 @@ public class StudioRepository implements IStudioRepository{
     }
 
     @Override
-    public Set<Studio> getAll() {
+    public List<Studio> getAll() {
         return studioDB;
     }
 

@@ -8,7 +8,7 @@ import za.ac.cput.entity.StudioMovie;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class StudioMovieRepository implements IStudioMovieRepository{
     private static StudioMovieRepository repository = null;
     private Set<StudioMovie> studioMovieDB = null;

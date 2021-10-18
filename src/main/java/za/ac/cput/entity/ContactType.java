@@ -6,12 +6,25 @@ package za.ac.cput.entity;
  Date: 10 June 2021
 */
 
+@Deprecated
 public class ContactType {
     private String name, description;
     private int contactTypeId;
 
+
+    private ContactType(){}
+
+
     public int getContactTypeId() {
         return contactTypeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     private ContactType(contactTypeBuilder contactTypeBuilder) {

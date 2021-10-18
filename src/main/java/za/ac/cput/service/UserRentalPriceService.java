@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.UserRentalPrice;
 import za.ac.cput.repository.UserRentalPriceRepository;
 import java.util.Set;
-
+@Deprecated
 @Service
 public class UserRentalPriceService implements IUserRentalPriceService {
     private static za.ac.cput.service.UserRentalPriceService service = null;

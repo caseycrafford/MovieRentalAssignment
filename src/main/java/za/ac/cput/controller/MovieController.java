@@ -1,10 +1,13 @@
+/*
 package za.ac.cput.controller;
 
+*/
 /*
     MovieController.java
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Entity and Factory
-*/
+*//*
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +16,7 @@ import za.ac.cput.factory.MovieFactory;
 import za.ac.cput.service.MovieService;
 
 import java.util.Set;
-
+@Deprecated
 @RestController
 @RequestMapping("/movie")
 public class MovieController {
@@ -45,4 +48,4 @@ public class MovieController {
     public Set <Movie> getAll(){
         return movieService.getAll();
     }
-}
+}*/
