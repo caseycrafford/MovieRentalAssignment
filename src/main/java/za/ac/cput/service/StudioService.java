@@ -1,12 +1,13 @@
 package za.ac.cput.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Studio;
 import za.ac.cput.repository.StudioRepository;
 
 import java.util.List;
-import java.util.Set;
+
 
 // Author: Marchello Carolus 218234457
 
@@ -14,38 +15,51 @@ import java.util.Set;
 public class StudioService implements IStudioService{
 
     private static StudioService service = null;
-    private StudioRepository repo = null;
 
-    private StudioService(){
-        this.repo = StudioRepository.getRepository();
-    }
+    @Autowired
+    private StudioRepository repo;
 
-    public static StudioService getService(){
-        if(service == null) {
-            service = new StudioService();
-        }
-        return service;
-    }
-
-
+    @Override
     public Studio create(Studio studio){
-        return this.repo.create(studio);
+        return this.repo.save(studio);
     }
 
-
-    public Studio read(String studioId){
-        return this.repo.read(studioId);
+    @Override
+    public Studio read(String studioId) {
+        return this.repo.findById(studioId).orElse(null);
     }
 
-    public Studio update(Studio studio){
-        return this.repo.update(studio);
+    @Override
+    public Studio update(Studio studio) {
+        if (this.repo.existsById(studio.getStudioId()))
+            return this.repo.save(studio);
+        return null;
     }
 
-    public boolean delete(String studioId){
-        return this.repo.delete(studioId);
+    @Override
+    public boolean delete(String studioId) {
+        this.repo.deleteById(studioId);
+        if(this.repo.existsById(studioId))
+            return false;
+        else
+            return true;
+
     }
 
-    public List<Studio> getAll(){
-        return this.repo.getAll();
+    @Override
+    public List<Studio> getAll() {
+        return this.repo.findAll();
+    }
+
+    public Studio getStudioId(String studioId){
+        Studio s = null;
+        List<Studio> studios = getAll();
+        for(Studio studio: studios){
+            if(studio.getStudioId().equals(studioId)){
+                s = studio;
+                break;
+            }
+        }
+        return s;
     }
 }
