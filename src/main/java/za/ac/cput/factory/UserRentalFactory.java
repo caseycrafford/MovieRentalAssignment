@@ -7,7 +7,7 @@ package za.ac.cput.factory;
 
 import za.ac.cput.entity.UserRental;
 import java.util.UUID;
-@Deprecated
+
 public class UserRentalFactory {
 
     public static UserRental build(int userId, int movieId, String rentalDate, String returnDate, String rentedBy){

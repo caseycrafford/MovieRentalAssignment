@@ -5,10 +5,15 @@ package za.ac.cput.entity;
  * Student number: 216063124
  */
 
-@Deprecated
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class UserRentalPrice {
-    private int duration;
+    @Id
     private String rentalId;
+    private int duration;
     private double amount;
 
     public UserRentalPrice(){
