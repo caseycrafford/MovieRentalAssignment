@@ -11,7 +11,7 @@ import za.ac.cput.factory.PriceFactory;
 import za.ac.cput.service.PriceService;
 
 import java.util.Set;
-@Deprecated
+
 @RestController
 @RequestMapping("/price")
 public class PriceController {

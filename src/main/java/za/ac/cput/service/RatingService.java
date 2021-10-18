@@ -1,64 +1,61 @@
 package za.ac.cput.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Rating;
 import za.ac.cput.repository.RatingRepository;
+
 import java.util.Set;
-@Deprecated
+import java.util.stream.Collectors;
+
 @Service
 public class RatingService implements IRatingService{
-
     private static RatingService service = null;
-    private RatingRepository  repo = null;
 
-    private RatingService(){
-        this.repo = RatingRepository.getRepository();
-    }
+    @Autowired
+    private RatingRepository repository;
 
-    public static RatingService getService(){
-        if(service == null){
-            service =new RatingService();
-        }
-        return service;
+    @Override
+    public Rating create (Rating rating){
+        return this.repository.save(rating);
     }
 
     @Override
-    public Rating create(Rating Rating) {
-        return this.repo.create(Rating);
+    public Rating read (String movieId){
+        return this.repository.findById(movieId).orElse(null);
     }
 
     @Override
-    public Rating read(String userId) {
-        return this.repo.read(userId);
+    public Rating update (Rating rating){
+        if(this.repository.existsById(rating.getMovieId()))
+            return this.repository.save(rating);
+        return null;
     }
 
     @Override
-    public Rating update(Rating Rating) {
-        return this.repo.update(Rating);
+    public boolean delete(String movieId){
+        this.repository.deleteById(movieId);
+        if(this.repository.existsById(movieId))
+            return false;
+        else
+            return true;
     }
 
     @Override
-    public boolean delete(String userId) {
-        return this.repo.delete(userId);
+    public Set<Rating> getAll(){
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
-    public Set<Rating> getSingleRating() {
-        Set<Rating> singleRating =null;
-        Set<Rating> RatingSet = getAll();
-
-        for (Rating Rating : RatingSet)
-        {
-            if(Rating.getMovieId().trim().toUpperCase().contains("A")){
-                singleRating.add(Rating);
+    public Rating getMovieGivenRating(double movieRating){
+        Rating r = null;
+        Set<Rating> ratings = getAll();
+        for (Rating rating : ratings){
+            if(rating.getRating()==movieRating){
+                r = rating;
+                break;
             }
         }
-        return singleRating;
-    }
-
-    @Override
-    public Set<Rating> getAll() {
-        return this.repo.getAll();
+        return r;
     }
 
 }//end of class
-

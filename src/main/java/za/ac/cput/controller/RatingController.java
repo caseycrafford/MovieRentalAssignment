@@ -12,7 +12,7 @@ import za.ac.cput.factory.RatingFactory;
 import za.ac.cput.service.RatingService;
 
 import java.util.Set;
-@Deprecated
+
 @RestController
 @RequestMapping("/rating")
 public class RatingController {

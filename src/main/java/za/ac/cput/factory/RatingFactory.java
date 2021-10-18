@@ -12,7 +12,6 @@ import za.ac.cput.entity.Rating;
 
 import java.util.UUID;
 
-@Deprecated
 public class RatingFactory {
     public static Rating build(double rating){
 

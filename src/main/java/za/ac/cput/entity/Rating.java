@@ -1,5 +1,9 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /*
     Rating.java
     Entity for Rating
@@ -7,15 +11,14 @@ package za.ac.cput.entity;
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
+@Entity
+public class Rating implements Serializable {
 
-@Deprecated
-public class Rating {
-
-    private Rating(){
+    protected Rating(){
 
     }
 
-    private String movieId;
+    @Id private String movieId;
     private double rating;
 
     private Rating(RatingBuilder RatingBuilder){

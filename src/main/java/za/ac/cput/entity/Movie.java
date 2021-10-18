@@ -9,13 +9,16 @@ package za.ac.cput.entity;
 */
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
-@Deprecated
+
+@Entity
 public class Movie implements Serializable {
-    private String movieId;
+    @Id private String movieId;
     private String title,releaseDate,genreId,directorId;
 
-    private Movie(){}
+    protected Movie(){}
 
     private Movie(MovieBuilder MovieBuilder){
         this.movieId = MovieBuilder.movieId;
