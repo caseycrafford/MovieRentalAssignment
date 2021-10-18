@@ -1,14 +1,19 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 /* Studio.java
         Entity for studio
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */
 
-@Deprecated
+
+
+@Entity
 public class Studio {
 
+    @Id
     private String studioId;
     private String studioName;
 

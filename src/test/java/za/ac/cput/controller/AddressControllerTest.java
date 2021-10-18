@@ -23,6 +23,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class AddressControllerTest {
     private static Address address = AddressFactory.build("Blenheim","Test","test","test",0111,"586");
 
+    public String SECURITY_USERNAME ="user";
+    public String SECURITY_PASSWORD ="password";
     @Autowired
     private TestRestTemplate restTemplate;
     private final String BASE_URL = "http://localhost:8080/Address";
@@ -68,7 +70,9 @@ public class AddressControllerTest {
         String url= BASE_URL +"/getall";
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null,headers);
-        ResponseEntity<String> response= restTemplate.exchange(url, HttpMethod.GET,entity,String.class);
+        ResponseEntity<String> response= restTemplate
+                .withBasicAuth(SECURITY_USERNAME , SECURITY_PASSWORD)
+                .exchange(url, HttpMethod.GET,entity,String.class);
         System.out.println("Show all: ");
         System.out.println(response);
         System.out.println(response.getBody());

@@ -1,62 +1,61 @@
 package za.ac.cput.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Movie;
 import za.ac.cput.repository.MovieRepository;
+
 import java.util.Set;
-@Deprecated
+import java.util.stream.Collectors;
+
+@Service
 public class MovieService implements IMovieService{
-
     private static MovieService service = null;
-    private MovieRepository  repo = null;
 
-    private MovieService(){
-        this.repo = MovieRepository.getRepository();
-    }
+    @Autowired
+    private MovieRepository repository;
 
-    public static MovieService getService(){
-        if(service == null){
-            service =new MovieService();
-        }
-        return service;
+    @Override
+    public Movie create (Movie movie){
+        return this.repository.save(movie);
     }
 
     @Override
-    public Movie create(Movie movie) {
-        return this.repo.create(movie);
+    public Movie read (String movieId){
+        return this.repository.findById(movieId).orElse(null);
     }
 
     @Override
-    public Movie read(String userId) {
-        return this.repo.read(userId);
+    public Movie update (Movie movie){
+        if(this.repository.existsById(movie.getMovieId()))
+            return this.repository.save(movie);
+        return null;
     }
 
     @Override
-    public Movie update(Movie movie) {
-        return this.repo.update(movie);
+    public boolean delete(String movieId){
+        this.repository.deleteById(movieId);
+        if(this.repository.existsById(movieId))
+            return false;
+        else
+            return true;
     }
 
     @Override
-    public boolean delete(String userId) {
-        return this.repo.delete(userId);
+    public Set<Movie> getAll(){
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
-    public Set<Movie> getSingleMovie() {
-        Set<Movie> singleMovie =null;
-        Set<Movie> MovieSet = getAll();
-
-        for (Movie movie : MovieSet)
-        {
-            if(movie.getMovieId().trim().toUpperCase().contains("A")){
-                singleMovie.add(movie);
+    public Movie getMovieGivenTitle(String movieTitle){
+        Movie m = null;
+        Set<Movie> movies = getAll();
+        for (Movie movie : movies){
+            if(movie.getTitle().equals(movieTitle)){
+                m = movie;
+                break;
             }
         }
-        return singleMovie;
-    }
-
-    @Override
-    public Set<Movie> getAll() {
-        return this.repo.getAll();
+        return m;
     }
 
 }//end of class

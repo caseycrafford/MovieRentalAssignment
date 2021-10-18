@@ -6,62 +6,61 @@ package za.ac.cput.service;
  Date: 22 August 2021
 */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.ContactType;
 import za.ac.cput.repository.ContactTypeRepository;
+
+import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+
 @Service
 public class ContactTypeService implements IContactTypeService {
 
-    private static ContactTypeService service = null;
-    private ContactTypeRepository  repo = null;
+    private static ContactTypeService service =null;
 
-    private ContactTypeService(){
-        this.repo = ContactTypeRepository.getRepository();
-    }
+    @Autowired
+    private ContactTypeRepository repo;
 
-    public static ContactTypeService getService(){
-        if(service == null){
-            service =new ContactTypeService();
-        }
-        return service;
+    @Override
+    public ContactType create(ContactType contactType){return this.repo.save(contactType);}
+
+    @Override
+    public ContactType read(String contactTypeId){return this.repo.findById(contactTypeId).orElse(null);}
+
+    @Override
+    public ContactType update(ContactType contactType){
+        if(this.repo.existsById(contactType.getContactTypeId()))
+            return this.repo.save(contactType);
+        return null;
     }
 
     @Override
-    public ContactType create(ContactType contactType) {
-        return this.repo.create(contactType);
-    }
-
-    @Override
-    public ContactType read(String contactTypeId) {
-        return this.repo.read(contactTypeId);
-    }
-
-    @Override
-    public ContactType update(ContactType contactType) {
-        return this.repo.update(contactType);
-    }
-
-    @Override
-    public boolean delete(String contactTypeId) {
-        return this.repo.delete(contactTypeId);
-    }
-
-    public Set<ContactType> getSingleContactType() {
-        Set<ContactType> SingleContactType =null;
-        Set<ContactType> ContactTypeSet = getAll();
-
-        for (ContactType contacttype : ContactTypeSet)
-        {
-            if(contacttype.toString().trim().toUpperCase().contains("A")){
-                SingleContactType.add(contacttype);
-            }
-        }
-        return SingleContactType;
+    public boolean delete(String userId){
+        this.repo.deleteById(userId);
+        if(this.repo.existsById(userId))
+            return false;
+        else
+            return true;
     }
 
     @Override
     public Set<ContactType> getAll() {
-        return this.repo.getAll();
+        return this.repo.findAll().stream().collect(Collectors.toSet());
     }
+
+    public Set<ContactType> getAllAddressStartWithA(){
+        Set<ContactType> AddressWithA = new HashSet<>();
+        Set<ContactType> contactTypes = getAll();
+
+        for (ContactType contactType : contactTypes){
+            if (contactType.toString().trim().toLowerCase().startsWith("a")){
+                AddressWithA.add(contactType);
+            }
+        }
+        return AddressWithA;
+    }
+
+
 }

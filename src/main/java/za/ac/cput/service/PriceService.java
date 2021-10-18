@@ -1,63 +1,61 @@
 package za.ac.cput.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Price;
 import za.ac.cput.repository.PriceRepository;
+
 import java.util.Set;
-@Deprecated
+import java.util.stream.Collectors;
+
 @Service
 public class PriceService implements IPriceService{
-
     private static PriceService service = null;
-    private PriceRepository  repo = null;
 
-    private PriceService(){
-        this.repo = PriceRepository.getRepository();
-    }
+    @Autowired
+    private PriceRepository repository;
 
-    public static PriceService getService(){
-        if(service == null){
-            service =new PriceService();
-        }
-        return service;
+    @Override
+    public Price create (Price price){
+        return this.repository.save(price);
     }
 
     @Override
-    public Price create(Price price) {
-        return this.repo.create(price);
+    public Price read (String movieId){
+        return this.repository.findById(movieId).orElse(null);
     }
 
     @Override
-    public Price read(String userId) {
-        return this.repo.read(userId);
+    public Price update (Price price){
+        if(this.repository.existsById(price.getMovieId()))
+            return this.repository.save(price);
+        return null;
     }
 
     @Override
-    public Price update(Price price) {
-        return this.repo.update(price);
+    public boolean delete(String movieId){
+        this.repository.deleteById(movieId);
+        if(this.repository.existsById(movieId))
+            return false;
+        else
+            return true;
     }
 
     @Override
-    public boolean delete(String userId) {
-        return this.repo.delete(userId);
+    public Set<Price> getAll(){
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
-    public Set<Price> getSinglePrice() {
-        Set<Price> singlePrice =null;
-        Set<Price> PriceSet = getAll();
-
-        for (Price price : PriceSet)
-        {
-            if(price.getMovieId().trim().toUpperCase().contains("A")){
-                singlePrice.add(price);
+    public Price getPriceGivenTitle(double amount){
+        Price p = null;
+        Set<Price> prices = getAll();
+        for (Price price : prices){
+            if(price.getAmount()==amount){
+                p = price;
+                break;
             }
         }
-        return singlePrice;
-    }
-
-    @Override
-    public Set<Price> getAll() {
-        return this.repo.getAll();
+        return p;
     }
 
 }//end of class

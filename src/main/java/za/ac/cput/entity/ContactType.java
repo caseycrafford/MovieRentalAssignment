@@ -6,16 +6,21 @@ package za.ac.cput.entity;
  Date: 10 June 2021
 */
 
-@Deprecated
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class ContactType {
+    @Id
+    private String contactTypeId;
     private String name, description;
-    private int contactTypeId;
 
 
-    private ContactType(){}
+
+    public ContactType(){}
 
 
-    public int getContactTypeId() {
+    public String getContactTypeId() {
         return contactTypeId;
     }
 
@@ -36,7 +41,7 @@ public class ContactType {
 
     public static class contactTypeBuilder {
         private String name, description;
-        private int contactTypeId;
+        private String contactTypeId;
 
         public contactTypeBuilder setName(String name) {
             this.name = name;
@@ -48,7 +53,7 @@ public class ContactType {
             return this;
         }
 
-        public contactTypeBuilder setContactTypeId(int contactTypeId) {
+        public contactTypeBuilder setContactTypeId(String contactTypeId) {
             this.contactTypeId = contactTypeId;
             return this;
         }

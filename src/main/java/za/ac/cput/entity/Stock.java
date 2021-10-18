@@ -1,5 +1,9 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /*
     Stock.java
     Entity for the Stock
@@ -7,14 +11,13 @@ package za.ac.cput.entity;
     Assignment 3 – Domain Driven Design: Entity and Factory
     11 June 2021
 */
+@Entity
+public class Stock implements Serializable {
 
-@Deprecated
-public class Stock {
-
-    private String movieId;
+    @Id private String movieId;
     private int quantity;
 
-    private Stock(){
+    protected Stock(){
 
     }
 

@@ -15,7 +15,7 @@ import java.util.List;
         Author: Marchello Carolus 218234457
 
         */
-
+@Deprecated
 @RestController
 @RequestMapping("/studio")
 public class StudioController {
@@ -48,7 +48,7 @@ public class StudioController {
 
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getAll")
     public List<Studio> getAll(){
         return studioService.getAll();
     }
