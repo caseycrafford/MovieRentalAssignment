@@ -1,3 +1,4 @@
+/*
 package za.ac.cput.service;
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -6,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.userRole;
 import za.ac.cput.factory.UserRoleFactory;
-import za.ac.cput.repository.UserRoleRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -61,4 +61,4 @@ class UserRoleServiceTest {
         System.out.println(service.getAll());
 
     }
-}
+}*/

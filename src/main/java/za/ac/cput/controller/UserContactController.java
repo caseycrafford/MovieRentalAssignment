@@ -13,7 +13,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/UserContact")
-
+@Deprecated
 public class UserContactController {
     @Autowired
     private UserContactService userContactService;

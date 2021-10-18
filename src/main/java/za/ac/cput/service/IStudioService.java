@@ -10,7 +10,7 @@ import java.util.Set;
         Author: Marchello Carolus 218234457
 
         */
-
+@Deprecated
 public interface IStudioService extends IService<Studio, String>{
     public List<Studio> getAll();
 }

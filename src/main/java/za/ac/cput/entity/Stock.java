@@ -8,6 +8,7 @@ package za.ac.cput.entity;
     11 June 2021
 */
 
+@Deprecated
 public class Stock {
 
     private String movieId;

@@ -8,7 +8,7 @@ import za.ac.cput.entity.Genre;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class GenreRepository implements IGenreRepository {
     private static GenreRepository repository = null;
     private Set<Genre> genreDB = null;

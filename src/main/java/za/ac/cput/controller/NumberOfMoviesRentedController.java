@@ -1,3 +1,4 @@
+/*
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +10,14 @@ import za.ac.cput.service.NumberOfMoviesRentedService;
 
 import java.util.Set;
 
+*/
 /**
  * Author: Lance Kruger
  * Student Number: 218159501
  * Program: Number of Movies Rented out Controller
  *lk
- */
+ *//*
+
 @RestController
 @RequestMapping("/number of movies rented")
 public class NumberOfMoviesRentedController {
@@ -48,3 +51,4 @@ public class NumberOfMoviesRentedController {
         return  numberOfMoviesRentedService.getAll();
     }
 }
+*/

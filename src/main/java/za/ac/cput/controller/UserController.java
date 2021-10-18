@@ -45,6 +45,6 @@ public class UserController {
 
     @GetMapping("/getSingleUser")
     public Set<User> getSingleUser(){
-        return userService.getSingleUser();
+        return userService.getAllUsersStartWithA();
     }
 }

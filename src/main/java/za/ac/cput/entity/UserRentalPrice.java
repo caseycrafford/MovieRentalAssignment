@@ -5,6 +5,7 @@ package za.ac.cput.entity;
  * Student number: 216063124
  */
 
+@Deprecated
 public class UserRentalPrice {
     private int duration;
     private String rentalId;

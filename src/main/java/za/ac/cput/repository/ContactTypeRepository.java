@@ -10,7 +10,7 @@ import za.ac.cput.entity.ContactType;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class ContactTypeRepository implements IContactType {
 
 

@@ -6,7 +6,7 @@ package za.ac.cput.entity;
  * Program: Movies Rented out of builder pattern
  *
  */
-
+@Deprecated
 public class MovieRentedOut {
     private static String movieID;
     private int quantity;

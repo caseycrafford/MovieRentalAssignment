@@ -1,11 +1,14 @@
+/*
 package za.ac.cput.repository;
 
+*/
 /*
     StockRepositoryTest.java
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Repository
     26 July 2021
-*/
+*//*
+
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -54,4 +57,4 @@ class StockRepositoryTest {
         assertTrue(success);
         System.out.println("Delete status: "+success);
     }
-}
+}*/

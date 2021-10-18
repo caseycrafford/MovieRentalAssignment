@@ -5,6 +5,7 @@ package za.ac.cput.entity;
  Author: Malcolm Camelo (217137334)
  Date: 10 June 2021
 */
+@Deprecated
 public class UserContact {
 
     private UserContact(){}

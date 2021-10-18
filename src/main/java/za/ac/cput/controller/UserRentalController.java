@@ -12,7 +12,7 @@ import za.ac.cput.factory.UserRentalFactory;
 import za.ac.cput.service.UserRentalService;
 
 import java.util.Set;
-
+@Deprecated
 @RestController
 @RequestMapping("/UserRental")
 public class UserRentalController {

@@ -7,7 +7,7 @@ import za.ac.cput.entity.Studio;
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */
-
+@Deprecated
 public class StudioFactory {
 
     public static Studio build(String studioId, String studioName){

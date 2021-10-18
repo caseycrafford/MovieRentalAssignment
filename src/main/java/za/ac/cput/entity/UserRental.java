@@ -4,7 +4,7 @@ package za.ac.cput.entity;
  * Author: Grant Constant
  * Student number: 216063124
  */
-
+@Deprecated
 public class UserRental {
     private int userId, movieId;
     private String rentedBy, rentalDate, returnDate, rentalId;

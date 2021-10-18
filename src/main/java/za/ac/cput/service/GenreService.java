@@ -1,16 +1,11 @@
+/*
 package za.ac.cput.service;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Genre;
 import za.ac.cput.repository.GenreRepository;
 
-import java.util.HashSet;
 import java.util.Set;
-/**
- * Author: Emilio Castano
- * Student Number: 219035709
- *
- */
-@Service
+@Deprecated
 public class GenreService implements IGenreService{
     private static GenreService service = null;
     private GenreRepository repository = null;
@@ -63,5 +58,5 @@ public class GenreService implements IGenreService{
         return this.repository.getAll();
     }
 
-
 }
+*/

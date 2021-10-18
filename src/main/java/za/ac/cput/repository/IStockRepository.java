@@ -7,10 +7,12 @@ package za.ac.cput.repository;
     26 July 2021
 */
 
+
 import za.ac.cput.entity.Stock;
 
 import java.util.Set;
 
+@Deprecated
 public interface IStockRepository extends IRepository<Stock, String> {
     public Set<Stock> getAll();
 }

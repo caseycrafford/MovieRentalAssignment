@@ -10,7 +10,7 @@ import java.util.Set;
         Author: Marchello Carolus 218234457
         Date: 26 July 2021
         */
-
+@Deprecated
 public interface IStudioRepository extends IRepository<Studio, String> {
     public List<Studio> getAll();
 }

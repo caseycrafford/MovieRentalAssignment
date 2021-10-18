@@ -11,7 +11,7 @@ import za.ac.cput.entity.Price;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class PriceRepository implements IPriceRepository{
     private static PriceRepository repository = null;
     private Set<Price> priceDB = null;
