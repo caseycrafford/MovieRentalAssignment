@@ -1,4 +1,4 @@
-/*
+package za.ac.cput.controller;/*
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +9,20 @@ import za.ac.cput.service.StudioMovieServices;
 
 import java.util.Set;
 */
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import za.ac.cput.entity.StudioMovie;
+import za.ac.cput.factory.StudioMovieFactory;
+import za.ac.cput.service.StudioMovieServices;
+
+import java.util.Set;
+
 /**
  * Author: Emilio Castano
  * Student Number: 219035709
  *
- *//*
+ */
 
 @RestController
 @RequestMapping("/studioMovie")
@@ -48,10 +57,5 @@ public class StudioMovieController {
         return studioMovieServices.getAll();
     }
 
-    @GetMapping("/getSingleStudioMovie")
-    public Set<StudioMovie> getSingleStudioMovie(){
-        return studioMovieServices.getSingleStudioMovie();
-    }
-
 }
-*/
+
