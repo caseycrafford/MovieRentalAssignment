@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/moviegenre")
+@RequestMapping("/movieGenre")
 public class MovieGenreController {
 
     @Autowired
@@ -52,7 +52,7 @@ public class MovieGenreController {
 
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getAll")
     public List<MovieGenre> getAll(){
         return movieGenreService.getAll();
     }

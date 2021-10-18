@@ -48,7 +48,7 @@ public class StudioController {
 
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getAll")
     public List<Studio> getAll(){
         return studioService.getAll();
     }
