@@ -1,11 +1,14 @@
+/*
 package za.ac.cput.repository;
 
+*/
 /*
     StockRepository.java
     @author:219169640 - Casey Michael Keven Crafford
     Assignment 3 – Domain Driven Design: Repository
     26 July 2021
-*/
+*//*
+
 
 import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.Stock;
@@ -13,7 +16,10 @@ import za.ac.cput.entity.Stock;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Repository
+
+@Deprecated
 public class StockRepository implements IStockRepository{
     private static StockRepository repository = null;
     private Set<Stock> stockDB = null;
@@ -72,3 +78,4 @@ public class StockRepository implements IStockRepository{
     }
 }
 
+*/

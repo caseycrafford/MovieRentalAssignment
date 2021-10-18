@@ -10,7 +10,7 @@ package za.ac.cput.factory;
 
 import za.ac.cput.entity.Stock;
 import java.util.UUID;
-
+@Deprecated
 public class StockFactory {
 
     public static Stock build(int quantity){

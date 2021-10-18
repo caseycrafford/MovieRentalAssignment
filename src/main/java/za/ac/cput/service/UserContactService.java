@@ -10,7 +10,7 @@ import za.ac.cput.entity.UserContact;
 import za.ac.cput.repository.UserContactRepository;
 
 import java.util.Set;
-
+@Deprecated
 public class UserContactService implements IUserContactService{
     private static UserContactService service = null;
     private UserContactRepository repo = null;

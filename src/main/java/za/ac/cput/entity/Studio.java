@@ -6,6 +6,7 @@ package za.ac.cput.entity;
         Date: 11 June 2021
         */
 
+@Deprecated
 public class Studio {
 
     private String studioId, studioName;

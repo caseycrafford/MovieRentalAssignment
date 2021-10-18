@@ -1,16 +1,12 @@
 package za.ac.cput.service;
-import org.springframework.stereotype.Service;
+
+
 import za.ac.cput.entity.StudioMovie;
 import za.ac.cput.repository.StudioMovieRepository;
 
 import java.util.HashSet;
 import java.util.Set;
-/**
- * Author: Emilio Castano
- * Student Number: 219035709
- *
- */
-@Service
+@Deprecated
 public class StudioMovieServices implements IStudioMovieService{
 
     private static StudioMovieServices service = null;

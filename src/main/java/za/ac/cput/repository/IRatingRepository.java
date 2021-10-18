@@ -10,7 +10,7 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.Rating;
 
 import java.util.Set;
-
+@Deprecated
 public interface IRatingRepository extends IRepository<Rating, String> {
     public Set<Rating> getAll();
 }

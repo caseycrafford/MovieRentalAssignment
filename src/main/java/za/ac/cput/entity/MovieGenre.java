@@ -5,7 +5,7 @@ package za.ac.cput.entity;
         Author: Marchello Carolus 218234457
         Date: 11 June 2021
         */
-
+@Deprecated
 public class MovieGenre {
 
     private String genreId, movieId;

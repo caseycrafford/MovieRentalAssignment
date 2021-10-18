@@ -9,7 +9,7 @@ package za.ac.cput.service;
 import za.ac.cput.entity.ContactType;
 import za.ac.cput.repository.ContactTypeRepository;
 import java.util.Set;
-
+@Deprecated
 public class ContactTypeService implements IContactTypeService {
 
     private static ContactTypeService service = null;

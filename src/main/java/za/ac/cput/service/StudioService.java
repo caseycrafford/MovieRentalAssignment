@@ -6,7 +6,7 @@ import za.ac.cput.repository.StudioRepository;
 import java.util.Set;
 
 // Author: Marchello Carolus 218234457
-
+@Deprecated
 public class StudioService {
 
     private static StudioService service = null;

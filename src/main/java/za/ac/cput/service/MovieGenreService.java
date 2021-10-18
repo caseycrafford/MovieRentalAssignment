@@ -7,6 +7,7 @@ import java.util.Set;
 /*  MovieGenreService.java
     Author: Marchello Carolus 218234457
 */
+@Deprecated
 public class MovieGenreService {
     private static MovieGenreService service = null;
     private MovieGenreRepository repo = null;

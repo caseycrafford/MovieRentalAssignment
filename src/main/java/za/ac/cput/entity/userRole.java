@@ -1,16 +1,22 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Author: Muhammad Yaasin Cole
  * Student Number: 218340869
  *
  */
+@Entity
 public class userRole {
 
-    private int roleId;
+    @Id
     private String userId;
+    private int roleId;
 
-    private userRole()
+
+    public userRole()
     {}
     public userRole(userRoleBuilder userRoleBuilder) {
 

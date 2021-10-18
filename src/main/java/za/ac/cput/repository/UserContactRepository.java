@@ -7,7 +7,7 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.UserContact;
 import java.util.HashSet;
 import java.util.Set;
-
+@Deprecated
 public class UserContactRepository implements IUserContact {
 
     private static UserContactRepository repository = null;

@@ -11,7 +11,7 @@ package za.ac.cput.factory;
 import za.ac.cput.entity.Price;
 
 import java.util.UUID;
-
+@Deprecated
 public class PriceFactory {
 
     public static Price build(float price){

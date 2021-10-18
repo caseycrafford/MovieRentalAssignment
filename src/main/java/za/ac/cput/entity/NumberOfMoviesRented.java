@@ -6,6 +6,7 @@ package za.ac.cput.entity;
  *
  */
 
+@Deprecated
 public class NumberOfMoviesRented {
     private String userID;
     private int rentalID;

@@ -8,7 +8,7 @@ package za.ac.cput.service;
 import za.ac.cput.entity.UserRental;
 
 import java.util.Set;
-
+@Deprecated
     public interface IUserRentalService extends IService<UserRental, String>{
         public Set<UserRental> getAll();
     }

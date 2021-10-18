@@ -8,8 +8,9 @@ package za.ac.cput.entity;
     11 June 2021
 */
 
-import java.io.Serializable;
 
+import java.io.Serializable;
+@Deprecated
 public class Movie implements Serializable {
     private String movieId;
     private String title,releaseDate,genreId,directorId;

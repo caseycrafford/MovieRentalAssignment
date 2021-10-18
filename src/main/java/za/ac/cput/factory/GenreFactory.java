@@ -8,6 +8,7 @@ import za.ac.cput.entity.Genre;
 
 import java.util.UUID;
 
+@Deprecated
 public class GenreFactory {
 
     public static Genre build(String genreId, String genreName, String description){

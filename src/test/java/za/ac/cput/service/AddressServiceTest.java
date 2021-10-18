@@ -1,12 +1,11 @@
+/*
 package za.ac.cput.service;
 
 import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.Address;
 import za.ac.cput.factory.AddressFactory;
-import za.ac.cput.repository.AddressRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -60,4 +59,4 @@ class AddressServiceTest {
         System.out.println(service.getAll());
 
     }
-}
+}*/

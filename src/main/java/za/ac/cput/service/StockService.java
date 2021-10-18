@@ -1,10 +1,11 @@
+/*
 package za.ac.cput.service;
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Stock;
 import za.ac.cput.repository.StockRepository;
 import java.util.Set;
-
+@Deprecated
 @Service
 public class StockService implements IStockService{
 
@@ -60,4 +61,4 @@ public class StockService implements IStockService{
         return this.repo.getAll();
     }
 
-}//end of class
+}//end of class*/

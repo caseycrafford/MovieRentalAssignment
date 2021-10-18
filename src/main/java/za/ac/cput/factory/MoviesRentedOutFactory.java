@@ -5,6 +5,7 @@ import java.util.UUID;
 import static javax.swing.text.html.parser.DTDConstants.ID;
 
 
+@Deprecated
 public class MoviesRentedOutFactory {
     public static MovieRentedOut build(String movieID, int quantity){
 
