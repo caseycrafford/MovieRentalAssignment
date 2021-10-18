@@ -8,7 +8,7 @@ package za.ac.cput.entity;
  */
 
 public class MovieRentedOut {
-    private String movieID;
+    private static String movieID;
     private int quantity;
 
     private MovieRentedOut(MovieRentedOutBuilder MovieRentedOutBuilder) {
@@ -16,7 +16,7 @@ public class MovieRentedOut {
         this.quantity = MovieRentedOutBuilder.quantity;
     }
 
-    public String getMovieID() {
+    public static String getMovieID() {
         return movieID;
     }
 
