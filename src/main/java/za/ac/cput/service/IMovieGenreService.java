@@ -1,7 +1,8 @@
 package za.ac.cput.service;
 
 import za.ac.cput.entity.MovieGenre;
-
+import za.ac.cput.service.IService;
+import java.util.List;
 import java.util.Set;
 
 /*
@@ -9,7 +10,7 @@ import java.util.Set;
         Author: Marchello Carolus 218234457
 
         */
-@Deprecated
-public interface IMovieGenreService extends IService<MovieGenre, String>{
-    public Set<MovieGenre> getAll();
+
+public interface IMovieGenreService extends IService <MovieGenre, String>{
+    public List<MovieGenre> getAll();
 }

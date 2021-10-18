@@ -9,7 +9,13 @@ package za.ac.cput.entity;
 @Deprecated
 public class Studio {
 
-    private String studioId, studioName;
+    private String studioId;
+    private String studioName;
+
+
+    private Studio() {
+
+    }
 
     private Studio(Builder builder) {
         this.studioId = builder.studioId;
@@ -24,6 +30,8 @@ public class Studio {
     public String getStudioName() {
         return studioName;
     }
+
+
 
     public static class Builder{
 
@@ -40,6 +48,7 @@ public class Studio {
 
             return this;
         }
+
 
         public Studio build(){
 

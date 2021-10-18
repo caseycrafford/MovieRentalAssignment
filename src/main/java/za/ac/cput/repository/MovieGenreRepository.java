@@ -2,7 +2,9 @@ package za.ac.cput.repository;
 
 import za.ac.cput.entity.MovieGenre;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /* Studio.java
@@ -14,10 +16,10 @@ import java.util.Set;
 public class MovieGenreRepository implements IMovieGenreRepository{
 
     private static MovieGenreRepository repo = null;
-    private Set<MovieGenre> movieGenreDB = null;
+    private List<MovieGenre> movieGenreDB = null;
 
     private MovieGenreRepository() {
-        movieGenreDB = new HashSet<MovieGenre>();
+        movieGenreDB = new ArrayList<>();
     }
 
     public static MovieGenreRepository getRepository(){
@@ -39,7 +41,7 @@ public class MovieGenreRepository implements IMovieGenreRepository{
     @Override
     public MovieGenre read(String genreId) {
         for (MovieGenre m : movieGenreDB)
-            if (m.getGenreId().equals(genreId)) {
+            if (m.getGenreId() == genreId) {
                 return m;
             }
         return null;
@@ -70,7 +72,7 @@ public class MovieGenreRepository implements IMovieGenreRepository{
 
 
     @Override
-    public Set<MovieGenre> getAll() {
+    public List<MovieGenre> getAll() {
         return movieGenreDB;
     }
 }

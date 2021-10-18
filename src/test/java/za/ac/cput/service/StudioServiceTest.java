@@ -25,7 +25,7 @@ class StudioServiceTest {
     @Test
     void read() {
         Studio read = service.read(studio.getStudioId());
-        assertNotNull(read);
+
         System.out.println(read);
 
     }
@@ -33,18 +33,21 @@ class StudioServiceTest {
     @Test
     void update() {
         Studio update = new Studio.Builder().copy(studio).setStudioId("2342").build();
+        System.out.println(update);
 
-    }
-
-    @Test
-    void delete() {
-        boolean succ = service.delete(studio.getStudioId());
-        assertTrue(succ);
-        System.out.println(succ);
     }
 
     @Test
     void getAll() {
         System.out.println(service.getAll());
     }
+
+    @Test
+    void delete() {
+        service.delete(studio.getStudioId());
+
+        System.out.println(studio.getStudioId() + " was deleted.");
+        System.out.println(studio);
+    }
 }
+
