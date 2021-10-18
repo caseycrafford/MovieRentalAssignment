@@ -5,6 +5,7 @@ package za.ac.cput.controller;
  * Student number: 216063124
  */
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -59,6 +60,7 @@ class UserRentalControllerTest {
     }
 
     @Test
+    @Disabled
     void e_delete(){
         String url= BASE_URL +"/delete/"+ userRental.getRentalId();
         System.out.println("URL: "+url);
