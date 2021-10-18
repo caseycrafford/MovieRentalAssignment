@@ -2,6 +2,7 @@ package za.ac.cput.repository;
 
 import za.ac.cput.entity.Studio;
 
+import java.util.List;
 import java.util.Set;
 
 /*
@@ -11,5 +12,5 @@ import java.util.Set;
         */
 
 public interface IStudioRepository extends IRepository<Studio, String> {
-    public Set<Studio> getAll();
+    public List<Studio> getAll();
 }
