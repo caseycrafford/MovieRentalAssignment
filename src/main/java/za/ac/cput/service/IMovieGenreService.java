@@ -1,3 +1,4 @@
+
 package za.ac.cput.service;
 
 import za.ac.cput.entity.MovieGenre;
@@ -14,3 +15,4 @@ import java.util.List;
 public interface IMovieGenreService extends IService <MovieGenre, String>{
     public List<MovieGenre> getAll();
 }
+

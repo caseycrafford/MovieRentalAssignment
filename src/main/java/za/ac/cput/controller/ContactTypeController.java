@@ -17,7 +17,7 @@ import za.ac.cput.service.ContactTypeService;
 import java.util.Set;
 @RestController
 @RequestMapping("/contactType")
-@Deprecated
+
 public class ContactTypeController {
 
     @Autowired
