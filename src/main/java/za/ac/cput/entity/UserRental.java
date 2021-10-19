@@ -1,15 +1,20 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /*
  * Author: Grant Constant
  * Student number: 216063124
  */
-@Deprecated
+@Entity
 public class UserRental {
+    @Id
+    private String rentalId;
     private int userId, movieId;
-    private String rentedBy, rentalDate, returnDate, rentalId;
+    private String rentedBy, rentalDate, returnDate;
 
-    private UserRental(){
+    public UserRental(){
     }
 
     public UserRental(UserRentalBuilder userRentalBuilder){

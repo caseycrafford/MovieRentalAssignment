@@ -8,15 +8,21 @@ package za.ac.cput.service;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.UserRental;
 import za.ac.cput.factory.UserRentalFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 class UserRentalServiceTest {
-    private static UserRentalService service = UserRentalService.getService();
-    private static UserRental userRental = UserRentalFactory.build(19, 32, "12 April 2019", "20 April 2019", "Emilio");
+
+    @Autowired
+    private UserRentalService service;
+
+    private static UserRental userRental = UserRentalFactory.build(19, 32, "12 April 2019", "20 April 2019", "Malcolm");
 
     @Test
     void a_create() {
