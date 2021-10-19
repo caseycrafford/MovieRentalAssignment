@@ -16,7 +16,7 @@ public class UserController {
 
     @PostMapping("/create")
     public User create (@RequestBody User user) {
-        User newUser = UserFactory.build(user.getUserId(),user.getAddressId(),user.getIdNumber(),user.getFirstName(),user.getLastName());
+        User newUser = UserFactory.build(user.getUserId(),user.getAddress(),user.getIdNumber(),user.getFirstName(),user.getLastName(),user.getEmail(),user.getCellNumber());
         return userService.create(newUser);
 
     }
