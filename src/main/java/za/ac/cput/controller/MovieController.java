@@ -22,7 +22,7 @@ public class MovieController {
 
     @PostMapping("/create")
     public Movie create(@RequestBody Movie movie) {
-        Movie newMovie = MovieFactory.build(movie.getTitle(), movie.getReleaseDate(), movie.getGenreId(),movie.getDirectorId());
+        Movie newMovie = MovieFactory.build(movie.getTitle(), movie.getReleaseDate(), movie.getGenres(),movie.getStudio(),movie.getMainActors(), movie.getPrice(), movie.getStock());
         return movieService.create(newMovie);
     }
 

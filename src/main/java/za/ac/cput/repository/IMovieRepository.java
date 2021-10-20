@@ -9,7 +9,7 @@ package za.ac.cput.repository;
 
 import za.ac.cput.entity.Movie;
 import java.util.Set;
-@Deprecated
+
 public interface IMovieRepository extends IRepository<Movie, String> {
     public Set <Movie> getAll();
 }

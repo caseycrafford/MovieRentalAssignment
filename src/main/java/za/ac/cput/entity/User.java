@@ -14,20 +14,19 @@ public class User {
     @Id
     private String userId;
 
-    private int addressId , idNumber;
-    private String firstName,lastName;
+    private String firstName,lastName, address, idNumber, email, cellNumber;
 
     public User() {}
 
     private User(userBuilder userBuilder)
     {
         this.userId = userBuilder.userId;
-        this.addressId = userBuilder.addressId;
+        this.address = userBuilder.address;
         this.idNumber = userBuilder.idNumber;
         this.firstName = userBuilder.firstName;
         this.lastName = userBuilder.lastName;
-
-
+        this.email = userBuilder.email;
+        this.cellNumber = userBuilder.cellNumber;
     }
 
     public String getFirstName() {
@@ -38,25 +37,29 @@ public class User {
         return lastName;
     }
 
-
     public String getUserId() {
         return userId;
     }
 
-    public int getAddressId() {
-        return addressId;
+    public String getAddress() {
+        return address;
     }
 
-    public int getIdNumber() {
+    public String getIdNumber() {
         return idNumber;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public String getCellNumber() {
+        return cellNumber;
+    }
 
     public static class userBuilder
     {
-        private int addressId , idNumber;
-        private String firstName,lastName,userId;
+        private String firstName,lastName,userId, address, idNumber,email,cellNumber;
 
 
         public userBuilder setFirstName(String firstName) {
@@ -74,27 +77,35 @@ public class User {
             return this;
         }
 
-        public userBuilder setAddressId(int addressId) {
-            this.addressId = addressId;
+        public userBuilder setAddress(String address) {
+            this.address = address;
             return this;
         }
 
-        public userBuilder setIdNumber(int idNumber) {
+        public userBuilder setIdNumber(String idNumber) {
             this.idNumber = idNumber;
             return this;
         }
 
+        public userBuilder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public userBuilder setCellNumber(String cellNumber) {
+            this.cellNumber = cellNumber;
+            return this;
+        }
 
         public userBuilder copy(User user)
         {
             this.userId = user.userId;
-            this.addressId = user.addressId;
+            this.address = user.address;
             this.idNumber = user.idNumber;
             this.firstName = user.firstName;
             this.lastName = user.lastName;
 
             return this;
-
 
         }
 
@@ -107,14 +118,13 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
-                ", addressId=" + addressId +
-                ", idNumber=" + idNumber +
+                "userId='" + userId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", idNumber='" + idNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", cellNumber='" + cellNumber + '\'' +
                 '}';
     }
-
-
-
 }

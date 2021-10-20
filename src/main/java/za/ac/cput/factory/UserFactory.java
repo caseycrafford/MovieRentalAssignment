@@ -10,9 +10,9 @@ import java.util.UUID;
 
 public class UserFactory {
 
-    public static User build(String userId , int addressId , int idNumber,String firstName , String lastName)
+    public static User build(String userId , String address , String idNumber,String firstName , String lastName, String email, String cellNumber)
     {
-        if (firstName.isEmpty() || lastName.isEmpty() || userId.isEmpty() || addressId <= 0 || idNumber <=0  )
+        if (firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || idNumber.isEmpty() ||email.isEmpty() || cellNumber.isEmpty() )
             return null;
 
         String userID = UUID.randomUUID().toString();
@@ -21,7 +21,10 @@ public class UserFactory {
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserId(userID)
-                .setAddressId(addressId)
-                .setIdNumber(idNumber).build();
+                .setAddress(address)
+                .setIdNumber(idNumber)
+                .setEmail(email)
+                .setCellNumber(cellNumber)
+                .build();
     }
 }

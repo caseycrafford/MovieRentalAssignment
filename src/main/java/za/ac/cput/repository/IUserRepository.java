@@ -8,7 +8,7 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.User;
 
 import java.util.Set;
-@Deprecated
+
 public interface IUserRepository extends IRepository<User, String>
 {
 

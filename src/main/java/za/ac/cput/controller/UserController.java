@@ -9,14 +9,14 @@ import za.ac.cput.service.UserService;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
 
     @PostMapping("/create")
     public User create (@RequestBody User user) {
-        User newUser = UserFactory.build(user.getUserId(),user.getAddressId(),user.getIdNumber(),user.getFirstName(),user.getLastName());
+        User newUser = UserFactory.build(user.getUserId(),user.getAddress(),user.getIdNumber(),user.getFirstName(),user.getLastName(),user.getEmail(),user.getCellNumber());
         return userService.create(newUser);
 
     }
