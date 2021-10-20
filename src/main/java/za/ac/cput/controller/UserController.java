@@ -9,7 +9,7 @@ import za.ac.cput.service.UserService;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
