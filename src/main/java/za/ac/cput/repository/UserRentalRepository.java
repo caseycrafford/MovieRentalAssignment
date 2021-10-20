@@ -8,7 +8,7 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.UserRental;
 
 import java.util.*;
-@Deprecated
+
 public class UserRentalRepository implements IUserRentalRepository{
     private static UserRentalRepository repository = null;
     private Set<UserRental> userRentalDB = null;

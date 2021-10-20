@@ -14,7 +14,7 @@
 //class MovieServiceTest {
 //
 //    private static IMovieService service = MovieService.getService();
-//    private static Movie movie= MovieFactory.build("Title","26/07/2021","76","567");
+//    private static Movie movie= MovieFactory.build("Title","26/07/2021","76","567","action","studio","actors",20,1);
 //
 //    @Test
 //    void a_create(){

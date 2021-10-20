@@ -22,7 +22,7 @@ class UserRentalServiceTest {
     @Autowired
     private UserRentalService service;
 
-    private static UserRental userRental = UserRentalFactory.build(19, 32, "12 April 2019", "20 April 2019", "Malcolm");
+    private static UserRental userRental = UserRentalFactory.build("9", "32");
 
     @Test
     void a_create() {
@@ -40,7 +40,7 @@ class UserRentalServiceTest {
 
     @Test
     void c_update() {
-        UserRental updated = new UserRental.UserRentalBuilder().copy(userRental).setUserId(11).build();
+        UserRental updated = new UserRental.UserRentalBuilder().copy(userRental).setUserId("11").build();
         assertNotNull(service.update(updated));
         System.out.println("Update: " + updated);
     }

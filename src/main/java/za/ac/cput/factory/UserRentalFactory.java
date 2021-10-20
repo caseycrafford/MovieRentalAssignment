@@ -6,20 +6,27 @@ package za.ac.cput.factory;
  */
 
 import za.ac.cput.entity.UserRental;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 public class UserRentalFactory {
 
-    public static UserRental build(int userId, int movieId, String rentalDate, String returnDate, String rentedBy){
+    public static UserRental build(String userId, String movieId){
 
-        if (userId<0 || movieId<0 || rentalDate.isEmpty() || returnDate.isEmpty() || rentedBy.isEmpty()){
+        SimpleDateFormat formatDate= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        Date date = new Date(System.currentTimeMillis());
+        String datetime = formatDate.format(date);
+
+        if (userId.isEmpty() || movieId.isEmpty() ){
             return null;
         }
 
         String id= UUID.randomUUID().toString();
 
         return new UserRental.UserRentalBuilder()
-                .setRentalId(id).setUserId(userId).setMovieId(movieId).setRentalDate(rentalDate).setReturnDate(returnDate).setRentedBy(rentedBy).build();
+                .setRentalId(id).setUserId(userId).setMovieId(movieId).setRentalDate(datetime).build();
     }
 
 }

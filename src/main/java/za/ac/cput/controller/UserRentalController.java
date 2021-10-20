@@ -12,9 +12,9 @@ import za.ac.cput.factory.UserRentalFactory;
 import za.ac.cput.service.UserRentalService;
 
 import java.util.Set;
-@Deprecated
+
 @RestController
-@RequestMapping("/UserRental")
+@RequestMapping("/userrental")
 public class UserRentalController {
 
     @Autowired
@@ -22,7 +22,7 @@ public class UserRentalController {
 
     @PostMapping("/create")
     public UserRental create(@RequestBody UserRental userRental){
-        UserRental newUserRental = UserRentalFactory.build(userRental.getUserId(),userRental.getMovieId(),userRental.getRentalDate(),userRental.getReturnDate(),userRental.getRentedBy());
+        UserRental newUserRental = UserRentalFactory.build(userRental.getUserId(),userRental.getMovieId());
         return userRentalService.create(newUserRental);
     }
 

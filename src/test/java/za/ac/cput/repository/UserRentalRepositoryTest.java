@@ -15,7 +15,7 @@ import za.ac.cput.factory.UserRentalFactory;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 public class UserRentalRepositoryTest {
     private static UserRentalRepository repository = UserRentalRepository.getRepository();
-    private static UserRental userRental = UserRentalFactory.build(15,156,"22 February 2018","28 February 2018", "Yaasin");
+    private static UserRental userRental = UserRentalFactory.build("15","156");
 
     @Test
     void a_create() {
@@ -33,7 +33,7 @@ public class UserRentalRepositoryTest {
 
     @Test
     void c_update() {
-        UserRental updated = new UserRental.UserRentalBuilder().copy(userRental).setUserId(15).build();
+        UserRental updated = new UserRental.UserRentalBuilder().copy(userRental).setUserId("15").build();
         assertNotNull(repository.update(updated));
         System.out.println("Update: " + updated);
     }

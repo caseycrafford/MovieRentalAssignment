@@ -11,8 +11,9 @@ import javax.persistence.Id;
 public class UserRental {
     @Id
     private String rentalId;
-    private int userId, movieId;
-    private String rentedBy, rentalDate, returnDate;
+    private String userId, movieId;
+    private String rentalDate;
+    private String returnDate;
 
     public UserRental(){
     }
@@ -23,20 +24,15 @@ public class UserRental {
         this.movieId = userRentalBuilder.movieId;
         this.rentalDate = userRentalBuilder.rentalDate;
         this.returnDate = userRentalBuilder.returnDate;
-        this.rentedBy = userRentalBuilder.rentedBy;
 
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public int getMovieId() {
+    public String getMovieId() {
         return movieId;
-    }
-
-    public String getRentedBy() {
-        return rentedBy;
     }
 
     public String getRentalDate() {
@@ -53,23 +49,22 @@ public class UserRental {
 
     public static class UserRentalBuilder{
         private String rentalId;
-        private int userId;
-        private int movieId;
+        private String userId;
+        private String movieId;
         private String rentalDate;
         private String returnDate;
-        private String rentedBy;
 
         public UserRentalBuilder setRentalId(String rentalId) {
             this.rentalId = rentalId;
             return this;
         }
 
-        public UserRentalBuilder setUserId(int userId) {
+        public UserRentalBuilder setUserId(String userId) {
             this.userId = userId;
             return this;
         }
 
-        public UserRentalBuilder setMovieId(int movieId) {
+        public UserRentalBuilder setMovieId(String movieId) {
             this.movieId = movieId;
             return this;
         }
@@ -84,16 +79,10 @@ public class UserRental {
             return this;
         }
 
-        public UserRentalBuilder setRentedBy(String rentedBy) {
-            this.rentedBy = rentedBy;
-            return this;
-        }
-
         public UserRentalBuilder copy (UserRental userRental) {
             this.movieId = userRental.movieId;
             this.rentalDate = userRental.rentalDate;
             this.rentalId = userRental.rentalId;
-            this.rentedBy = userRental.rentedBy;
             this.returnDate = userRental.returnDate;
             this.userId = userRental.userId;
 
@@ -108,12 +97,11 @@ public class UserRental {
     @Override
     public String toString() {
         return "UserRental{" +
-                "rentalId=" + rentalId +
-                ", userId=" + userId +
-                ", movieId=" + movieId +
-                ", rentalDate=" + rentalDate +
-                ", returnDate=" + returnDate +
-                ", rentedBy='" + rentedBy + '\'' +
+                "rentalId='" + rentalId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", movieId='" + movieId + '\'' +
+                ", rentalDate='" + rentalDate + '\'' +
+                ", returnDate='" + returnDate + '\'' +
                 '}';
     }
 }

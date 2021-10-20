@@ -16,8 +16,8 @@ public class UserRentalTest {
     @BeforeEach
     void setUp()
     {
-        userRental_1 = UserRentalFactory.build(15,154,"11 January 2018", "15 January 2018", "Malcolm");
-        userRental_2 = UserRentalFactory.build(23,191,"4 March 2018","8 March 2018","Lance");
+        userRental_1 = UserRentalFactory.build("15","154");
+        userRental_2 = UserRentalFactory.build("23","191");
         userRental_3 = userRental_1;
     }
 

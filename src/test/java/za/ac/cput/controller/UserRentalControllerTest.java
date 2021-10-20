@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class UserRentalControllerTest {
-    public static UserRental userRental = UserRentalFactory.build(8,91,"5 January 2018","1 February 2018", "Casey");
+    public static UserRental userRental = UserRentalFactory.build("8","91");
 
     @Autowired
     private TestRestTemplate restTemplate;
