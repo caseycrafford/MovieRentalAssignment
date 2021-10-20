@@ -11,14 +11,6 @@ import javax.persistence.Id;
 
 @Entity
 public class UserRentalPrice {
-    @Id
-    private String rentalId;
-    private int duration;
-    private double amount;
-
-    public UserRentalPrice(){
-
-    }
 
     public UserRentalPrice(UserRentalPriceBuilder userRentalPriceBuilder){
         this.rentalId = userRentalPriceBuilder.rentalId;

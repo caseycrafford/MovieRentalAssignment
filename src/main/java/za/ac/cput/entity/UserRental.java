@@ -9,13 +9,6 @@ import javax.persistence.Id;
  */
 @Entity
 public class UserRental {
-    @Id
-    private String rentalId;
-    private int userId, movieId;
-    private String rentedBy, rentalDate, returnDate;
-
-    public UserRental(){
-    }
 
     public UserRental(UserRentalBuilder userRentalBuilder){
         this.rentalId = userRentalBuilder.rentalId;
